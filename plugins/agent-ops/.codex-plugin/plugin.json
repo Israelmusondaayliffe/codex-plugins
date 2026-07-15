@@ -1,22 +1,22 @@
 {
   "name": "agent-ops",
-  "version": "0.1.0+codex.20260714115137",
-  "description": "Design, run, resume, and audit agents, Goals, and bounded loops with explicit authority and evidence.",
+  "version": "0.2.0",
+  "description": "Design, route, and audit reusable agent systems with explicit authority, evidence, stops, and failure behavior.",
   "author": {
     "name": "Israel Ayliffe"
   },
   "skills": "./skills/",
   "interface": {
     "displayName": "Agent Ops",
-    "shortDescription": "Operate agents, Goals, and bounded loops.",
-    "longDescription": "Agent Ops routes agent design, Goal engineering, execution, resume, bounded loops, and system audits while requiring explicit boundaries, stops, evidence, and recovery.",
+    "shortDescription": "Design and audit bounded agent systems.",
+    "longDescription": "Agent Ops designs reusable agents, routes agent-system work, and audits authority, tools, evidence, stops, and recovery. Generic Codex Goals and loops are owned by LoopKit.",
     "developerName": "Israel Ayliffe",
     "category": "Productivity",
     "capabilities": [],
     "defaultPrompt": [
       "Design a bounded agent system for this outcome.",
-      "Turn this sustained task into a verifiable Goal.",
-      "Audit this agent system before it runs."
+      "Audit this agent system before it runs.",
+      "Route this reusable agent architecture."
     ]
   }
 }

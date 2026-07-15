@@ -21,6 +21,11 @@ For example:
 Start a new Codex task after installation. An already open task may keep the
 capability inventory it loaded before the plugin was installed.
 
+LoopKit includes local `PreCompact` and `SessionStart` hooks. Review and trust
+them through `/hooks` before relying on automatic checkpoint refresh or resume.
+The plugin remains usable through its skills and scripts if the hooks are not
+trusted.
+
 ## Update
 
 Refresh the marketplace source:

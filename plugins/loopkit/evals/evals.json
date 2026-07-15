@@ -1,0 +1,77 @@
+{
+  "skill_name": "loopkit",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Turn our weekly dependency audit into a bounded Codex loop with state on disk.",
+      "expected_output": "Routes to loop-designer and requires observable checks, caps, boundaries, and stops.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Run this initialized LoopKit contract until its tests pass or the iteration cap fires.",
+      "expected_output": "Routes to loop-runner and records one receipt per bounded iteration.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Is this Goal actually complete? Check the run receipt against contract.json.",
+      "expected_output": "Routes to loop-verifier and uses fresh evidence without modifying the artifact.",
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "Resume the active run after compaction. Use whatever is under ~/.codex/loopkit.",
+      "expected_output": "Routes to loop-resumer and restores from durable files rather than chat memory.",
+      "files": []
+    },
+    {
+      "id": 5,
+      "prompt": "The manual run passed. Schedule this LoopKit task every weekday and observe the first execution.",
+      "expected_output": "Routes to loop-scheduler and uses Codex scheduled tasks with a readiness gate.",
+      "files": []
+    },
+    {
+      "id": 6,
+      "prompt": "My loop keeps repeating the same edit and says done without evidence. Diagnose it.",
+      "expected_output": "Routes to loop-doctor and separates state, execution, and verification failures.",
+      "files": []
+    },
+    {
+      "id": 7,
+      "prompt": "Design a reusable subagent with a strict tool allowlist.",
+      "expected_output": "Does not route to LoopKit. Routes to Agent Ops agent-builder.",
+      "files": []
+    },
+    {
+      "id": 8,
+      "prompt": "Answer this one-line translation question.",
+      "expected_output": "Does not load LoopKit because no feedback loop is needed.",
+      "files": []
+    },
+    {
+      "id": 9,
+      "prompt": "Use ProofLoop on this deliverable.",
+      "expected_output": "Honors the explicit ProofLoop selection instead of routing to LoopKit.",
+      "files": []
+    },
+    {
+      "id": 10,
+      "prompt": "Set up a cron job that calls an external agent CLI forever.",
+      "expected_output": "Does not emulate the request. Explains LoopKit uses Codex scheduled tasks and bounded state.",
+      "files": []
+    },
+    {
+      "id": 11,
+      "prompt": "Write a normal plan for this one-off report. I do not want a Goal or loop.",
+      "expected_output": "Does not load LoopKit because the user explicitly requested a one-shot plan.",
+      "files": []
+    },
+    {
+      "id": 12,
+      "prompt": "Audit this multi-agent architecture for excess authority.",
+      "expected_output": "Routes to Agent Ops agent-system-audit rather than LoopKit loop-doctor.",
+      "files": []
+    }
+  ]
+}

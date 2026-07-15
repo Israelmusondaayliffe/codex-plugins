@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
-  "generated_on": "2026-07-14",
-  "expected_owned_skill_count": 102,
+  "generated_on": "2026-07-15",
+  "expected_owned_skill_count": 109,
   "required_plugins": [
     "agent-ops",
     "brand-world-studio",
@@ -10,6 +10,7 @@
     "data-storytelling-studio",
     "founder-revenue-engine",
     "knowledge-work-superpowers",
+    "loopkit",
     "model-evaluation-lab",
     "model-prompt-lab",
     "outcome-engine",
@@ -67,6 +68,17 @@
       "excluded_routes": ["proofloop:proofloop-run", "proofloop:proofloop-audit"],
       "reason": "The request is a focused agent audit and explicitly excludes the ProofLoop protocol.",
       "verification_needed": ["Verify the agent audit evidence surface."]
+    },
+    {
+      "id": "agents-versus-loops",
+      "match_all": ["reusable agent system", "bounded codex loop"],
+      "plugin": "agent-ops",
+      "skill": "agent-ops-router",
+      "route_type": "plugin-router",
+      "companions": ["loopkit"],
+      "excluded_routes": ["loopkit:loopkit as primary before the agent contract exists"],
+      "reason": "Reusable agent architecture owns the first decision; LoopKit receives the approved bounded execution contract at handoff.",
+      "verification_needed": ["Verify the agent contract before initializing the LoopKit run."]
     },
     {
       "id": "prompts-versus-evaluations",
@@ -164,20 +176,40 @@
     {
       "plugin": "agent-ops",
       "display_name": "Agent Ops",
-      "purpose": "Design, route, run, loop, and audit agents and Goals.",
+      "purpose": "Design, route, and audit reusable agent systems.",
       "front_door": "agent-ops-router",
-      "composite_triggers": ["design an agent and decide whether this should be a goal or loop", "agent goal loop and audit"],
+      "composite_triggers": ["design and audit a reusable agent system", "agent architecture tools authority and stops"],
       "owned_skills": ["agent-builder", "agent-ops-router", "agent-system-audit", "goal-runner", "loop-goal-engineer", "loopy"],
       "direct_routes": [
         {"skill": "agent-builder", "triggers": ["build a reusable agent"]},
         {"skill": "agent-system-audit", "triggers": ["audit this agent system"]},
         {"skill": "goal-runner", "triggers": ["run goal runner"]},
-        {"skill": "loop-goal-engineer", "triggers": ["engineer a loop goal"]},
-        {"skill": "loopy", "triggers": ["run this as a loopy workflow"]}
+        {"skill": "loop-goal-engineer", "triggers": ["use loop goal engineer"]},
+        {"skill": "loopy", "triggers": ["use loopy"]}
       ],
-      "companions": ["proofloop"],
-      "handoffs": ["Use ProofLoop only after an explicit request for learning and quarantined memory."],
-      "exclusions": ["Do not infer ProofLoop from ordinary agent verification."],
+      "companions": ["loopkit", "proofloop"],
+      "handoffs": ["Send approved generic Goal and loop execution contracts to LoopKit.", "Use ProofLoop only after an explicit request for learning and quarantined memory."],
+      "exclusions": ["Do not own generic Codex Goal, loop, resume, verification, or scheduling work.", "Do not infer ProofLoop from ordinary agent verification."],
+      "lifecycle": {"state": "active", "visibility": "installed"}
+    },
+    {
+      "plugin": "loopkit",
+      "display_name": "LoopKit",
+      "purpose": "Design, run, verify, resume, schedule, and diagnose bounded Codex loops with durable state.",
+      "front_door": "loopkit",
+      "composite_triggers": ["design run verify and schedule a bounded codex loop", "durable plan act verify loop with state on disk"],
+      "owned_skills": ["loop-designer", "loop-doctor", "loop-resumer", "loop-runner", "loop-scheduler", "loop-verifier", "loopkit"],
+      "direct_routes": [
+        {"skill": "loop-designer", "triggers": ["turn this into a bounded codex loop"]},
+        {"skill": "loop-doctor", "triggers": ["diagnose this repeating loop"]},
+        {"skill": "loop-resumer", "triggers": ["resume the active loopkit run"]},
+        {"skill": "loop-runner", "triggers": ["run this initialized loopkit contract"]},
+        {"skill": "loop-scheduler", "triggers": ["schedule this loopkit task"]},
+        {"skill": "loop-verifier", "triggers": ["verify this loopkit run"]}
+      ],
+      "companions": ["agent-ops"],
+      "handoffs": ["Receive approved reusable agent execution contracts from Agent Ops."],
+      "exclusions": ["Do not own reusable agent definitions or agent-system audits.", "Do not manufacture a loop when fresh feedback cannot change the next action."],
       "lifecycle": {"state": "active", "visibility": "installed"}
     },
     {
