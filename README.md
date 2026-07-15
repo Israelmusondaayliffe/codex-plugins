@@ -3,7 +3,8 @@
 A public marketplace for the personal Codex plugins I use to research, plan,
 create, operate, evaluate, and ship work.
 
-Website: published through OpenAI Sites  
+Website: https://israel-codex-plugins.israelayliffe.chatgpt.site
+
 Repository: https://github.com/Israelmusondaayliffe/codex-plugins
 
 ## Install
