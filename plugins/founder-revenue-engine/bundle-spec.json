@@ -1,0 +1,55 @@
+{
+  "plugin": "founder-revenue-engine",
+  "version": "0.1.0+codex.20260714121935",
+  "skills": [
+    "first-customer-finder",
+    "founder-revenue-router",
+    "last30days",
+    "linkedin-viral-content-creator",
+    "market-narrative-builder",
+    "outreach-sequence-builder",
+    "signal-to-icp"
+  ],
+  "coordinator_skills": [
+    "founder-revenue-router",
+    "signal-to-icp",
+    "market-narrative-builder",
+    "outreach-sequence-builder"
+  ],
+  "companions": [
+    {"name": "sales", "required": false, "purpose": "Connected sales workflows when installed"},
+    {"name": "creative-production", "required": false, "purpose": "Campaign creative exploration when installed"},
+    {"name": "gmail", "required": false, "purpose": "Email actions after action-time authorization"},
+    {"name": "google-calendar", "required": false, "purpose": "Meeting actions after action-time authorization"},
+    {"name": "canva", "required": false, "purpose": "Campaign asset production"},
+    {"name": "writing-quality", "required": false, "purpose": "Final commercial prose validation"}
+  ],
+  "guardrails": [
+    "Signals must remain source-linked and bounded by the stated evidence window.",
+    "Unsupported proof is removed or labeled as a hypothesis.",
+    "Research and drafts never authorize sends, scheduling, CRM writes, or account changes."
+  ],
+  "routing_cases": [
+    {
+      "kind": "success",
+      "prompt": "Collect recent public pain, intent, buying, and language signals.",
+      "expected_skill": "last30days",
+      "evidence_file": "skills/founder-revenue-router/references/workflow.md",
+      "evidence_contains": "signal-research: collect recent public pain"
+    },
+    {
+      "kind": "boundary",
+      "prompt": "Turn verified signals into a bounded ideal-customer hypothesis.",
+      "expected_skill": "signal-to-icp",
+      "evidence_file": "skills/founder-revenue-router/references/workflow.md",
+      "evidence_contains": "icp: turn evidence into a bounded ideal-customer"
+    },
+    {
+      "kind": "failure",
+      "prompt": "Draft the sequence and send it from my connected email account.",
+      "expected_skill": "outreach-sequence-builder",
+      "evidence_file": "skills/outreach-sequence-builder/SKILL.md",
+      "evidence_contains": "Stop before sending"
+    }
+  ]
+}

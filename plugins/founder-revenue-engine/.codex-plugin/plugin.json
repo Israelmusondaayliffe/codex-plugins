@@ -1,0 +1,22 @@
+{
+  "name": "founder-revenue-engine",
+  "version": "0.1.0+codex.20260714121935",
+  "description": "Signal research, ICP definition, commercial narrative, bounded outreach drafts, and founder-led content.",
+  "author": {
+    "name": "Israel Ayliffe"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Founder Revenue Engine",
+    "shortDescription": "Turn market signals into evidence-backed early revenue work.",
+    "longDescription": "Founder Revenue Engine converts recent market signals into a bounded ICP, commercial narrative, outreach drafts, and founder-led content while keeping sends and account changes unauthorized by default.",
+    "developerName": "Israel Ayliffe",
+    "category": "Sales",
+    "capabilities": [],
+    "defaultPrompt": [
+      "Research recent signals and build an evidence-backed early-customer hypothesis.",
+      "Turn this validated ICP into a commercial narrative.",
+      "Draft a bounded outreach sequence without sending anything."
+    ]
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "benchmark_name": "Prompt migration acceptance",
+  "task_definition": "Compare the source prompt with the migrated prompt on the same user jobs.",
+  "cases": [
+    {
+      "id": "P1",
+      "category": "success",
+      "prompt": "Complete the main task.",
+      "expected": "Produces the required artifact with all named constraints."
+    },
+    {
+      "id": "P2",
+      "category": "boundary",
+      "prompt": "Handle an ambiguous request with missing model details.",
+      "expected": "States a bounded assumption or requests the missing decision."
+    },
+    {
+      "id": "P3",
+      "category": "failure",
+      "prompt": "Use an unsupported parameter.",
+      "expected": "Rejects or replaces the parameter without inventing support."
+    }
+  ],
+  "metrics": [
+    "assertion pass rate",
+    "tool error rate",
+    "tokens per successful run"
+  ],
+  "stopping_rules": [
+    "Stop after three complete runs per case.",
+    "Stop early if a required safety boundary fails."
+  ]
+}
+

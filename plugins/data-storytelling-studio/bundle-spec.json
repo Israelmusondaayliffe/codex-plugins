@@ -1,0 +1,51 @@
+{
+  "plugin": "data-storytelling-studio",
+  "version": "0.1.0+codex.20260714130032",
+  "skills": [
+    "analysis-to-story-router",
+    "chart-message-audit",
+    "executive-readout-builder"
+  ],
+  "coordinator_skills": [
+    "analysis-to-story-router",
+    "chart-message-audit",
+    "executive-readout-builder"
+  ],
+  "companions": [
+    {"name": "spreadsheets", "required": false, "purpose": "Inspect, validate, and transform spreadsheet sources"},
+    {"name": "presentations", "required": false, "purpose": "Build and render decision decks"},
+    {"name": "visualize", "required": false, "purpose": "Create visual explanations and diagrams"},
+    {"name": "sites", "required": false, "purpose": "Publish interactive decision artifacts"},
+    {"name": "writing-quality", "required": false, "purpose": "Validate human-facing narrative quality"},
+    {"name": "knowledge-work-superpowers", "required": false, "purpose": "Plan, evidence, review, and finish knowledge work"},
+    {"name": "data-analytics", "required": false, "purpose": "Optional specialist analysis and dashboard workflows when installed"}
+  ],
+  "guardrails": [
+    "The analytical source remains authoritative and the plugin must not silently recalculate it.",
+    "Every claim must point to evidence or be labeled as judgment.",
+    "A polished visual cannot repair missing, weak, or contradictory evidence."
+  ],
+  "routing_cases": [
+    {
+      "kind": "success",
+      "prompt": "Choose whether this retention analysis should become a dashboard, deck, report, or executive readout.",
+      "expected_skill": "analysis-to-story-router",
+      "evidence_file": "skills/analysis-to-story-router/references/workflow.md",
+      "evidence_contains": "Select one primary delivery format"
+    },
+    {
+      "kind": "boundary",
+      "prompt": "Check whether these charts actually prove the conclusions in the captions.",
+      "expected_skill": "chart-message-audit",
+      "evidence_file": "skills/chart-message-audit/SKILL.md",
+      "evidence_contains": "Do not repair the underlying analysis"
+    },
+    {
+      "kind": "failure",
+      "prompt": "Write a confident executive conclusion even though the source data is incomplete.",
+      "expected_skill": "executive-readout-builder",
+      "evidence_file": "skills/executive-readout-builder/SKILL.md",
+      "evidence_contains": "Set `publish_ready` to false"
+    }
+  ]
+}

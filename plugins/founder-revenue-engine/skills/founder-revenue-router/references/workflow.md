@@ -1,0 +1,10 @@
+# Founder revenue routing
+
+signal-research: collect recent public pain, intent, buying, and language signals.
+icp: turn evidence into a bounded ideal-customer and early-adopter hypothesis.
+narrative: connect audience problem, offer, proof, objections, and call to action.
+outreach: draft a traceable, bounded message sequence without sending.
+content: create founder-led LinkedIn content from verified claims and positioning.
+
+Gmail, calendar, CRM, and account actions require action-time authorization. Research and drafts do not grant it.
+

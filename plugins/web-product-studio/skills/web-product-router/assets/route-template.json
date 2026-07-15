@@ -1,0 +1,8 @@
+{
+  "route": "redesign",
+  "objective": "Observable product outcome",
+  "design_constitution": "minimalist-ui",
+  "implementation_skills": ["redesign-existing-projects"],
+  "acceptance_flow": "path/to/acceptance-flow.json",
+  "rationale": "Why this route owns the task"
+}

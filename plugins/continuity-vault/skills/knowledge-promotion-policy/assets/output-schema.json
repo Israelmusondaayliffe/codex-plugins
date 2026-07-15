@@ -1,0 +1,27 @@
+{
+  "skill": "knowledge-promotion-policy",
+  "required": [
+    "knowledge_item",
+    "source",
+    "current_authority",
+    "destination",
+    "rationale",
+    "owner",
+    "review_trigger",
+    "provenance_action",
+    "approval_required"
+  ],
+  "nonempty_strings": [
+    "knowledge_item",
+    "source",
+    "current_authority",
+    "rationale",
+    "owner",
+    "review_trigger",
+    "provenance_action"
+  ],
+  "enums": {
+    "destination": ["durable-file", "project-reference", "graph", "memory-candidate", "none"]
+  },
+  "boolean_fields": ["approval_required"]
+}

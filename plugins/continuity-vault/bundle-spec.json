@@ -1,0 +1,51 @@
+{
+  "plugin": "continuity-vault",
+  "version": "0.1.0+codex.20260714121935",
+  "skills": [
+    "continuity-router",
+    "frontier-extraction",
+    "graphify",
+    "knowledge-promotion-policy",
+    "staleness-and-conflict-audit"
+  ],
+  "coordinator_skills": [
+    "continuity-router",
+    "knowledge-promotion-policy",
+    "staleness-and-conflict-audit"
+  ],
+  "companions": [
+    {"name": "claude-mem", "required": false, "purpose": "Recall and prior-context discovery"},
+    {"name": "notion", "required": false, "purpose": "Internal wiki sources"},
+    {"name": "google-drive", "required": false, "purpose": "Working document sources"},
+    {"name": "knowledge-work-superpowers", "required": false, "purpose": "Evidence-led deliverables"},
+    {"name": "writing-quality", "required": false, "purpose": "Final continuity report prose"}
+  ],
+  "guardrails": [
+    "The active AGENTS.md chain and workspace source files remain authoritative.",
+    "Memory and Chronicle are recall surfaces and must be rechecked before load-bearing use.",
+    "Audits do not silently overwrite, delete, or resolve conflicts in source material."
+  ],
+  "routing_cases": [
+    {
+      "kind": "success",
+      "prompt": "Extract reusable decisions from this completed task and preserve the source.",
+      "expected_skill": "frontier-extraction",
+      "evidence_file": "skills/continuity-router/references/workflow.md",
+      "evidence_contains": "extract` | A task or source contains reusable decisions"
+    },
+    {
+      "kind": "boundary",
+      "prompt": "Decide whether this belongs in a project reference or memory candidate.",
+      "expected_skill": "knowledge-promotion-policy",
+      "evidence_file": "skills/continuity-router/references/workflow.md",
+      "evidence_contains": "promote` | Extracted knowledge needs a durable destination decision"
+    },
+    {
+      "kind": "failure",
+      "prompt": "Resolve this instruction conflict by deleting the older source.",
+      "expected_skill": "staleness-and-conflict-audit",
+      "evidence_file": "skills/staleness-and-conflict-audit/SKILL.md",
+      "evidence_contains": "never resolves a conflict by silently editing or deleting"
+    }
+  ]
+}

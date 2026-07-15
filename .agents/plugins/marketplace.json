@@ -1,0 +1,188 @@
+{
+  "name": "israel-codex-plugins",
+  "interface": {
+    "displayName": "Israel's Codex Plugins"
+  },
+  "plugins": [
+    {
+      "name": "knowledge-work-superpowers",
+      "source": {
+        "source": "local",
+        "path": "./plugins/knowledge-work-superpowers"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "outcome-engine",
+      "source": {
+        "source": "local",
+        "path": "./plugins/outcome-engine"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "proofloop",
+      "source": {
+        "source": "local",
+        "path": "./plugins/proofloop"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "writing-quality",
+      "source": {
+        "source": "local",
+        "path": "./plugins/writing-quality"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "capability-operator",
+      "source": {
+        "source": "local",
+        "path": "./plugins/capability-operator"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "agent-ops",
+      "source": {
+        "source": "local",
+        "path": "./plugins/agent-ops"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "video-production-studio",
+      "source": {
+        "source": "local",
+        "path": "./plugins/video-production-studio"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Media"
+    },
+    {
+      "name": "web-product-studio",
+      "source": {
+        "source": "local",
+        "path": "./plugins/web-product-studio"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "model-prompt-lab",
+      "source": {
+        "source": "local",
+        "path": "./plugins/model-prompt-lab"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "strategy-room",
+      "source": {
+        "source": "local",
+        "path": "./plugins/strategy-room"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "brand-world-studio",
+      "source": {
+        "source": "local",
+        "path": "./plugins/brand-world-studio"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Design"
+    },
+    {
+      "name": "founder-revenue-engine",
+      "source": {
+        "source": "local",
+        "path": "./plugins/founder-revenue-engine"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Sales"
+    },
+    {
+      "name": "continuity-vault",
+      "source": {
+        "source": "local",
+        "path": "./plugins/continuity-vault"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "data-storytelling-studio",
+      "source": {
+        "source": "local",
+        "path": "./plugins/data-storytelling-studio"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "model-evaluation-lab",
+      "source": {
+        "source": "local",
+        "path": "./plugins/model-evaluation-lab"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    }
+  ]
+}

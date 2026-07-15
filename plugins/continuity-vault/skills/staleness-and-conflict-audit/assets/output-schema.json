@@ -1,0 +1,29 @@
+{
+  "skill": "staleness-and-conflict-audit",
+  "required": [
+    "scope",
+    "audit_date",
+    "sources",
+    "findings",
+    "result",
+    "next_review",
+    "mutation_authorized"
+  ],
+  "nonempty_strings": ["scope", "audit_date", "next_review"],
+  "list_fields": ["sources", "findings"],
+  "id_lists": ["findings"],
+  "item_required": {
+    "findings": ["id", "kind", "severity", "source", "evidence", "recommended_action"]
+  },
+  "item_enums": {
+    "findings.kind": ["stale-claim", "instruction-conflict", "authority-gap", "missing-owner", "broken-reference"],
+    "findings.severity": ["low", "medium", "high"]
+  },
+  "enums": {
+    "result": ["clear", "needs-review", "blocked"]
+  },
+  "boolean_fields": ["mutation_authorized"],
+  "const_values": {
+    "mutation_authorized": false
+  }
+}

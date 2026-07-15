@@ -1,0 +1,42 @@
+{
+  "skill": "signal-to-icp",
+  "required": [
+    "offer",
+    "evidence_scope",
+    "signals",
+    "icp_hypothesis",
+    "disqualifiers",
+    "confidence",
+    "verification_gaps"
+  ],
+  "nonempty_strings": [
+    "offer",
+    "evidence_scope",
+    "icp_hypothesis"
+  ],
+  "list_fields": [
+    "signals",
+    "disqualifiers",
+    "verification_gaps"
+  ],
+  "id_lists": [
+    "signals"
+  ],
+  "item_required": {
+    "signals": [
+      "id",
+      "source",
+      "date",
+      "signal",
+      "why_it_matters"
+    ]
+  },
+  "enums": {
+    "confidence": [
+      "low",
+      "medium",
+      "high"
+    ]
+  }
+}
+

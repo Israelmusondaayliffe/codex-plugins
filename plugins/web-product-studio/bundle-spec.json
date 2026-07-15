@@ -1,0 +1,52 @@
+{
+  "plugin": "web-product-studio",
+  "version": "0.1.0+codex.20260714115137",
+  "skills": [
+    "acceptance-flow",
+    "code-production-agent",
+    "design-constitution-selector",
+    "full-output-enforcement",
+    "gstack",
+    "image-to-code",
+    "imagegen-frontend-web",
+    "playwright",
+    "redesign-existing-projects",
+    "web-product-router"
+  ],
+  "coordinator_skills": [
+    "acceptance-flow",
+    "design-constitution-selector",
+    "web-product-router"
+  ],
+  "companions": [
+    "build-web-apps",
+    "supabase",
+    "github",
+    "codex-security",
+    "browser"
+  ],
+  "guardrails": [
+    "Load exactly one design constitution or none.",
+    "Prove user-facing completion through browser-verifiable acceptance flows."
+  ],
+  "routing_cases": [
+    {
+      "prompt": "Build a new dashboard from this product brief.",
+      "expected_skill": "web-product-router",
+      "evidence_file": "skills/web-product-router/references/routing.md",
+      "evidence_contains": "greenfield: new product or major new surface"
+    },
+    {
+      "prompt": "Match this supplied screenshot in working frontend code.",
+      "expected_skill": "image-to-code",
+      "evidence_file": "skills/web-product-router/references/routing.md",
+      "evidence_contains": "Use image-to-code or imagegen-frontend-web"
+    },
+    {
+      "prompt": "Turn the brief into browser-verifiable acceptance scenarios.",
+      "expected_skill": "acceptance-flow",
+      "evidence_file": "skills/acceptance-flow/SKILL.md",
+      "evidence_contains": "browser-verifiable user flows"
+    }
+  ]
+}

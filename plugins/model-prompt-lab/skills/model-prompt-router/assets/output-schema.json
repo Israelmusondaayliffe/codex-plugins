@@ -1,0 +1,28 @@
+{
+  "skill": "model-prompt-router",
+  "required": [
+    "route",
+    "target_model",
+    "task",
+    "rationale",
+    "source_check_required"
+  ],
+  "nonempty_strings": [
+    "target_model",
+    "task",
+    "rationale"
+  ],
+  "boolean_fields": [
+    "source_check_required"
+  ],
+  "enums": {
+    "route": [
+      "generate",
+      "migrate",
+      "diagnose",
+      "benchmark",
+      "working-mode"
+    ]
+  }
+}
+

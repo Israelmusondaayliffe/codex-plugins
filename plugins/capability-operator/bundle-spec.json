@@ -1,0 +1,58 @@
+{
+  "plugin": "capability-operator",
+  "version": "0.1.0+codex.20260714193616",
+  "skills": [
+    "capability-inventory",
+    "capability-router",
+    "fresh-task-discovery-verifier",
+    "harness-meta-audit",
+    "plugin-portfolio-manager",
+    "skill-creator-pro",
+    "skill-overlap-audit"
+  ],
+  "coordinator_skills": [
+    "capability-inventory",
+    "capability-router",
+    "fresh-task-discovery-verifier",
+    "plugin-portfolio-manager",
+    "skill-overlap-audit"
+  ],
+  "companions": [
+    "plugin-creator",
+    "skill-creator",
+    "plugin-eval",
+    "proofloop",
+    "claude-mem"
+  ],
+  "guardrails": [
+    "Read-only by default.",
+    "Global mutations require explicit authority and backup.",
+    "Installed and task-visible are separate evidence layers."
+  ],
+  "routing_cases": [
+    {
+      "prompt": "Choose one primary plugin or skill for a cross-domain request.",
+      "expected_skill": "capability-router",
+      "evidence_file": "skills/capability-router/SKILL.md",
+      "evidence_contains": "Choose one primary route"
+    },
+    {
+      "prompt": "Show every loose, bundled, installed, and visible skill.",
+      "expected_skill": "capability-inventory",
+      "evidence_file": "skills/capability-inventory/SKILL.md",
+      "evidence_contains": "loose skills, plugin source bundles"
+    },
+    {
+      "prompt": "Find duplicate and drifted skills without deleting anything.",
+      "expected_skill": "skill-overlap-audit",
+      "evidence_file": "skills/skill-overlap-audit/SKILL.md",
+      "evidence_contains": "duplicate, drifted"
+    },
+    {
+      "prompt": "Prove the new plugin loaded in a clean task.",
+      "expected_skill": "fresh-task-discovery-verifier",
+      "evidence_file": "skills/fresh-task-discovery-verifier/SKILL.md",
+      "evidence_contains": "clean Codex task prompt"
+    }
+  ]
+}

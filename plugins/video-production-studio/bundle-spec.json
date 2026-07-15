@@ -1,0 +1,55 @@
+{
+  "plugin": "video-production-studio",
+  "version": "0.1.0+codex.20260714115922",
+  "skills": [
+    "embedded-captions",
+    "faceless-explainer",
+    "general-video",
+    "graphic-overlays",
+    "media-use",
+    "motion-graphics",
+    "music-to-video",
+    "pr-to-video",
+    "product-launch-video",
+    "remotion-to-hyperframes",
+    "slideshow",
+    "video-delivery-qc",
+    "video-production-router",
+    "video-prompt-builder",
+    "website-to-video"
+  ],
+  "coordinator_skills": [
+    "video-delivery-qc",
+    "video-production-router"
+  ],
+  "companions": [
+    "hyperframes",
+    "remotion",
+    "browser",
+    "computer-use"
+  ],
+  "guardrails": [
+    "HyperFrames is the default runtime unless the source or user selects Remotion.",
+    "Every render requires technical and visual delivery checks."
+  ],
+  "routing_cases": [
+    {
+      "prompt": "Create a narrated explainer without an on-camera host.",
+      "expected_skill": "faceless-explainer",
+      "evidence_file": "skills/video-production-router/references/routing.md",
+      "evidence_contains": "Owner: faceless-explainer"
+    },
+    {
+      "prompt": "Turn this pull request into a short launch video.",
+      "expected_skill": "pr-to-video",
+      "evidence_file": "skills/video-production-router/references/routing.md",
+      "evidence_contains": "Owner: pr-to-video"
+    },
+    {
+      "prompt": "Check this export for dimensions, audio, captions, and visual defects.",
+      "expected_skill": "video-delivery-qc",
+      "evidence_file": "skills/video-delivery-qc/SKILL.md",
+      "evidence_contains": "Use before handing off any video export"
+    }
+  ]
+}

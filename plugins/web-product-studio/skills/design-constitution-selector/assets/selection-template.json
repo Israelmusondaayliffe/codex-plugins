@@ -1,0 +1,13 @@
+{
+  "selected": "minimalist-ui",
+  "evidence": [
+    "Dense operational content benefits from restrained hierarchy."
+  ],
+  "rationale": "Why this constitution fits the product",
+  "rejected": [
+    {
+      "name": "industrial-brutalist-ui",
+      "reason": "Conflicts with the supplied brand tone."
+    }
+  ]
+}

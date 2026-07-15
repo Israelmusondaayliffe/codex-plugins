@@ -1,0 +1,19 @@
+{
+  "plugin": "data-storytelling-studio",
+  "should_trigger": [
+    {"query": "The retention analysis in q2-retention.xlsx is checked. Should this become a dashboard, a deck, or a one-page readout for the CCO?", "expected_skill": "analysis-to-story-router"},
+    {"query": "I have a notebook and three findings. Pick the smallest format that will help the operating team decide what to do next.", "expected_skill": "analysis-to-story-router"},
+    {"query": "Audit the claims beside every chart in this quarterly deck. Check denominators, scales, uncertainty, and accessibility.", "expected_skill": "chart-message-audit"},
+    {"query": "This line chart says onboarding drives retention. Tell me whether the visual and evidence actually support that statement.", "expected_skill": "chart-message-audit"},
+    {"query": "Turn these checked churn findings into an answer-first executive readout with evidence, caveats, risks, and next actions.", "expected_skill": "executive-readout-builder"},
+    {"query": "Write the leadership narrative for this board deck from the approved analysis and audited visuals. Do not add claims.", "expected_skill": "executive-readout-builder"}
+  ],
+  "should_not_trigger": [
+    {"query": "Clean the duplicate rows and recalculate gross margin in this xlsx file.", "reason": "Spreadsheet data work belongs to Spreadsheets or Data Analytics."},
+    {"query": "Create a new brand illustration with a textured editorial style.", "reason": "Creative production belongs to the visual or brand production tools."},
+    {"query": "Build a raw-data forecasting model and tune its hyperparameters.", "reason": "Analysis and model training are outside this coordinator plugin."},
+    {"query": "Write a general employee announcement about the office schedule.", "reason": "No analytical source or decision-story workflow is present."},
+    {"query": "Design the onboarding screens for an iOS app.", "reason": "Mobile product design is outside this plugin."},
+    {"query": "Compare two language models on a support-ticket dataset.", "reason": "Model comparison belongs to Model Evaluation Lab."}
+  ]
+}

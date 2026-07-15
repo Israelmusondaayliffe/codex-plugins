@@ -1,0 +1,23 @@
+{
+  "scope": "Second-wave private plugin installation evidence",
+  "audit_date": "2026-07-14",
+  "sources": [
+    "Approved portfolio plan",
+    "Plugin source manifests",
+    "Live codex plugin listing",
+    "Installed cache copies"
+  ],
+  "findings": [
+    {
+      "id": "F1",
+      "kind": "stale-claim",
+      "severity": "medium",
+      "source": "Build report installation statement",
+      "evidence": "Installation state can change after the report is written.",
+      "recommended_action": "Re-run the release gate before relying on the report as current state."
+    }
+  ],
+  "result": "needs-review",
+  "next_review": "Run at the next plugin update or before sharing installation claims.",
+  "mutation_authorized": false
+}

@@ -1,0 +1,8 @@
+{
+  "route": "migrate",
+  "target_model": "gpt-5.6-sol",
+  "task": "Migrate an existing production prompt while preserving its job.",
+  "rationale": "The user supplied a source prompt and named a new target model.",
+  "source_check_required": true
+}
+

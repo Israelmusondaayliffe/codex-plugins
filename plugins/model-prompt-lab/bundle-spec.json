@@ -1,0 +1,51 @@
+{
+  "plugin": "model-prompt-lab",
+  "version": "0.1.0+codex.20260714121935",
+  "skills": [
+    "fable-5-production-prompter",
+    "fable-mode",
+    "gpt-5-4-production-prompter",
+    "gpt-5-6-production-prompter",
+    "model-prompt-router",
+    "prompt-benchmark-designer",
+    "prompt-migration-audit"
+  ],
+  "coordinator_skills": [
+    "model-prompt-router",
+    "prompt-benchmark-designer",
+    "prompt-migration-audit"
+  ],
+  "companions": [
+    {"name": "openai-developers", "required": false, "purpose": "Current OpenAI platform guidance when installed"},
+    {"name": "proofloop", "required": false, "purpose": "Extended iterative verification"},
+    {"name": "writing-quality", "required": false, "purpose": "Final human-facing prose validation"}
+  ],
+  "guardrails": [
+    "Current model availability, parameters, and tool behavior must be checked with the owning documentation when load-bearing.",
+    "A migration preserves the job while revalidating model-specific assumptions.",
+    "Prompt deliverables are returned in their own code blocks."
+  ],
+  "routing_cases": [
+    {
+      "kind": "success",
+      "prompt": "Create a new production prompt for a verified target model.",
+      "expected_skill": "model-prompt-router",
+      "evidence_file": "skills/model-prompt-router/references/workflow.md",
+      "evidence_contains": "generate: create a new production prompt"
+    },
+    {
+      "kind": "boundary",
+      "prompt": "Preserve this job while adapting the prompt to another model.",
+      "expected_skill": "prompt-migration-audit",
+      "evidence_file": "skills/prompt-migration-audit/SKILL.md",
+      "evidence_contains": "before a prompt is migrated"
+    },
+    {
+      "kind": "failure",
+      "prompt": "Use a model parameter whose current support cannot be verified.",
+      "expected_skill": "model-prompt-router",
+      "evidence_file": "skills/model-prompt-router/SKILL.md",
+      "evidence_contains": "label the route provisional"
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Grill Me"
+  short_description: "Relentless decision-tree interviews"
+  default_prompt: "Use $grill-me to interview me until every material branch of this plan is resolved."

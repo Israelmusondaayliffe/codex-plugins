@@ -1,0 +1,26 @@
+{
+  "skill": "continuity-router",
+  "required": [
+    "source",
+    "authority_layer",
+    "route",
+    "rationale",
+    "next_skill",
+    "verification",
+    "destructive_action_authorized"
+  ],
+  "nonempty_strings": [
+    "source",
+    "authority_layer",
+    "rationale",
+    "next_skill",
+    "verification"
+  ],
+  "enums": {
+    "route": ["extract", "promote", "graph", "search", "audit", "digest"]
+  },
+  "boolean_fields": ["destructive_action_authorized"],
+  "const_values": {
+    "destructive_action_authorized": false
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "agent-ops",
+  "version": "0.1.0+codex.20260714115137",
+  "description": "Design, run, resume, and audit agents, Goals, and bounded loops with explicit authority and evidence.",
+  "author": {
+    "name": "Israel Ayliffe"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Agent Ops",
+    "shortDescription": "Operate agents, Goals, and bounded loops.",
+    "longDescription": "Agent Ops routes agent design, Goal engineering, execution, resume, bounded loops, and system audits while requiring explicit boundaries, stops, evidence, and recovery.",
+    "developerName": "Israel Ayliffe",
+    "category": "Productivity",
+    "capabilities": [],
+    "defaultPrompt": [
+      "Design a bounded agent system for this outcome.",
+      "Turn this sustained task into a verifiable Goal.",
+      "Audit this agent system before it runs."
+    ]
+  }
+}

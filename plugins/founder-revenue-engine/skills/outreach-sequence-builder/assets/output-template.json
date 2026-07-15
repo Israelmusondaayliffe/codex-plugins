@@ -1,0 +1,20 @@
+{
+  "audience": "Founders maintaining a complex Codex skill library.",
+  "evidence_scope": "Approved ICP, narrative, and named public or internal evidence only.",
+  "messages": [
+    {
+      "id": "O1",
+      "channel": "email",
+      "objective": "Open a problem-validation conversation.",
+      "copy": "I noticed your team is maintaining several Codex skills. I am testing a way to prove install, cache, and clean-task visibility in one pass. Is capability drift a problem you are dealing with?",
+      "evidence_reference": "Prospect skill-library evidence and approved market narrative."
+    }
+  ],
+  "stop_rules": [
+    "Stop after a reply.",
+    "Stop on opt-out.",
+    "Stop after three unanswered messages."
+  ],
+  "send_authorized": false
+}
+

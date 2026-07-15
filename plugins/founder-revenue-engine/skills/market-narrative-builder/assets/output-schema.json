@@ -1,0 +1,24 @@
+{
+  "skill": "market-narrative-builder",
+  "required": [
+    "audience",
+    "problem",
+    "evidence",
+    "offer",
+    "proof",
+    "objections",
+    "call_to_action"
+  ],
+  "nonempty_strings": [
+    "audience",
+    "problem",
+    "offer",
+    "proof",
+    "call_to_action"
+  ],
+  "list_fields": [
+    "evidence",
+    "objections"
+  ]
+}
+

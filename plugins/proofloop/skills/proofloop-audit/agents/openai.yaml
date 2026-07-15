@@ -1,0 +1,6 @@
+interface:
+  display_name: ProofLoop Audit
+  short_description: Audit ProofLoop evidence and safety
+  default_prompt: Audit ProofLoop learning with $proofloop-audit.
+policy:
+  allow_implicit_invocation: true

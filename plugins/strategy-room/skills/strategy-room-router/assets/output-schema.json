@@ -1,0 +1,29 @@
+{
+  "skill": "strategy-room-router",
+  "required": [
+    "route",
+    "decision",
+    "rationale",
+    "execution_authorized"
+  ],
+  "nonempty_strings": [
+    "decision",
+    "rationale"
+  ],
+  "boolean_fields": [
+    "execution_authorized"
+  ],
+  "const_values": {
+    "execution_authorized": false
+  },
+  "enums": {
+    "route": [
+      "interview",
+      "challenge",
+      "explore",
+      "synthesize",
+      "register"
+    ]
+  }
+}
+

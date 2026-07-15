@@ -1,0 +1,13 @@
+{
+  "decision_question": "Should the customer success team prioritize onboarding changes to reduce first-30-day churn?",
+  "audience": "Chief Customer Officer and customer success directors",
+  "analysis_state": "checked",
+  "source_artifacts": ["q2-retention-analysis.xlsx", "retention-method-note.md"],
+  "delivery_format": "executive-readout",
+  "format_rationale": "The audience needs one bounded decision, the supporting evidence, and named follow-up work rather than continuous monitoring.",
+  "evidence_limits": ["Cohorts cover paid accounts only", "The analysis is observational and does not establish causality"],
+  "required_companions": ["spreadsheets", "writing-quality"],
+  "next_skill": "chart-message-audit",
+  "risks": ["A segment-level effect could be hidden by the overall average"],
+  "handoff_ready": true
+}

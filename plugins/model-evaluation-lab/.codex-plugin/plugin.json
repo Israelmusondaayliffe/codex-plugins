@@ -1,0 +1,22 @@
+{
+  "name": "model-evaluation-lab",
+  "version": "0.1.0+codex.20260714130940",
+  "description": "Plans reproducible model evaluations, normalizes benchmark runs, and produces measured model-selection decisions.",
+  "author": {
+    "name": "Israel Ayliffe"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Model Evaluation Lab",
+    "shortDescription": "Plan, run, normalize, and decide model evaluations.",
+    "longDescription": "Model Evaluation Lab turns a model choice into a fixed evaluation plan, a reproducible run contract, normalized results, and a decision memo that separates measurement from judgment and deployment conditions.",
+    "developerName": "Israel Ayliffe",
+    "category": "Developer Tools",
+    "capabilities": [],
+    "defaultPrompt": [
+      "Design a reproducible evaluation for this model decision.",
+      "Normalize these raw benchmark results into a stable comparison.",
+      "Write a model-selection memo that separates results from judgment."
+    ]
+  }
+}

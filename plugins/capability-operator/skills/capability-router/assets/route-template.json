@@ -1,0 +1,13 @@
+{
+  "primary_route": "plugin-name:skill-name",
+  "route_type": "plugin-router",
+  "plugin": "plugin-name",
+  "skill": "skill-name",
+  "reason": "One short reason tied to task scope and artifact state.",
+  "load_order": [
+    "plugin-name:skill-name"
+  ],
+  "companions": [],
+  "excluded_routes": [],
+  "verification_needed": []
+}

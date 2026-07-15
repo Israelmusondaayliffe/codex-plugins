@@ -1,0 +1,12 @@
+{
+  "evidence_scope": "Supplied sources only",
+  "claims": [
+    {
+      "id": "C1",
+      "claim": "Material factual statement",
+      "status": "unsupported",
+      "evidence": "",
+      "remedy": "qualify"
+    }
+  ]
+}

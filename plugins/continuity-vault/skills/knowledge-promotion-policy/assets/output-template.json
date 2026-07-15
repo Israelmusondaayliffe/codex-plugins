@@ -1,0 +1,11 @@
+{
+  "knowledge_item": "The approved rationale for selecting the second five private plugins",
+  "source": "CODEX-OUTPUTS/2026-07-14/private-plugin-marketplace_second-five-build-report_v1.md",
+  "current_authority": "Derived implementation record governed by the approved portfolio plan",
+  "destination": "durable-file",
+  "rationale": "The build report is already the correct durable evidence surface and should remain the single record.",
+  "owner": "private-plugin-marketplace project",
+  "review_trigger": "Review when the plugin portfolio or installation state changes.",
+  "provenance_action": "Keep links to the approved plan and verification ledger in the report.",
+  "approval_required": false
+}

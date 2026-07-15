@@ -1,0 +1,8 @@
+{
+  "route": "agent-design",
+  "outcome": "Concrete end state",
+  "evidence_surface": "Where success is proven",
+  "boundaries": ["Allowed systems and writes"],
+  "stop_condition": "When to complete, pause, or ask",
+  "rationale": "Why this route owns the request"
+}

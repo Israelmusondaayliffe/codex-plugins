@@ -1,0 +1,30 @@
+{
+  "should_trigger": [
+    "Do a deep research report on this market and cite the sources.",
+    "Turn these notes into an evidence-backed recommendation for leadership.",
+    "Plan this multi-step research project before you start.",
+    "Find the source of this claim and tell me whether it is actually supported.",
+    "Compare these options using internal files and current public evidence.",
+    "Audit my memo for unsupported claims and citation problems.",
+    "Build a source ledger and claim ledger for this report.",
+    "Research these independent questions in parallel and synthesize the results.",
+    "Review the feedback on this report before changing the draft.",
+    "Verify this brief before I send it to the executive team.",
+    "Package the final research deliverable with its evidence and known limits.",
+    "I have a rough knowledge-work request. Help me define what the finished result should be."
+  ],
+  "should_not_trigger": [
+    "What time is it in London?",
+    "Translate this sentence into Spanish.",
+    "Fix the failing unit test in this repository.",
+    "Create a React landing page from this screenshot.",
+    "Resize this image to 1080 by 1080.",
+    "Add these numbers for me.",
+    "Draft a one-line reply saying I will attend.",
+    "Show me tomorrow's weather.",
+    "Rename this local file.",
+    "Explain what this single paragraph means in plain English.",
+    "Generate an icon of a green leaf.",
+    "Format this existing list as bullets without changing the words."
+  ]
+}

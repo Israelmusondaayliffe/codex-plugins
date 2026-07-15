@@ -1,0 +1,54 @@
+---
+name: decision-grill
+description: "Interview the user one consequential question at a time to resolve an idea, plan, workflow, research question, or design. Use when they say grill me, pressure-test this, challenge my plan, clarify the brief, or ask hard questions. Inspect sources before asking discoverable facts and track dependent decisions."
+---
+
+# Decision Grill
+
+Resolve the decision tree before turning the idea into a plan or artifact.
+
+## Operating rules
+
+- Ask one question at a time.
+- Ask about the highest-impact unresolved choice whose answer affects later choices.
+- Give a recommended answer and one short reason before asking for the user's decision.
+- Inspect available files, connectors, references, and current sources instead of asking the user to restate discoverable facts.
+- Push back when an answer conflicts with the goal, constraints, evidence, or an earlier decision.
+- Do not start implementation, publish anything, or create external state during the interview.
+
+## Workflow
+
+1. State the likely objective in one sentence.
+2. Name the current source of truth and inspect it when available.
+3. Map the first decision branches. Typical branches include audience, outcome, scope, proof, constraints, format, ownership, timing, risk, and permissions.
+4. Choose the next unresolved branch based on dependency, not convenience.
+5. Ask one focused question. Offer the recommended answer and the main tradeoff.
+6. Record the answer, its consequences, and any branch it resolves or creates.
+7. Every four to six decisions, give a compact state recap so drift is visible.
+8. Test the emerging design against edge cases, conflicting constraints, failure modes, and the user who bears the cost when it fails.
+9. Continue until the completion test passes.
+
+## Completion test
+
+Stop when all material branches are one of:
+
+- resolved,
+- discoverable from an identified source,
+- explicitly out of scope,
+- deliberately deferred with an owner or trigger for revisiting.
+
+End with:
+
+- objective,
+- decisions made,
+- evidence used,
+- open risks,
+- deferred questions,
+- out-of-scope items,
+- recommended next skill.
+
+Recommend `to-outcome-brief` when shared understanding is ready to be written down.
+
+## User control
+
+The user can say `stop`, `summarize`, `skip this branch`, or `decide for me` at any time. When asked to decide, choose the safest option consistent with the stated outcome and label the choice as an assumption.

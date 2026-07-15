@@ -1,0 +1,20 @@
+{
+  "plugin": "model-evaluation-lab",
+  "should_trigger": [
+    {"query": "Take this model comparison from the initial decision question through the final deployment recommendation and tell me the next safe stage each time.", "expected_skill": "model-evaluation-router"},
+    {"query": "Plan a fair model comparison for support-ticket routing with a baseline, frozen cases, metrics, cost cap, and stopping rules.", "expected_skill": "model-evaluation-plan"},
+    {"query": "Before we migrate models, define the success, boundary, and failure dataset and the decision rule.", "expected_skill": "model-evaluation-plan"},
+    {"query": "Run this frozen eval plan locally and record every case result, latency, marginal cost, and environment condition.", "expected_skill": "benchmark-runner"},
+    {"query": "Normalize raw-results.json into comparable candidate aggregates without filling in the missing executions.", "expected_skill": "benchmark-runner"},
+    {"query": "Write the deployment recommendation from these completed benchmark results and separate measurements from judgment.", "expected_skill": "model-selection-memo"},
+    {"query": "Decide whether to keep the baseline or roll out the candidate, with tradeoffs, limitations, rollback conditions, and cost treatment.", "expected_skill": "model-selection-memo"}
+  ],
+  "should_not_trigger": [
+    {"query": "Write a better production prompt for the current OpenAI model.", "reason": "Prompt construction belongs to Model Prompt Lab."},
+    {"query": "Train a vision model on this image dataset.", "reason": "Model training belongs to Hugging Face training skills."},
+    {"query": "Clean and chart the quarterly revenue spreadsheet.", "reason": "Data analysis and charting belong to analytical companions."},
+    {"query": "Turn this checked analysis into a board-ready readout.", "reason": "Decision storytelling belongs to Data Storytelling Studio."},
+    {"query": "Fix the failing GitHub Actions test in this repository.", "reason": "CI repair belongs to GitHub and code workflows."},
+    {"query": "Which laptop should I buy for travel?", "reason": "A general product recommendation is not a model evaluation workflow."}
+  ]
+}

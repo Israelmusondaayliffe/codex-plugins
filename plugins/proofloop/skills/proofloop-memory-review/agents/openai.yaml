@@ -1,0 +1,6 @@
+interface:
+  display_name: ProofLoop Memory Review
+  short_description: Review governed ProofLoop memory
+  default_prompt: Review my ProofLoop candidates with $proofloop-memory-review.
+policy:
+  allow_implicit_invocation: true

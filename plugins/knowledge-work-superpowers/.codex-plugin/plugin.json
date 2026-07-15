@@ -1,0 +1,37 @@
+{
+  "name": "knowledge-work-superpowers",
+  "version": "0.1.0",
+  "description": "A disciplined workflow system for research, analysis, writing, review, and evidence-backed delivery.",
+  "author": {
+    "name": "Israel A."
+  },
+  "license": "MIT",
+  "keywords": [
+    "knowledge-work",
+    "deep-research",
+    "evidence",
+    "analysis",
+    "planning",
+    "review",
+    "verification"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Knowledge Work Superpowers",
+    "shortDescription": "Evidence-first workflows for research, analysis, writing, and delivery",
+    "longDescription": "Frame substantial knowledge work, plan it, research systematically, test claims against evidence, draft from sources, review the result, and verify it before delivery.",
+    "developerName": "Israel A.",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "Research this question deeply and build an evidence-backed brief.",
+      "Turn this rough request into a clear knowledge-work plan.",
+      "Audit this draft for unsupported claims and missing evidence."
+    ],
+    "brandColor": "#245C4F"
+  }
+}

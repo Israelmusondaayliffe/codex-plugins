@@ -1,0 +1,43 @@
+{
+  "plugin": "writing-quality",
+  "version": "0.1.0+codex.20260714115137",
+  "skills": [
+    "business-writing-intent-enforcer",
+    "claim-boundary-checker",
+    "writing-enforcer",
+    "writing-quality-router"
+  ],
+  "coordinator_skills": [
+    "claim-boundary-checker",
+    "writing-quality-router"
+  ],
+  "companions": [
+    "knowledge-work-superpowers",
+    "documents",
+    "google-drive"
+  ],
+  "guardrails": [
+    "Detect-only review does not mutate prose.",
+    "Unsupported claims are removed, qualified, sourced, or marked unverified."
+  ],
+  "routing_cases": [
+    {
+      "prompt": "Rewrite this executive email for a skeptical reader.",
+      "expected_skill": "writing-quality-router",
+      "evidence_file": "skills/writing-quality-router/references/routing.md",
+      "evidence_contains": "## rewrite"
+    },
+    {
+      "prompt": "Flag issues in this draft but do not rewrite it.",
+      "expected_skill": "writing-enforcer",
+      "evidence_file": "skills/writing-quality-router/SKILL.md",
+      "evidence_contains": "writing-enforcer in report-only mode"
+    },
+    {
+      "prompt": "Which statements in this launch copy lack support?",
+      "expected_skill": "claim-boundary-checker",
+      "evidence_file": "skills/claim-boundary-checker/SKILL.md",
+      "evidence_contains": "claim audit"
+    }
+  ]
+}

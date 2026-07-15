@@ -1,0 +1,22 @@
+{
+  "name": "strategy-room",
+  "version": "0.1.0+codex.20260714121935",
+  "description": "Pre-commitment interviews, assumption challenge, option generation, decision synthesis, and uncertainty tracking.",
+  "author": {
+    "name": "Israel Ayliffe"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Strategy Room",
+    "shortDescription": "Pressure-test decisions before committing resources.",
+    "longDescription": "Strategy Room routes consequential choices through interview, assumption challenge, option generation, decision synthesis, and assumption tracking, then stops at an explicit execution handoff.",
+    "developerName": "Israel Ayliffe",
+    "category": "Productivity",
+    "capabilities": [],
+    "defaultPrompt": [
+      "Pressure-test this decision before I commit resources.",
+      "Generate distinct options and synthesize a recommendation.",
+      "Create an assumption register for this choice."
+    ]
+  }
+}

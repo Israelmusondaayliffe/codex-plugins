@@ -1,0 +1,38 @@
+{
+  "skill": "prompt-benchmark-designer",
+  "required": [
+    "benchmark_name",
+    "task_definition",
+    "cases",
+    "metrics",
+    "stopping_rules"
+  ],
+  "nonempty_strings": [
+    "benchmark_name",
+    "task_definition"
+  ],
+  "list_fields": [
+    "cases",
+    "metrics",
+    "stopping_rules"
+  ],
+  "id_lists": [
+    "cases"
+  ],
+  "item_required": {
+    "cases": [
+      "id",
+      "category",
+      "prompt",
+      "expected"
+    ]
+  },
+  "item_enums": {
+    "cases.category": [
+      "success",
+      "boundary",
+      "failure"
+    ]
+  }
+}
+

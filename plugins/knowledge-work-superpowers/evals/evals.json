@@ -1,0 +1,23 @@
+{
+  "skill_name": "knowledge-work-superpowers",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Research the current market for employee curiosity programs. Build an evidence-backed brief for a leadership decision and show where the evidence conflicts.",
+      "expected_output": "Frames the decision, plans the research, prioritizes current primary sources, tracks conflicting evidence, and produces a cited brief with limitations.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Use the internal strategy notes and the latest public data to recommend which of three workshop concepts we should pilot first.",
+      "expected_output": "Routes internal sources to their owning connector, combines them with current public evidence, separates facts from inference, and verifies the recommendation.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Audit this draft report. I want every unsupported claim, weak citation, hidden assumption, and unresolved contradiction called out before I send it.",
+      "expected_output": "Uses the review and verification skills, produces prioritized findings, and does not rewrite until the evidence problems are understood.",
+      "files": []
+    }
+  ]
+}

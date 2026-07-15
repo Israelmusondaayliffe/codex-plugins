@@ -1,0 +1,32 @@
+{
+  "skill": "prompt-migration-audit",
+  "required": [
+    "source_model",
+    "target_model",
+    "findings",
+    "unsupported_parameters",
+    "verification_required"
+  ],
+  "nonempty_strings": [
+    "source_model",
+    "target_model"
+  ],
+  "list_fields": [
+    "findings"
+  ],
+  "boolean_fields": [
+    "verification_required"
+  ],
+  "id_lists": [
+    "findings"
+  ],
+  "item_required": {
+    "findings": [
+      "id",
+      "type",
+      "evidence",
+      "action"
+    ]
+  }
+}
+

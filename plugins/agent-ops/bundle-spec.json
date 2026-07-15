@@ -1,0 +1,46 @@
+{
+  "plugin": "agent-ops",
+  "version": "0.1.0+codex.20260714115137",
+  "skills": [
+    "agent-builder",
+    "agent-ops-router",
+    "agent-system-audit",
+    "goal-runner",
+    "loop-goal-engineer",
+    "loopy"
+  ],
+  "coordinator_skills": [
+    "agent-ops-router",
+    "agent-system-audit"
+  ],
+  "companions": [
+    "outcome-engine",
+    "proofloop",
+    "superpowers",
+    "plugin-eval"
+  ],
+  "guardrails": [
+    "Do not run autonomous work without authority, evidence, and stop conditions.",
+    "General idea-to-result work remains owned by Outcome Engine."
+  ],
+  "routing_cases": [
+    {
+      "prompt": "Build a reusable agent with a strict tool contract.",
+      "expected_skill": "agent-builder",
+      "evidence_file": "skills/agent-ops-router/references/routing.md",
+      "evidence_contains": "agent-design: define a reusable agent"
+    },
+    {
+      "prompt": "Run this sustained outcome until the named evidence exists.",
+      "expected_skill": "goal-runner",
+      "evidence_file": "skills/agent-ops-router/references/routing.md",
+      "evidence_contains": "goal-run: execute an existing Goal contract"
+    },
+    {
+      "prompt": "Audit this autonomous workflow for unbounded authority.",
+      "expected_skill": "agent-system-audit",
+      "evidence_file": "skills/agent-system-audit/SKILL.md",
+      "evidence_contains": "unbounded external authority"
+    }
+  ]
+}

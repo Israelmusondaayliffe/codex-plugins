@@ -1,0 +1,9 @@
+{
+  "source": "CODEX-OUTPUTS/2026-07-14/private-plugin-marketplace_plugin-portfolio-plan_v1.md",
+  "authority_layer": "Approved portfolio plan in the workspace output record",
+  "route": "promote",
+  "rationale": "The approved selection rationale should remain findable without replacing the original report.",
+  "next_skill": "knowledge-promotion-policy",
+  "verification": "Confirm the destination points back to this source and does not claim higher authority.",
+  "destructive_action_authorized": false
+}

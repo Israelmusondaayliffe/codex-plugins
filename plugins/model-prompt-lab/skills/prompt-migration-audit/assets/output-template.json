@@ -1,0 +1,15 @@
+{
+  "source_model": "gpt-5.4",
+  "target_model": "gpt-5.6-sol",
+  "findings": [
+    {
+      "id": "M1",
+      "type": "current-source-check",
+      "evidence": "The prompt names model-specific controls.",
+      "action": "Verify the controls in current documentation before migration."
+    }
+  ],
+  "unsupported_parameters": [],
+  "verification_required": true
+}
+

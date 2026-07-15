@@ -1,0 +1,15 @@
+{
+  "audience": "AI workflow builders maintaining a growing Codex environment.",
+  "problem": "They cannot trust filesystem presence as proof that a capability is installed and visible.",
+  "evidence": [
+    "Live inventory mismatches and repeated fresh-task discovery checks."
+  ],
+  "offer": "Build and maintain role-based personal plugins with validator, cache, and discovery proof.",
+  "proof": "The process produces source, installed-cache, and clean-task evidence for each plugin.",
+  "objections": [
+    "Concern about token cost.",
+    "Concern about duplicated loose skills."
+  ],
+  "call_to_action": "Review one capability area and decide whether it merits a verified plugin bundle."
+}
+

@@ -1,0 +1,11 @@
+{
+  "skill": "chart-message-audit",
+  "required": ["artifact_id", "claim", "visual_type", "audience", "evidence_refs", "checks", "verdict", "revision_actions", "handoff_owner", "handoff_ready"],
+  "nonempty_strings": ["artifact_id", "claim", "visual_type", "audience", "handoff_owner"],
+  "list_fields": ["evidence_refs", "checks", "revision_actions"],
+  "boolean_fields": ["handoff_ready"],
+  "enums": {"verdict": ["pass", "revise", "block"]},
+  "id_lists": ["checks"],
+  "item_required": {"checks": ["id", "criterion", "status", "evidence"]},
+  "item_enums": {"checks.status": ["pass", "warn", "fail"]}
+}

@@ -1,0 +1,12 @@
+{
+  "skill": "analysis-to-story-router",
+  "required": ["decision_question", "audience", "analysis_state", "source_artifacts", "delivery_format", "format_rationale", "evidence_limits", "required_companions", "next_skill", "risks", "handoff_ready"],
+  "nonempty_strings": ["decision_question", "audience", "format_rationale", "next_skill"],
+  "list_fields": ["source_artifacts", "evidence_limits", "required_companions", "risks"],
+  "boolean_fields": ["handoff_ready"],
+  "enums": {
+    "analysis_state": ["checked", "partial", "disputed"],
+    "delivery_format": ["notebook", "chart", "dashboard", "report", "deck", "executive-readout", "site"],
+    "next_skill": ["chart-message-audit", "executive-readout-builder", "analysis-owner"]
+  }
+}

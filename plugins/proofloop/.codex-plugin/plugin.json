@@ -1,0 +1,22 @@
+{
+  "name": "proofloop",
+  "version": "0.1.0+codex.20260713133858",
+  "description": "Governed agent learning ledger and evaluation wrapper with bounded refinement, verification, quarantined memory, and read-only audit.",
+  "author": {
+    "name": "Israel Ayliffe"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "ProofLoop",
+    "shortDescription": "Run evidence-gated learning loops.",
+    "longDescription": "ProofLoop adds bounded task execution, quarantined learning records, governed memory review, and read-only audits without adding external authority.",
+    "developerName": "Israel Ayliffe",
+    "category": "Productivity",
+    "capabilities": [],
+    "defaultPrompt": [
+      "Run this task through ProofLoop.",
+      "Review these ProofLoop candidate lessons.",
+      "Audit whether ProofLoop is helping."
+    ]
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "plugin": "model-evaluation-lab",
+  "version": "0.1.0+codex.20260714130940",
+  "skills": [
+    "benchmark-runner",
+    "model-evaluation-plan",
+    "model-evaluation-router",
+    "model-selection-memo"
+  ],
+  "coordinator_skills": [
+    "benchmark-runner",
+    "model-evaluation-plan",
+    "model-evaluation-router",
+    "model-selection-memo"
+  ],
+  "companions": [
+    {"name": "hugging-face", "required": false, "purpose": "Datasets, community evals, jobs, and Trackio-backed execution"},
+    {"name": "model-prompt-lab", "required": false, "purpose": "Prompt benchmark design and migration-specific test cases"},
+    {"name": "data-storytelling-studio", "required": false, "purpose": "Decision-facing charts and executive readouts"},
+    {"name": "knowledge-work-superpowers", "required": false, "purpose": "Evidence planning, review, and delivery"},
+    {"name": "writing-quality", "required": false, "purpose": "Human-facing decision memo validation"}
+  ],
+  "guardrails": [
+    "Fix the evaluation plan before inspecting candidate results.",
+    "Record model, prompt, tool, dataset, and environment conditions needed for reproduction.",
+    "Separate measured results from judgment, and distinguish whole-session usage from marginal prompt or plugin cost."
+  ],
+  "routing_cases": [
+    {
+      "kind": "success",
+      "prompt": "Take this model comparison from a new question through a deployment decision.",
+      "expected_skill": "model-evaluation-router",
+      "evidence_file": "skills/model-evaluation-router/references/workflow.md",
+      "evidence_contains": "Route every new or multi-stage request through this sequence"
+    },
+    {
+      "kind": "boundary",
+      "prompt": "Normalize these completed raw case results without inventing missing runs.",
+      "expected_skill": "benchmark-runner",
+      "evidence_file": "skills/benchmark-runner/SKILL.md",
+      "evidence_contains": "does not invent missing executions"
+    },
+    {
+      "kind": "success",
+      "prompt": "Plan a fair comparison between two model configurations for support-ticket routing.",
+      "expected_skill": "model-evaluation-plan",
+      "evidence_file": "skills/model-evaluation-plan/references/workflow.md",
+      "evidence_contains": "Freeze before execution"
+    },
+    {
+      "kind": "failure",
+      "prompt": "Recommend the winning model even though only one candidate finished.",
+      "expected_skill": "model-selection-memo",
+      "evidence_file": "skills/model-selection-memo/SKILL.md",
+      "evidence_contains": "Set `decision_ready` to false"
+    }
+  ]
+}

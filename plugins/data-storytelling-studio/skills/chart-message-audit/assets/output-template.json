@@ -1,0 +1,17 @@
+{
+  "artifact_id": "retention-curve-v3",
+  "claim": "Accounts completing guided onboarding retain at a higher rate through day 30.",
+  "visual_type": "two-series retention curve",
+  "audience": "Chief Customer Officer and customer success directors",
+  "evidence_refs": ["q2-retention-analysis.xlsx#retention_by_onboarding", "retention-method-note.md#cohort-definition"],
+  "checks": [
+    {"id": "claim-scope", "criterion": "Claim matches the measured cohort and period", "status": "pass", "evidence": "Caption names paid-account cohorts and day 30."},
+    {"id": "baseline", "criterion": "Comparison baseline is visible", "status": "pass", "evidence": "Both groups use day-zero active paid accounts as the denominator."},
+    {"id": "causality", "criterion": "Observational evidence is not presented as causal", "status": "warn", "evidence": "The current subtitle uses 'drives' even though users self-selected onboarding completion."},
+    {"id": "accessibility", "criterion": "Series can be distinguished without color", "status": "warn", "evidence": "Both lines use solid strokes and require color discrimination."}
+  ],
+  "verdict": "revise",
+  "revision_actions": ["Replace 'drives' with 'is associated with'", "Use direct labels and distinct line patterns"],
+  "handoff_owner": "executive-readout-builder after visual revision",
+  "handoff_ready": false
+}

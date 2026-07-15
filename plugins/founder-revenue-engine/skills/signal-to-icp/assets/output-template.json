@@ -1,0 +1,23 @@
+{
+  "offer": "A verified Codex plugin build service.",
+  "evidence_scope": "Approved source ledger and recent public signals.",
+  "signals": [
+    {
+      "id": "S1",
+      "source": "Named source URL or internal evidence file",
+      "date": "2026-07-14",
+      "signal": "Teams struggle to know whether installed skills are visible in fresh tasks.",
+      "why_it_matters": "The pain is tied to verification and maintenance, not only installation."
+    }
+  ],
+  "icp_hypothesis": "AI workflow builders with growing Codex skill libraries who need install and discovery proof.",
+  "disqualifiers": [
+    "Teams seeking only one-off prompt writing.",
+    "Users without a file-based Codex environment."
+  ],
+  "confidence": "medium",
+  "verification_gaps": [
+    "Confirm willingness to pay for ongoing capability maintenance."
+  ]
+}
+

@@ -1,0 +1,15 @@
+{
+  "decision_question": "Should the customer success team prioritize onboarding changes to reduce first-30-day churn?",
+  "audience": "Chief Customer Officer and customer success directors",
+  "delivery_format": "executive-readout",
+  "answer": "Prioritize a measured onboarding intervention for new paid accounts, while testing the effect by segment before treating the observed association as causal.",
+  "evidence": [
+    {"id": "retention-gap", "claim": "Measured: guided-onboarding completers retained at a higher day-30 rate in the checked Q2 cohort.", "source": "q2-retention-analysis.xlsx#retention_by_onboarding", "confidence": "high"},
+    {"id": "selection-limit", "claim": "Measured: onboarding completion was self-selected, so the analysis does not isolate causal impact.", "source": "retention-method-note.md#limitations", "confidence": "high"}
+  ],
+  "decisions": ["Run a controlled onboarding intervention before broad rollout"],
+  "risks": ["Overall averages may hide segment-specific harm or benefit"],
+  "caveats": ["Paid accounts only", "Observational cohort", "Day-30 horizon"],
+  "next_actions": ["Define segment-level success metrics", "Run a time-bounded experiment", "Review retention and support-load effects together"],
+  "publish_ready": true
+}

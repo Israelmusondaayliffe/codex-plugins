@@ -1,0 +1,22 @@
+{
+  "name": "continuity-vault",
+  "version": "0.1.0+codex.20260714121935",
+  "description": "Source-preserving extraction, knowledge promotion, graph routing, recall, and staleness auditing.",
+  "author": {
+    "name": "Israel Ayliffe"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Continuity Vault",
+    "shortDescription": "Keep reusable knowledge findable and trustworthy.",
+    "longDescription": "Continuity Vault routes work through source-preserving extraction, governed promotion, relationship mapping, recall, and staleness audits while keeping workspace files authoritative.",
+    "developerName": "Israel Ayliffe",
+    "category": "Productivity",
+    "capabilities": [],
+    "defaultPrompt": [
+      "Extract reusable knowledge from this source without replacing it.",
+      "Decide where this knowledge belongs and preserve its authority.",
+      "Audit these sources for staleness and instruction conflicts."
+    ]
+  }
+}

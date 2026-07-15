@@ -1,0 +1,37 @@
+{
+  "skill": "outreach-sequence-builder",
+  "required": [
+    "audience",
+    "evidence_scope",
+    "messages",
+    "stop_rules",
+    "send_authorized"
+  ],
+  "nonempty_strings": [
+    "audience",
+    "evidence_scope"
+  ],
+  "list_fields": [
+    "messages",
+    "stop_rules"
+  ],
+  "boolean_fields": [
+    "send_authorized"
+  ],
+  "const_values": {
+    "send_authorized": false
+  },
+  "id_lists": [
+    "messages"
+  ],
+  "item_required": {
+    "messages": [
+      "id",
+      "channel",
+      "objective",
+      "copy",
+      "evidence_reference"
+    ]
+  }
+}
+

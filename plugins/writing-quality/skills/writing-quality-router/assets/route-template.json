@@ -1,0 +1,7 @@
+{
+  "route": "rewrite",
+  "operation": "Rewrite supplied prose without changing its factual scope.",
+  "audience": "Named audience or unknown",
+  "rationale": "Why this is the smallest sufficient route",
+  "claim_check_required": false
+}

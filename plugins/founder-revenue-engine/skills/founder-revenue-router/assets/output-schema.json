@@ -1,0 +1,31 @@
+{
+  "skill": "founder-revenue-router",
+  "required": [
+    "route",
+    "offer",
+    "commercial_outcome",
+    "rationale",
+    "send_authorized"
+  ],
+  "nonempty_strings": [
+    "offer",
+    "commercial_outcome",
+    "rationale"
+  ],
+  "boolean_fields": [
+    "send_authorized"
+  ],
+  "const_values": {
+    "send_authorized": false
+  },
+  "enums": {
+    "route": [
+      "signal-research",
+      "icp",
+      "narrative",
+      "outreach",
+      "content"
+    ]
+  }
+}
+
