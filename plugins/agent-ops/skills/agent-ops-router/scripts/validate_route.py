@@ -5,7 +5,7 @@ import json
 import sys
 from pathlib import Path
 
-ROUTES = {"agent-design", "goal-design", "goal-run", "bounded-loop", "audit", "resume"}
+ROUTES = {"agent-design", "audit", "loopkit-handoff"}
 
 
 def main() -> int:

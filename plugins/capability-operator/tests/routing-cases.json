@@ -28,7 +28,7 @@
     {
       "id": "agent-composite",
       "kind": "composite",
-      "task": "Design an agent and decide whether this should be a Goal or loop, then audit it.",
+      "task": "Design and audit a reusable agent system with a strict tool contract.",
       "expected": {"primary_route": "agent-ops:agent-ops-router", "route_type": "plugin-router", "plugin": "agent-ops", "skill": "agent-ops-router", "companions": [], "excluded_routes": []}
     },
     {
@@ -36,6 +36,18 @@
       "kind": "focused",
       "task": "Run Goal Runner against this bounded outcome.",
       "expected": {"primary_route": "agent-ops:goal-runner", "route_type": "plugin-skill", "plugin": "agent-ops", "skill": "goal-runner", "companions": [], "excluded_routes": []}
+    },
+    {
+      "id": "loopkit-composite",
+      "kind": "composite",
+      "task": "Design, run, verify, and schedule a bounded Codex loop with durable state.",
+      "expected": {"primary_route": "loopkit:loopkit", "route_type": "plugin-router", "plugin": "loopkit", "skill": "loopkit", "companions": [], "excluded_routes": []}
+    },
+    {
+      "id": "loopkit-focused",
+      "kind": "focused",
+      "task": "Resume the active LoopKit run.",
+      "expected": {"primary_route": "loopkit:loop-resumer", "route_type": "plugin-skill", "plugin": "loopkit", "skill": "loop-resumer", "companions": [], "excluded_routes": []}
     },
     {
       "id": "video-composite",
@@ -198,6 +210,12 @@
       "kind": "collision",
       "task": "Audit this agent system. Do not run ProofLoop.",
       "expected": {"primary_route": "agent-ops:agent-system-audit", "route_type": "plugin-skill", "plugin": "agent-ops", "skill": "agent-system-audit", "companions": [], "excluded_routes": ["proofloop:proofloop-run", "proofloop:proofloop-audit"]}
+    },
+    {
+      "id": "collision-agent-loopkit",
+      "kind": "collision",
+      "task": "Design a reusable agent system, then hand its execution contract to a bounded Codex loop.",
+      "expected": {"primary_route": "agent-ops:agent-ops-router", "route_type": "plugin-router", "plugin": "agent-ops", "skill": "agent-ops-router", "companions": ["loopkit"], "excluded_routes": ["loopkit:loopkit as primary before the agent contract exists"]}
     },
     {
       "id": "collision-prompt-evaluation",

@@ -223,7 +223,7 @@ export const plugins = [
     "shortDescription": "Route, inventory, and govern Codex capabilities.",
     "longDescription": "Capability Operator selects one primary plugin or skill route, inventories capability layers, finds overlap and drift, manages lifecycle decisions, builds validated skills, and proves clean-task discovery after installation.",
     "description": "Capability routing, read-only inventories, overlap audits, portfolio governance, skill creation, and fresh-task discovery proof.",
-    "version": "0.1.0+codex.20260714193616",
+    "version": "0.1.1",
     "category": "Productivity",
     "license": null,
     "capabilities": [],
@@ -276,17 +276,17 @@ export const plugins = [
   {
     "slug": "agent-ops",
     "name": "Agent Ops",
-    "shortDescription": "Operate agents, Goals, and bounded loops.",
-    "longDescription": "Agent Ops routes agent design, Goal engineering, execution, resume, bounded loops, and system audits while requiring explicit boundaries, stops, evidence, and recovery.",
-    "description": "Design, run, resume, and audit agents, Goals, and bounded loops with explicit authority and evidence.",
-    "version": "0.1.0+codex.20260714115137",
+    "shortDescription": "Design and audit bounded agent systems.",
+    "longDescription": "Agent Ops designs reusable agents, routes agent-system work, and audits authority, tools, evidence, stops, and recovery. Generic Codex Goals and loops are owned by LoopKit.",
+    "description": "Design, route, and audit reusable agent systems with explicit authority, evidence, stops, and failure behavior.",
+    "version": "0.2.0",
     "category": "Productivity",
     "license": null,
     "capabilities": [],
     "defaultPrompts": [
       "Design a bounded agent system for this outcome.",
-      "Turn this sustained task into a verifiable Goal.",
-      "Audit this agent system before it runs."
+      "Audit this agent system before it runs.",
+      "Route this reusable agent architecture."
     ],
     "skills": [
       {
@@ -295,7 +295,7 @@ export const plugins = [
       },
       {
         "name": "agent-ops-router",
-        "description": "Routes requests among agent design, workflow design, Goal engineering, bounded loop execution, audit, run, and resume. Use when a request mentions agents, autonomous workflows, persistent Goals, monitoring loops, retries, handoffs, or resuming an existing system. Enforces one primary operational route and prevents a general outcome workflow from being mistaken for an agent-system design."
+        "description": "Route reusable agent-system requests among agent design and agent-system audit. Use when a user asks to build a reusable agent, define an agent tool contract, choose an agent architecture, or audit an agent system's authority and stops. Generic Codex Goals, bounded loops, resume, verification, and schedules route to LoopKit."
       },
       {
         "name": "agent-system-audit",
@@ -303,15 +303,15 @@ export const plugins = [
       },
       {
         "name": "goal-runner",
-        "description": "Run a task to evidence-gated completion. Takes any deliverable task, converts it into a durable goal contract (outcome, machine checks, judgment criteria, four stops, iteration policy), then drives an execute-verify loop that never reports done unless a deterministic check script passes and a fresh-context verifier that did not do the work confirms every criterion. Never dies silently, it finishes or stops with a blocked report naming what would clear the block. Four routed modes. CONTRACT builds the goal contract. RUN executes the loop. VERIFY checks any existing deliverable against a spec. RESUME continues an interrupted run from the contract and progress files. Triggers on run this as a goal, goal runner, run to completion, make sure this is absolutely complete, don't stop until done, finish this fully, completion contract, verify this against the brief or spec, evidence-gated done, resume the goal run, or any task where completion must be guaranteed rather than claimed."
+        "description": "Explicit-only compatibility shim for the historical Goal Runner name. Use only when the user explicitly says goal-runner or Goal Runner. Redirect Codex Goal contract, execution, verification, and resume work to the matching LoopKit skill. Generic goal or completion requests should trigger LoopKit directly."
       },
       {
         "name": "loop-goal-engineer",
-        "description": "Write production-ready /goal and /loop prompts for Claude Code and Codex CLI. User describes a thing they want done, this skill engineers the goal condition, the loop, or both. Four routed modes. GOAL writes a one-shot verifiable finish line. LOOP writes a recurring or self-pacing loop with all six working parts (trigger, execution, verifier, stop rules, memory, skills). ORCHESTRATE writes multi-agent goal setups (orchestrator, builder, reviewer) across Codex and Claude Code. DIAGNOSE fixes loops that run away, stall, or waste tokens. Triggers on write a goal, write a loop, /goal, /loop, goal condition, loop engineering, turn this into a loop, make this autonomous, codex goal, claude code loop, schedule a loop, stop rules, fix my loop, my loop ran away, orchestrate codex and claude, or any request to convert a task into an autonomous agent loop or goal."
+        "description": "Explicit-only compatibility shim for the historical Loop Goal Engineer name. Use only when the user explicitly says loop-goal-engineer or Loop Goal Engineer. Redirect Codex loop design, scheduling, and diagnosis to LoopKit. Generic loop, Goal, recurring-task, and schedule requests should trigger LoopKit directly."
       },
       {
         "name": "loopy",
-        "description": "Discover, find, compare, audit, repair, adapt, craft, run, debrief, save, and prepare repeatable AI-agent loops for publication. Use when a user asks to analyze code or coding threads for recurring work, find a published loop, interview them to turn a goal into a bounded loop, review a loop for weak checks or unsafe authority, execute a loop with an evidence receipt, learn from completed runs, save or reuse a project loop, or validate and submit a loop to Loop Library."
+        "description": "Explicit-only compatibility shim for the historical Loopy name. Use only when the user explicitly says Loopy or asks for the Loop Library workflow. Redirect generic Codex loop design, run, verification, resume, and diagnosis to LoopKit. Retain the bundled legacy references only for an explicitly requested Loop Library discovery or publication task."
       }
     ],
     "counts": {
@@ -822,14 +822,74 @@ export const plugins = [
     },
     "bundlesMcp": false,
     "bundlesApp": false
+  },
+  {
+    "slug": "loopkit",
+    "name": "LoopKit",
+    "shortDescription": "Bounded Codex loops with durable evidence.",
+    "longDescription": "LoopKit turns repeatable work into bounded Codex loops. It creates durable contracts, runs evidence-gated iterations, restores compact checkpoints, prepares scheduled tasks, and diagnoses stalled or unsafe runs.",
+    "description": "Design, run, verify, resume, schedule, and diagnose bounded Codex loops with durable state and evidence-gated completion.",
+    "version": "0.1.0",
+    "category": "Productivity",
+    "license": "MIT",
+    "capabilities": [
+      "Goals",
+      "Scheduled tasks",
+      "Lifecycle hooks",
+      "Local state"
+    ],
+    "defaultPrompts": [
+      "Turn this recurring task into a bounded Codex loop.",
+      "Resume the active LoopKit run from its checkpoint.",
+      "Diagnose why this loop keeps repeating."
+    ],
+    "skills": [
+      {
+        "name": "loop-designer",
+        "description": "Design and initialize a bounded Codex loop or Goal contract with observable completion, machine checks, authority boundaries, iteration limits, and named stop states. Use when a user asks to turn a recurring task into a loop, define a verifiable Goal, build a Plan-Act-Verify contract, or create durable loop state before execution. Do not use to run an existing contract."
+      },
+      {
+        "name": "loop-doctor",
+        "description": "Diagnose and repair LoopKit loops that repeat, stall, drift, overrun limits, lose state, fail verification, misuse scheduling, or claim completion without evidence. Use when a user says the loop is stuck, keeps doing the same thing, wastes tokens, forgot progress, passed bad output, schedule drifted, or asks for a LoopKit audit. Preserve the intended outcome and change only material defects."
+      },
+      {
+        "name": "loop-resumer",
+        "description": "Resume a nonterminal LoopKit run after interruption, restart, or context compaction by restoring its checkpoint and validating durable state. Use when a user says resume the loop, continue where it stopped, restore the active Goal, pick up after compaction, or recover a blocked or waiting run. Do not infer run state from chat memory."
+      },
+      {
+        "name": "loop-runner",
+        "description": "Execute an initialized LoopKit run through bounded observe, choose, act, verify, and record iterations. Use when a user says run this loop, continue until the contract is satisfied, execute the ready Goal, or carry a durable run to a named terminal state. Requires a valid LoopKit run directory. Do not use to design agents or create an untested schedule."
+      },
+      {
+        "name": "loop-scheduler",
+        "description": "Prepare, activate, observe, pause, or remove a Codex scheduled task for a manually tested LoopKit run. Use when a user asks to schedule this loop, run it every day or week, make the workflow recurring, test an automation, or diagnose a scheduled LoopKit run. Uses Codex scheduled tasks, not cron or a shell loop."
+      },
+      {
+        "name": "loop-verifier",
+        "description": "Verify a LoopKit run, artifact, or completion claim against its durable contract and fresh evidence. Use when a user asks is this actually done, verify the loop, review a run receipt, check completion against the spec, or requires independent evidence before a Goal is closed. Do not modify the artifact while acting as verifier."
+      },
+      {
+        "name": "loopkit",
+        "description": "Route Codex work among bounded loop design, execution, verification, resume, scheduled tasks, and diagnosis. Use when a user says build a loop, run this until done, make this recurring, resume the active run, schedule this task, verify the loop, diagnose repetition, or asks for a durable Plan-Act-Verify workflow with state on disk. Use this front door for multi-stage loop work. Do not use for quick one-shot questions, general agent architecture, or external agent CLI configuration."
+      }
+    ],
+    "counts": {
+      "skills": 7,
+      "assets": 3,
+      "references": 7,
+      "scripts": 10,
+      "files": 43
+    },
+    "bundlesMcp": false,
+    "bundlesApp": false
   }
 ] as const;
 export const totals = {
-  "plugins": 15,
-  "skills": 102,
-  "assets": 251,
-  "references": 372,
-  "scripts": 307,
-  "files": 1237
+  "plugins": 16,
+  "skills": 109,
+  "assets": 254,
+  "references": 379,
+  "scripts": 317,
+  "files": 1280
 } as const;
 export type Plugin = (typeof plugins)[number];

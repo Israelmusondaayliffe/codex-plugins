@@ -1,0 +1,30 @@
+{
+  "hooks": {
+    "PreCompact": [
+      {
+        "matcher": "^(manual|auto)$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ${PLUGIN_ROOT}/hooks/loopkit_hooks.py pre-compact",
+            "timeout": 10,
+            "statusMessage": "Saving LoopKit checkpoint"
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "matcher": "^(resume|compact)$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ${PLUGIN_ROOT}/hooks/loopkit_hooks.py session-start",
+            "timeout": 10,
+            "statusMessage": "Restoring LoopKit checkpoint"
+          }
+        ]
+      }
+    ]
+  }
+}

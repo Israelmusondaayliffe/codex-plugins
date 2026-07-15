@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "run_id": "__REPLACE_ME__",
+  "iteration": 1,
+  "status": "running",
+  "action": "__REPLACE_ME__",
+  "evidence_paths": [],
+  "checks": [
+    {
+      "id": "__REPLACE_ME__",
+      "passed": false,
+      "evidence": "__REPLACE_ME__"
+    }
+  ],
+  "judgments": [],
+  "outcome": "__REPLACE_ME__",
+  "next_action": "__REPLACE_ME__",
+  "progressed": true
+}

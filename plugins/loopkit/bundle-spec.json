@@ -1,0 +1,27 @@
+{
+  "plugin": "loopkit",
+  "version": "0.1.0",
+  "state_root": "${CODEX_HOME:-~/.codex}/loopkit",
+  "front_door": "loopkit",
+  "skills": [
+    "loopkit",
+    "loop-designer",
+    "loop-runner",
+    "loop-verifier",
+    "loop-resumer",
+    "loop-scheduler",
+    "loop-doctor"
+  ],
+  "hooks": ["PreCompact", "SessionStart"],
+  "guardrails": [
+    "A loop never expands the active task's authority or permissions.",
+    "Completion requires deterministic evidence and a valid run receipt.",
+    "A scheduled loop must pass one manual run before activation.",
+    "Hook output is checkpoint-only and capped at 4096 bytes."
+  ],
+  "compatibility": {
+    "agent_ops": "0.2.x",
+    "temporary_shims": ["goal-runner", "loop-goal-engineer", "loopy"],
+    "remove_in": "loopkit 0.2.0 and agent-ops 0.3.0"
+  }
+}

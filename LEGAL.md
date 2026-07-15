@@ -7,6 +7,7 @@ every file under one license.
 
 - knowledge-work-superpowers includes its own MIT LICENSE and NOTICE.md.
 - outcome-engine declares MIT in its plugin manifest and includes NOTICE.md.
+- loopkit declares MIT in its plugin manifest and includes a LICENSE file.
 - Other plugins do not currently declare a top-level package license. Copyright
   remains with the relevant author unless a file or package states otherwise.
 - Third-party notices and license files inside plugin folders remain in force.

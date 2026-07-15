@@ -1,6 +1,6 @@
 {
   "plugin": "agent-ops",
-  "version": "0.1.0+codex.20260714115137",
+  "version": "0.2.0",
   "skills": [
     "agent-builder",
     "agent-ops-router",
@@ -13,6 +13,20 @@
     "agent-ops-router",
     "agent-system-audit"
   ],
+  "primary_skills": [
+    "agent-builder",
+    "agent-ops-router",
+    "agent-system-audit"
+  ],
+  "compatibility_shims": {
+    "through": "0.2.x",
+    "remove_in": "0.3.0 after loopkit 0.2.0",
+    "skills": [
+      "goal-runner",
+      "loop-goal-engineer",
+      "loopy"
+    ]
+  },
   "companions": [
     "outcome-engine",
     "proofloop",
@@ -21,6 +35,7 @@
   ],
   "guardrails": [
     "Do not run autonomous work without authority, evidence, and stop conditions.",
+    "Generic Codex Goals and loops are owned by LoopKit.",
     "General idea-to-result work remains owned by Outcome Engine."
   ],
   "routing_cases": [
@@ -31,10 +46,10 @@
       "evidence_contains": "agent-design: define a reusable agent"
     },
     {
-      "prompt": "Run this sustained outcome until the named evidence exists.",
-      "expected_skill": "goal-runner",
+      "prompt": "Agent Ops: route this bounded Goal execution request.",
+      "expected_skill": "agent-ops-router",
       "evidence_file": "skills/agent-ops-router/references/routing.md",
-      "evidence_contains": "goal-run: execute an existing Goal contract"
+      "evidence_contains": "loopkit-handoff: route generic Codex Goals"
     },
     {
       "prompt": "Audit this autonomous workflow for unbounded authority.",

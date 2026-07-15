@@ -150,8 +150,8 @@ def validate_registry(registry: Any, inventory_root: Path | None = None) -> list
         errors.append(f"owned skill count is {len(all_owned)}, expected {expected_count}")
 
     collisions = registry.get("collision_rules")
-    if not isinstance(collisions, list) or len(collisions) != 8:
-        errors.append("collision_rules must contain exactly eight cases")
+    if not isinstance(collisions, list) or len(collisions) != 9:
+        errors.append("collision_rules must contain exactly nine cases")
         collisions = []
     seen_collision_ids: set[str] = set()
     for rule in collisions:

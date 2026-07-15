@@ -28,13 +28,14 @@ task capability inventory.
 
 | Plugin | Purpose |
 | --- | --- |
-| agent-ops | Build, audit, and operate durable agent systems |
+| agent-ops | Design, route, and audit durable agent systems |
 | brand-world-studio | Build brand systems, briefs, visuals, and consistency checks |
 | capability-operator | Route, inventory, govern, and verify Codex capabilities |
 | continuity-vault | Extract, structure, and govern durable working knowledge |
 | data-storytelling-studio | Turn analysis into clear executive stories |
 | founder-revenue-engine | Find customers, build outreach, and shape market narratives |
 | knowledge-work-superpowers | Research, analyze, draft, review, and verify evidence-backed work |
+| loopkit | Design, run, verify, resume, schedule, and diagnose bounded Codex loops |
 | model-evaluation-lab | Plan, run, and interpret model evaluations |
 | model-prompt-lab | Design, migrate, and benchmark production prompts |
 | outcome-engine | Turn unclear goals into verified outcomes |
@@ -44,9 +45,10 @@ task capability inventory.
 | web-product-studio | Design, build, test, and ship web products |
 | writing-quality | Route, improve, and verify serious writing work |
 
-The marketplace currently contains 15 plugins and 102 skills. The packages also
+The marketplace currently contains 16 plugins and 109 skills. The packages also
 include their supporting scripts, references, assets, and agent definitions.
-They do not currently bundle MCP servers or app connectors.
+LoopKit includes local lifecycle hooks. The marketplace does not currently
+bundle MCP servers or app connectors.
 
 ## Update
 
@@ -68,6 +70,8 @@ Then start a new Codex task.
 - scripts/generate-catalog.mjs builds the website catalog from plugin manifests.
 - INSTALL.md contains installation and troubleshooting details.
 - LEGAL.md records package-specific licensing and exclusions.
+- PRIVACY.md describes repository and plugin data handling.
+- TERMS.md states the terms for using these packages.
 - SECURITY.md explains secret handling and issue reporting.
 
 ## Development
