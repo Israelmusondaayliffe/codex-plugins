@@ -882,14 +882,92 @@ export const plugins = [
     },
     "bundlesMcp": false,
     "bundlesApp": false
+  },
+  {
+    "slug": "harness-engineering",
+    "name": "Harness Engineering",
+    "shortDescription": "Build a personal Codex operating harness.",
+    "longDescription": "Interview the user, inspect the current Codex environment, plan a right-sized harness, apply approved changes with backups, and verify the result with fresh evidence.",
+    "description": "Design, build, verify, and maintain a personalized Codex harness through a source-first interview and reversible guided workflow.",
+    "version": "1.0.0",
+    "category": "Productivity",
+    "license": "MIT",
+    "capabilities": [
+      "Interactive",
+      "Write"
+    ],
+    "defaultPrompts": [
+      "Design and build my Codex harness.",
+      "Audit my current Codex setup.",
+      "Verify that my harness really works."
+    ],
+    "skills": [
+      {
+        "name": "agents-md-engineer",
+        "description": "Design, rewrite, split, or verify a Codex AGENTS.md instruction chain across global, workspace, project, and nested scopes. Use when users ask what belongs in AGENTS.md, want instructions modeled on an existing harness, need shorter or clearer agent guidance, have conflicting instruction files, or need templates that encode role, boundaries, routing, workflow, and verification."
+      },
+      {
+        "name": "harness-audit",
+        "description": "Inspect a current Codex home, workspace, project, or imported agent setup without changing it. Use for harness audits, setup inventories, AGENTS.md chain checks, installed skill or plugin reviews, connector and MCP inventories, rules or hook inspection, drift detection, secret-exposure checks, and gap analysis before a harness plan or upgrade."
+      },
+      {
+        "name": "harness-builder",
+        "description": "Apply an approved Harness Engineering operations plan to local Codex and workspace files with dry-run, hash preconditions, backups, atomic writes, receipts, and rollback. Use when a user approves a harness plan, asks to create the workspace and instruction files, fill approved harness gaps, or execute a defined batch of local configuration changes."
+      },
+      {
+        "name": "harness-engineering",
+        "description": "Design, build, verify, or maintain a personalized Codex harness from a vague brief or an existing setup. Use when a user asks for a Codex operating system, harness, AGENTS.md chain, workspace architecture, capability stack, guided setup, harness upgrade, or an end-to-end workflow that combines interview, audit, planning, reversible implementation, and verification. Route focused requests to the owned skill that matches the current phase."
+      },
+      {
+        "name": "harness-interview",
+        "description": "Conduct a persistent, source-first interview that converts a user's incomplete Codex setup idea into a confirmed harness profile. Use when the user says grill me, interview me, design my harness, set up Codex for me, ask what I need, or gives a thin brief whose answers could change global instructions, workspace structure, permissions, skills, plugins, connectors, verification, or maintenance."
+      },
+      {
+        "name": "harness-maintainer",
+        "description": "Audit and update an existing Codex harness after model changes, Codex releases, plugin updates, repeated corrections, stale instructions, failed automations, or capability drift. Use for weekly, monthly, or quarterly harness reviews, model-jump audits, obsolete-skill removal, routing parity checks, maintenance planning, and safe in-place upgrades."
+      },
+      {
+        "name": "harness-planner",
+        "description": "Turn a confirmed harness profile and read-only audit into a decision-complete architecture and reversible operation plan. Use when a user asks for a harness plan, implementation plan, workspace blueprint, capability plan, migration plan, or wants to see exact proposed changes and checks before Codex edits global or project files."
+      },
+      {
+        "name": "harness-runner",
+        "description": "Execute an approved Harness Engineering plan as a bounded Goal with durable state, iteration receipts, approval stops, resume behavior, and a verifier handoff. Use when a user says run the harness build, keep going until verified, use a Goal, resume the build, or carry an approved multi-stage harness implementation to a named terminal state."
+      },
+      {
+        "name": "harness-verifier",
+        "description": "Verify a generated or upgraded Codex harness against its approved profile, operations plan, current files, live capability state, and fresh discovery evidence. Use when a user asks whether the harness is complete, installed, global, visible, safe, restart-ready, or actually operational rather than merely present on disk."
+      },
+      {
+        "name": "model-prompt-engineer",
+        "description": "Create, migrate, or test prompts used by a Codex harness while adapting to the selected current OpenAI model and prompt surface. Use for global instruction prompts, Goal prompts, verification prompts, API system prompts, model migrations, prompt regressions, or requests to support GPT-5.6 and later models without freezing the harness to one model generation."
+      },
+      {
+        "name": "plugin-engineer",
+        "description": "Create, update, validate, install, or package a Codex plugin required by an approved harness architecture. Use when several related skills need a public or team bundle, when the harness needs plugin metadata or a marketplace entry, or when an existing local plugin must be updated and reinstalled with source-cache and fresh-discovery proof."
+      },
+      {
+        "name": "skill-engineer",
+        "description": "Create or upgrade a missing Codex skill identified during harness design, using the official Skill Creator workflow and evidence that the skill fixes a repeated failure. Use when the harness plan requires a new reusable workflow, validator, script, reference set, or asset bundle that is not already supplied by an installed skill or plugin."
+      }
+    ],
+    "counts": {
+      "skills": 12,
+      "assets": 4,
+      "references": 6,
+      "scripts": 3,
+      "files": 47
+    },
+    "bundlesMcp": false,
+    "bundlesApp": false
   }
 ] as const;
 export const totals = {
-  "plugins": 16,
-  "skills": 109,
-  "assets": 254,
-  "references": 379,
-  "scripts": 317,
-  "files": 1280
+  "plugins": 17,
+  "skills": 121,
+  "assets": 258,
+  "references": 385,
+  "scripts": 320,
+  "files": 1327
 } as const;
 export type Plugin = (typeof plugins)[number];

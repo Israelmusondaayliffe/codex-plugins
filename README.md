@@ -34,6 +34,7 @@ task capability inventory.
 | continuity-vault | Extract, structure, and govern durable working knowledge |
 | data-storytelling-studio | Turn analysis into clear executive stories |
 | founder-revenue-engine | Find customers, build outreach, and shape market narratives |
+| harness-engineering | Interview, design, build, verify, and maintain a personalized Codex harness |
 | knowledge-work-superpowers | Research, analyze, draft, review, and verify evidence-backed work |
 | loopkit | Design, run, verify, resume, schedule, and diagnose bounded Codex loops |
 | model-evaluation-lab | Plan, run, and interpret model evaluations |
@@ -45,7 +46,7 @@ task capability inventory.
 | web-product-studio | Design, build, test, and ship web products |
 | writing-quality | Route, improve, and verify serious writing work |
 
-The marketplace currently contains 16 plugins and 109 skills. The packages also
+The marketplace currently contains 17 plugins and 121 skills. The packages also
 include their supporting scripts, references, assets, and agent definitions.
 LoopKit includes local lifecycle hooks. The marketplace does not currently
 bundle MCP servers or app connectors.

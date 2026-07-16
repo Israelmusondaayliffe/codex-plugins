@@ -1,0 +1,4 @@
+interface:
+  display_name: "Harness Audit"
+  short_description: "Inspect an existing Codex harness without changing it."
+  default_prompt: "Use $harness-audit to inspect my current Codex setup."

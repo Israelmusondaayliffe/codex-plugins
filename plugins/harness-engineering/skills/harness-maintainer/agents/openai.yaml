@@ -1,0 +1,4 @@
+interface:
+  display_name: "Harness Maintainer"
+  short_description: "Audit drift and plan safe harness updates."
+  default_prompt: "Use $harness-maintainer to audit and update my harness."

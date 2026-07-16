@@ -1,0 +1,4 @@
+interface:
+  display_name: "Harness Interview"
+  short_description: "Interview a user before designing their harness."
+  default_prompt: "Use $harness-interview to question me before planning my harness."

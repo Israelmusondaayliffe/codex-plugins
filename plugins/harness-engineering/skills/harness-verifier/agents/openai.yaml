@@ -1,0 +1,4 @@
+interface:
+  display_name: "Harness Verifier"
+  short_description: "Verify a harness against fresh evidence."
+  default_prompt: "Use $harness-verifier to verify my Codex harness."

@@ -30,7 +30,7 @@ test("server-renders the public marketplace homepage", async () => {
   const html = await response.text();
   assert.match(html, /<title>Israel&#x27;s Codex Plugins<\/title>/i);
   assert.match(html, /A working system/);
-  assert.match(html, /Fifteen field-tested plugins/);
+  assert.match(html, /17(?:<!--.*?-->)? field-tested plugins/);
   assert.match(html, /codex plugin marketplace add Israelmusondaayliffe/);
   assert.match(html, /knowledge-work-superpowers/);
   assert.match(html, /does not currently.*MCP servers/i);
@@ -47,5 +47,18 @@ test("server-renders plugin detail pages", async () => {
   assert.match(
     html,
     /codex plugin add capability-operator@israel-codex-plugins/,
+  );
+});
+
+test("server-renders the Harness Engineering release", async () => {
+  const response = await render("/plugins/harness-engineering");
+  assert.equal(response.status, 200);
+
+  const html = await response.text();
+  assert.match(html, /Harness Engineering/);
+  assert.match(html, /harness-interview/);
+  assert.match(
+    html,
+    /codex plugin add harness-engineering@israel-codex-plugins/,
   );
 });

@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Harness operations plan",
+  "type": "object",
+  "required": ["schema_version", "run_id", "allowed_roots", "approval_groups", "operations"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "run_id": {"type": "string", "minLength": 1},
+    "allowed_roots": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "approval_groups": {"type": "array", "items": {"type": "string"}},
+    "operations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "action", "target", "approval_group"],
+        "properties": {
+          "id": {"type": "string"},
+          "action": {"enum": ["create", "update"]},
+          "target": {"type": "string"},
+          "content": {"type": "string"},
+          "source": {"type": "string"},
+          "expected_sha256": {"type": ["string", "null"]},
+          "approval_group": {"type": "string"}
+        }
+      }
+    }
+  }
+}

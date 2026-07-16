@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { headers } from "next/headers";
 import { IBM_Plex_Mono, Space_Grotesk } from "next/font/google";
+import { totals } from "./catalog.generated";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -21,7 +22,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const origin = host ? protocol + "://" + host : "http://localhost:3000";
   const title = "Israel's Codex Plugins";
   const description =
-    "A public Codex marketplace with 15 plugins and 102 skills for research, strategy, creation, operations, and delivery.";
+    `A public Codex marketplace with ${totals.plugins} plugins and ${totals.skills} skills for research, strategy, creation, operations, and delivery.`;
 
   return {
     metadataBase: new URL(origin),

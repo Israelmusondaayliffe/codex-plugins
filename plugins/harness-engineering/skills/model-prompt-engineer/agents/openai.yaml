@@ -1,0 +1,4 @@
+interface:
+  display_name: "Model Prompt Engineer"
+  short_description: "Create current-model prompts for harness workflows."
+  default_prompt: "Use $model-prompt-engineer to build a model-aware prompt."
