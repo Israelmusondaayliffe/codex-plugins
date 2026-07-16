@@ -1,0 +1,36 @@
+{
+  "selected": "design-taste-frontend",
+  "evidence": [
+    "The supplied references use editorial scale, rough print texture, stark composition, and a restrained black, cream, and coral palette.",
+    "The current site feels toy-like because bordered cards, colored gradients, and offset box shadows repeat across the catalog.",
+    "A public developer registry benefits from information hierarchy, purposeful interaction, keyboard access, and disciplined motion."
+  ],
+  "rationale": "Design Taste supports the needed editorial marketing surface while requiring accessible states, motivated motion, restrained color, and fewer card containers.",
+  "dials": {
+    "current": {
+      "designVariance": 5,
+      "motionIntensity": 3,
+      "visualDensity": 6
+    },
+    "target": {
+      "designVariance": 7,
+      "motionIntensity": 6,
+      "visualDensity": 5
+    }
+  },
+  "audit": {
+    "preserve": ["Public route slugs", "Primary navigation labels", "Install commands", "Generated catalog source", "Keyboard focus and reduced-motion support"],
+    "replace": ["Repeated bordered card grid", "Multi-color card gradients", "Offset shadow hover treatment", "Decorative dot eyebrows", "Framed and rotated hero artwork"],
+    "interactionGoal": "Use an indexed registry with a live selected-plugin preview, keyboard search shortcuts, clear selection state, and compact install feedback."
+  },
+  "rejected": [
+    {
+      "name": "minimalist-ui",
+      "reason": "Too restrained for the expressive printmaking references and the requested visual upgrade."
+    },
+    {
+      "name": "industrial-brutalist-ui",
+      "reason": "The references are tactile and editorial, not raw interface brutalism."
+    }
+  ]
+}

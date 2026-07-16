@@ -32,9 +32,16 @@ export function CopyCommand({ command, compact = false }: CopyCommandProps) {
   return (
     <div className={"copy-command" + (compact ? " copy-command-compact" : "")}>
       <code>{command}</code>
-      <button aria-label={"Copy command: " + command} onClick={copy} type="button">
+      <button
+        aria-label={copied ? "Command copied" : "Copy command: " + command}
+        onClick={copy}
+        type="button"
+      >
         {copied ? "Copied" : "Copy"}
       </button>
+      <span className="sr-only" aria-live="polite">
+        {copied ? "Command copied to clipboard" : ""}
+      </span>
     </div>
   );
 }

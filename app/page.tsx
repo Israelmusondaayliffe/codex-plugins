@@ -26,9 +26,8 @@ export default function Home() {
     <>
       <header className="site-header shell">
         <Link className="wordmark" href="/" aria-label="Israel's Codex Plugins">
-          <span>IA</span>
-          <span>/</span>
-          <span>CODEX</span>
+          <span className="wordmark-mark">IA</span>
+          <span>CODEX PLUGINS</span>
         </Link>
         <nav aria-label="Primary navigation">
           <a href="#plugins">Plugins</a>
@@ -39,119 +38,137 @@ export default function Home() {
 
       <main>
         <section className="hero shell" aria-labelledby="hero-title">
+          <figure className="hero-art" aria-hidden="true">
+            <Image
+              alt=""
+              fill
+              priority
+              sizes="(max-width: 800px) 100vw, 62vw"
+              src="/plugin-constellation.png"
+              unoptimized
+            />
+          </figure>
           <div className="hero-copy">
-            <p className="eyebrow">Israel&apos;s Codex Plugins</p>
+            <p className="kicker">A public Codex marketplace</p>
             <h1 id="hero-title">
               A working system,
               <br />
               packaged.
             </h1>
             <p className="hero-lede">
-              {totals.plugins} field-tested plugins for research, strategy,
-              creation, operations, and delivery in Codex.
+              {totals.plugins} field-tested plugins for repeatable research,
+              creation, strategy, and operations.
             </p>
             <div className="hero-actions">
               <a className="button button-primary" href="#plugins">
-                Browse plugins
+                Browse the registry
               </a>
-              <a className="button button-secondary" href={repositoryUrl}>
+              <a className="button button-quiet" href={repositoryUrl}>
                 View source
               </a>
             </div>
           </div>
-          <figure className="hero-art">
-            <Image
-              alt="Abstract modular forms arranged like a creative system"
-              fill
-              priority
-              sizes="(max-width: 980px) 100vw, 58vw"
-              src="/plugin-constellation.png"
-              unoptimized
-            />
-          </figure>
         </section>
 
         <section className="proof-strip shell" aria-label="Marketplace totals">
           <div>
             <strong>{totals.plugins}</strong>
-            <span>Plugins</span>
+            <span>Public plugins</span>
           </div>
           <div>
             <strong>{totals.skills}</strong>
-            <span>Skills</span>
+            <span>Bundled skills</span>
           </div>
           <div>
             <strong>{resourceTotal.toLocaleString("en-US")}</strong>
             <span>Support files</span>
           </div>
           <div>
-            <strong>Public</strong>
-            <span>Git marketplace</span>
+            <strong>1</strong>
+            <span>Copyable marketplace</span>
           </div>
         </section>
 
         <section className="catalog-section shell" id="plugins">
           <div className="section-heading">
-            <p className="eyebrow">The collection</p>
-            <h2>Choose the capability you need.</h2>
+            <h2>Find the capability. Inspect the package. Copy the command.</h2>
             <p>
-              Search the complete catalog, inspect every bundled skill, and
-              copy a plugin-specific install command.
+              Search every plugin and skill, select a record, then install only
+              what belongs in your Codex setup.
             </p>
           </div>
           <Catalog />
         </section>
 
         <section className="install-section" id="install">
-          <div className="shell install-grid">
-            <div className="section-heading install-heading">
-              <p className="eyebrow">Installation</p>
-              <h2>Two commands. Then start a new task.</h2>
+          <div className="shell install-layout">
+            <div className="install-intro">
+              <p className="kicker">Install in Codex</p>
+              <h2>One marketplace. Any plugin.</h2>
               <p>
-                Add the public marketplace once. Install only the plugins you
-                want. A fresh task makes the new skills visible to Codex.
+                Add the public source once, install what you need, then open a
+                fresh task so Codex can load the new capability inventory.
               </p>
             </div>
-            <div className="install-steps">
-              <article className="install-card">
-                <span className="step-number">01</span>
-                <h3>Add the marketplace</h3>
+            <ol className="install-steps">
+              <li>
+                <div className="step-heading">
+                  <span>01</span>
+                  <h3>Add the marketplace</h3>
+                </div>
                 <CopyCommand command="codex plugin marketplace add Israelmusondaayliffe/codex-plugins --ref main" />
-              </article>
-              <article className="install-card install-card-shifted">
-                <span className="step-number">02</span>
-                <h3>Install a plugin</h3>
-                <CopyCommand command="codex plugin add knowledge-work-superpowers@israel-codex-plugins" />
-              </article>
-              <article className="install-card">
-                <span className="step-number">03</span>
-                <h3>Start a new Codex task</h3>
+              </li>
+              <li>
+                <div className="step-heading">
+                  <span>02</span>
+                  <h3>Install a plugin</h3>
+                </div>
+                <CopyCommand command="codex plugin add loopkit@israel-codex-plugins" />
+              </li>
+              <li>
+                <div className="step-heading">
+                  <span>03</span>
+                  <h3>Start a new task</h3>
+                </div>
                 <p>
-                  Fresh tasks load the newly installed plugin inventory. Your
-                  existing task may keep its earlier capability list.
+                  Fresh tasks load the installed plugin inventory. Existing
+                  tasks may retain their earlier capability list.
                 </p>
-              </article>
-            </div>
+              </li>
+            </ol>
           </div>
         </section>
 
-        <section className="truth-section shell">
-          <div className="truth-mark" aria-hidden="true">
-            <span>{totals.skills}</span>
-            <small>skills</small>
-          </div>
-          <div className="truth-copy">
-            <p className="eyebrow">What is inside</p>
+        <section className="inventory-section shell">
+          <div className="inventory-statement">
             <h2>Skills first. Claims kept exact.</h2>
             <p>
-              This release contains Codex plugins and their skills, scripts,
-              references, assets, and agent definitions. It does not currently
-              bundle MCP servers or app connectors.
+              This release includes skills, scripts, references, assets, and
+              agent definitions. It does not currently bundle MCP servers or
+              app connectors.
             </p>
             <Link className="text-link" href="/plugins/capability-operator">
-              Inspect a full plugin record
+              Inspect a complete plugin record
             </Link>
           </div>
+          <dl className="inventory-facts">
+            <div>
+              <dt>Repository</dt>
+              <dd>Public on GitHub</dd>
+            </div>
+            <div>
+              <dt>Marketplace</dt>
+              <dd>israel-codex-plugins</dd>
+            </div>
+            <div>
+              <dt>Install surface</dt>
+              <dd>Codex CLI</dd>
+            </div>
+            <div>
+              <dt>Discovery</dt>
+              <dd>Fresh task required</dd>
+            </div>
+          </dl>
         </section>
       </main>
 

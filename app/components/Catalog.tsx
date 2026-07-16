@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { marketplaceName, plugins } from "../catalog.generated";
 import { CopyCommand } from "./CopyCommand";
 
@@ -13,12 +13,44 @@ const categories = [
 export function Catalog() {
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState("All");
+  const [sortMode, setSortMode] = useState<"curated" | "skills">("curated");
+  const [selectedSlug, setSelectedSlug] = useState(plugins[0].slug);
+  const searchRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    function onKeyDown(event: KeyboardEvent) {
+      const target = event.target as HTMLElement | null;
+      const isTyping =
+        target instanceof HTMLInputElement ||
+        target instanceof HTMLTextAreaElement ||
+        target instanceof HTMLSelectElement ||
+        target?.isContentEditable;
+
+      if (event.key === "/" && !isTyping) {
+        event.preventDefault();
+        searchRef.current?.focus();
+      }
+
+      if (event.key === "Escape") {
+        setQuery("");
+        setCategory("All");
+        searchRef.current?.focus();
+      }
+    }
+
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, []);
 
   const matches = useMemo(() => {
     const needle = query.trim().toLowerCase();
-    return plugins.filter((plugin) => {
-      const matchesCategory =
-        category === "All" || plugin.category === category;
+    const categoryMatches = plugins.filter(
+      (plugin) => category === "All" || plugin.category === category,
+    );
+    const directMatches = categoryMatches.filter((plugin) =>
+      [plugin.name, plugin.slug].join(" ").toLowerCase().includes(needle),
+    );
+    const broadMatches = categoryMatches.filter((plugin) => {
       const haystack = [
         plugin.name,
         plugin.slug,
@@ -28,79 +60,165 @@ export function Catalog() {
       ]
         .join(" ")
         .toLowerCase();
-      return matchesCategory && (!needle || haystack.includes(needle));
+      return !needle || haystack.includes(needle);
     });
-  }, [category, query]);
+    const filtered = needle && directMatches.length ? directMatches : broadMatches;
+
+    if (sortMode === "skills") {
+      return [...filtered].sort(
+        (left, right) => right.counts.skills - left.counts.skills,
+      );
+    }
+
+    return filtered;
+  }, [category, query, sortMode]);
+
+  const selectedPlugin =
+    matches.find((plugin) => plugin.slug === selectedSlug) ?? matches[0] ?? null;
+
+  function resetCatalog() {
+    setQuery("");
+    setCategory("All");
+    setSortMode("curated");
+    setSelectedSlug(plugins[0].slug);
+    searchRef.current?.focus();
+  }
 
   return (
-    <div>
+    <div className="catalog">
       <div className="catalog-tools">
         <label className="search-field">
-          <span className="sr-only">Search plugins</span>
-          <input
-            onChange={(event) => setQuery(event.target.value)}
-            placeholder="Search plugins or skills"
-            type="search"
-            value={query}
-          />
+          <span>Search the registry</span>
+          <span className="search-control">
+            <input
+              aria-keyshortcuts="/"
+              aria-label="Search plugins and skills"
+              data-testid="catalog-search"
+              onChange={(event) => setQuery(event.target.value)}
+              placeholder="Plugin or skill name"
+              ref={searchRef}
+              type="search"
+              value={query}
+            />
+            <kbd>/</kbd>
+          </span>
         </label>
-        <div className="filter-list" aria-label="Filter by category">
-          {categories.map((item) => (
-            <button
-              aria-pressed={category === item}
-              key={item}
-              onClick={() => setCategory(item)}
-              type="button"
-            >
-              {item}
-            </button>
-          ))}
+
+        <div className="filter-group">
+          <span className="control-label">Category</span>
+          <div className="filter-list" aria-label="Filter by category">
+            {categories.map((item) => (
+              <button
+                aria-pressed={category === item}
+                key={item}
+                onClick={() => setCategory(item)}
+                type="button"
+              >
+                {item}
+              </button>
+            ))}
+          </div>
         </div>
       </div>
 
-      <div className="catalog-grid">
-        {matches.map((plugin, index) => (
-          <article
-            className={"plugin-card card-variant-" + (index % 4)}
-            key={plugin.slug}
+      <div className="catalog-status">
+        <p aria-live="polite">
+          {matches.length} {matches.length === 1 ? "record" : "records"}
+        </p>
+        <div className="sort-list" aria-label="Sort plugins">
+          <span>Sort</span>
+          <button
+            aria-pressed={sortMode === "curated"}
+            onClick={() => setSortMode("curated")}
+            type="button"
           >
-            <div className="card-topline">
-              <span>{plugin.category}</span>
-              <span>{plugin.counts.skills} skills</span>
+            Curated
+          </button>
+          <button
+            aria-pressed={sortMode === "skills"}
+            onClick={() => setSortMode("skills")}
+            type="button"
+          >
+            Most skills
+          </button>
+        </div>
+      </div>
+
+      {matches.length > 0 && selectedPlugin ? (
+        <div className="registry-layout">
+          <div className="registry-list" aria-label="Plugin registry">
+            {matches.map((plugin, index) => {
+              const selected = selectedPlugin.slug === plugin.slug;
+              return (
+                <button
+                  aria-pressed={selected}
+                  className="registry-row"
+                  data-testid={"plugin-row-" + plugin.slug}
+                  key={plugin.slug}
+                  onClick={() => setSelectedSlug(plugin.slug)}
+                  onFocus={() => setSelectedSlug(plugin.slug)}
+                  onMouseEnter={() => setSelectedSlug(plugin.slug)}
+                  type="button"
+                >
+                  <span className="registry-index">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <span className="registry-name">{plugin.name}</span>
+                  <span className="registry-category">{plugin.category}</span>
+                  <span className="registry-count">
+                    {plugin.counts.skills} skills
+                  </span>
+                  <span className="registry-arrow" aria-hidden="true">
+                    ↗
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+
+          <aside
+            className="registry-preview"
+            data-testid="plugin-preview"
+            key={selectedPlugin.slug}
+            aria-label={selectedPlugin.name + " selected plugin"}
+          >
+            <div className="preview-topline">
+              <span>{selectedPlugin.category}</span>
+              <span>{selectedPlugin.counts.skills} skills</span>
             </div>
-            <div>
-              <h3>{plugin.name}</h3>
-              <p>{plugin.shortDescription}</p>
+            <div className="preview-copy">
+              <h3>{selectedPlugin.name}</h3>
+              <p>{selectedPlugin.longDescription}</p>
             </div>
-            <ul className="skill-preview" aria-label="Featured skills">
-              {plugin.skills.slice(0, 4).map((skill) => (
-                <li key={skill.name}>{skill.name}</li>
-              ))}
-            </ul>
-            <div className="card-actions">
+            <div className="preview-skills">
+              <span>Featured skills</span>
+              <ul>
+                {selectedPlugin.skills.slice(0, 5).map((skill) => (
+                  <li key={skill.name}>{skill.name}</li>
+                ))}
+              </ul>
+            </div>
+            <div className="preview-actions">
               <CopyCommand
                 command={
-                  "codex plugin add " + plugin.slug + "@" + marketplaceName
+                  "codex plugin add " +
+                  selectedPlugin.slug +
+                  "@" +
+                  marketplaceName
                 }
                 compact
               />
-              <Link href={"/plugins/" + plugin.slug}>Details</Link>
+              <Link href={"/plugins/" + selectedPlugin.slug}>
+                Open plugin record
+              </Link>
             </div>
-          </article>
-        ))}
-      </div>
-
-      {matches.length === 0 && (
+          </aside>
+        </div>
+      ) : (
         <div className="empty-state">
-          <p>No plugin matches that search.</p>
-          <button
-            onClick={() => {
-              setQuery("");
-              setCategory("All");
-            }}
-            type="button"
-          >
-            Reset catalog
+          <p>No plugin matches this search.</p>
+          <button onClick={resetCatalog} type="button">
+            Reset registry
           </button>
         </div>
       )}

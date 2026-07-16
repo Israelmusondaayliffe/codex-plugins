@@ -33,6 +33,8 @@ test("server-renders the public marketplace homepage", async () => {
   assert.match(html, /17(?:<!--.*?-->)? field-tested plugins/);
   assert.match(html, /codex plugin marketplace add Israelmusondaayliffe/);
   assert.match(html, /knowledge-work-superpowers/);
+  assert.match(html, /LoopKit/);
+  assert.match(html, /Harness Engineering/);
   assert.match(html, /does not currently.*MCP servers/i);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape/);
 });
@@ -60,5 +62,18 @@ test("server-renders the Harness Engineering release", async () => {
   assert.match(
     html,
     /codex plugin add harness-engineering@israel-codex-plugins/,
+  );
+});
+
+test("server-renders the LoopKit release", async () => {
+  const response = await render("/plugins/loopkit");
+  assert.equal(response.status, 200);
+
+  const html = await response.text();
+  assert.match(html, /LoopKit/);
+  assert.match(html, /loop-runner/);
+  assert.match(
+    html,
+    /codex plugin add loopkit@israel-codex-plugins/,
   );
 });

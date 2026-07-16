@@ -1,0 +1,71 @@
+{
+  "flows": [
+    {
+      "id": "F1",
+      "name": "See the complete current marketplace",
+      "preconditions": ["The site is deployed from the current main branch"],
+      "steps": [
+        {
+          "action": "Open the homepage",
+          "expected": "The page reports 17 plugins and 121 skills, and the catalog includes LoopKit and Harness Engineering.",
+          "evidence": "Rendered DOM assertion and production screenshot"
+        }
+      ],
+      "status": "passed"
+    },
+    {
+      "id": "F2",
+      "name": "Find a plugin quickly",
+      "preconditions": ["The homepage catalog is visible"],
+      "steps": [
+        {
+          "action": "Press slash and type loopkit",
+          "expected": "Search receives focus and the registry narrows to LoopKit.",
+          "evidence": "Browser focus and visible result assertions"
+        },
+        {
+          "action": "Press Escape",
+          "expected": "The search clears and the full registry returns.",
+          "evidence": "Browser input value and result count assertions"
+        }
+      ],
+      "status": "passed"
+    },
+    {
+      "id": "F3",
+      "name": "Inspect and install a selected plugin",
+      "preconditions": ["The homepage catalog is visible"],
+      "steps": [
+        {
+          "action": "Select Harness Engineering in the registry",
+          "expected": "The preview shows its description, featured skills, and exact install command.",
+          "evidence": "Browser selection and preview assertions"
+        },
+        {
+          "action": "Copy the install command",
+          "expected": "The button confirms the copy and the visible command matches Harness Engineering exactly.",
+          "evidence": "Button feedback and command text assertion"
+        },
+        {
+          "action": "Open the plugin record",
+          "expected": "The Harness Engineering detail route renders its skills and package facts.",
+          "evidence": "URL and rendered DOM assertions"
+        }
+      ],
+      "status": "passed"
+    },
+    {
+      "id": "F4",
+      "name": "Use the registry on a narrow screen",
+      "preconditions": ["The browser viewport is 390 by 844"],
+      "steps": [
+        {
+          "action": "Open the homepage and navigate through the catalog controls",
+          "expected": "The hero, filters, registry rows, selected preview, and install commands remain readable without horizontal overflow.",
+          "evidence": "Responsive screenshot and overflow assertion"
+        }
+      ],
+      "status": "passed"
+    }
+  ]
+}

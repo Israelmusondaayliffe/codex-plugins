@@ -8,6 +8,9 @@ type PluginPageProps = {
   params: Promise<{ slug: string }>;
 };
 
+const repositoryUrl =
+  "https://github.com/Israelmusondaayliffe/codex-plugins";
+
 export function generateStaticParams() {
   return plugins.map((plugin) => ({ slug: plugin.slug }));
 }
@@ -33,9 +36,8 @@ export default async function PluginPage({ params }: PluginPageProps) {
     <>
       <header className="site-header shell detail-header">
         <Link className="wordmark" href="/" aria-label="Back to plugin catalog">
-          <span>IA</span>
-          <span>/</span>
-          <span>CODEX</span>
+          <span className="wordmark-mark">IA</span>
+          <span>CODEX PLUGINS</span>
         </Link>
         <Link className="back-link" href="/#plugins">
           Back to catalog
@@ -44,8 +46,8 @@ export default async function PluginPage({ params }: PluginPageProps) {
 
       <main className="plugin-detail shell">
         <section className="detail-hero">
-          <div>
-            <p className="eyebrow">{plugin.category}</p>
+          <div className="detail-heading">
+            <p className="kicker">{plugin.category} plugin</p>
             <h1>{plugin.name}</h1>
             <p>{plugin.longDescription}</p>
           </div>
@@ -62,25 +64,33 @@ export default async function PluginPage({ params }: PluginPageProps) {
               <dt>Files</dt>
               <dd>{plugin.counts.files}</dd>
             </div>
+            <div>
+              <dt>License</dt>
+              <dd>{plugin.license ?? "See legal"}</dd>
+            </div>
           </dl>
         </section>
 
-        <section className="detail-install">
-          <p className="eyebrow">Install this plugin</p>
-          <CopyCommand
-            command={
-              "codex plugin add " + plugin.slug + "@" + marketplaceName
-            }
-          />
-          <p className="install-note">
-            Add the marketplace first if you have not already, then start a new
-            Codex task after installation.
-          </p>
+        <section className="detail-install" aria-labelledby="install-title">
+          <div>
+            <h2 id="install-title">Add this plugin to Codex.</h2>
+          </div>
+          <div>
+            <CopyCommand
+              command={
+                "codex plugin add " + plugin.slug + "@" + marketplaceName
+              }
+            />
+            <p className="install-note">
+              Add the marketplace first if needed, then start a new Codex task
+              after installation.
+            </p>
+          </div>
         </section>
 
         <section className="skill-list-section">
-          <div className="section-heading">
-            <p className="eyebrow">Bundled capabilities</p>
+          <div className="section-heading detail-section-heading">
+            <p className="kicker">Bundled capabilities</p>
             <h2>Every skill in this plugin.</h2>
           </div>
           <div className="skill-list">
@@ -96,30 +106,41 @@ export default async function PluginPage({ params }: PluginPageProps) {
           </div>
         </section>
 
-        <section className="package-facts">
+        <section className="package-section">
           <div>
-            <span>{plugin.counts.assets}</span>
-            <p>Asset files</p>
+            <h2>Source you can inspect.</h2>
+            <a
+              className="text-link"
+              href={repositoryUrl + "/tree/main/plugins/" + plugin.slug}
+            >
+              Open this plugin on GitHub
+            </a>
           </div>
-          <div>
-            <span>{plugin.counts.references}</span>
-            <p>Reference files</p>
-          </div>
-          <div>
-            <span>{plugin.counts.scripts}</span>
-            <p>Script files</p>
-          </div>
-          <div>
-            <span>{plugin.license ?? "See legal"}</span>
-            <p>License status</p>
-          </div>
+          <dl className="package-facts">
+            <div>
+              <dt>Assets</dt>
+              <dd>{plugin.counts.assets}</dd>
+            </div>
+            <div>
+              <dt>References</dt>
+              <dd>{plugin.counts.references}</dd>
+            </div>
+            <div>
+              <dt>Scripts</dt>
+              <dd>{plugin.counts.scripts}</dd>
+            </div>
+            <div>
+              <dt>Total files</dt>
+              <dd>{plugin.counts.files}</dd>
+            </div>
+          </dl>
         </section>
       </main>
 
       <footer>
         <div className="shell footer-grid">
           <p className="footer-name">Israel&apos;s Codex Plugins</p>
-          <Link href="/">Browse all plugins</Link>
+          <Link href="/#plugins">Browse all plugins</Link>
         </div>
       </footer>
     </>

@@ -1,0 +1,8 @@
+{
+  "route": "redesign",
+  "objective": "Turn the existing public plugin catalog into a serious, interactive developer registry that exposes all 17 plugins and makes installation fast and trustworthy.",
+  "design_constitution": "design-taste-frontend",
+  "implementation_skills": ["redesign-existing-projects", "acceptance-flow"],
+  "acceptance_flow": "docs/site-redesign/acceptance-flow.json",
+  "rationale": "The repository, routes, catalog generator, and hosting project already work. The requested outcome is a visual and interaction overhaul with the existing information architecture preserved."
+}
