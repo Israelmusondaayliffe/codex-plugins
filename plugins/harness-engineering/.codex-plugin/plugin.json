@@ -18,7 +18,7 @@
     "developerName": "Israel Ayliffe",
     "category": "Productivity",
     "capabilities": ["Interactive", "Write"],
-    "websiteURL": "https://israel-codex-plugins.israelayliffe.chatgpt.site/plugins/harness-engineering",
+    "websiteURL": "https://github.com/Israelmusondaayliffe/codex-plugins/tree/main/plugins/harness-engineering",
     "privacyPolicyURL": "https://github.com/Israelmusondaayliffe/codex-plugins/blob/main/plugins/harness-engineering/PRIVACY.md",
     "termsOfServiceURL": "https://github.com/Israelmusondaayliffe/codex-plugins/blob/main/plugins/harness-engineering/TERMS.md",
     "defaultPrompt": [
