@@ -1,0 +1,4 @@
+interface:
+  display_name: "AGENTS.md Engineer"
+  short_description: "Design scoped global, workspace, and project guidance."
+  default_prompt: "Use $agents-md-engineer to design my AGENTS.md chain."

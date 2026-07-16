@@ -1,0 +1,4 @@
+interface:
+  display_name: "Harness Runner"
+  short_description: "Execute a bounded harness build with durable state."
+  default_prompt: "Use $harness-runner to run my approved harness build."

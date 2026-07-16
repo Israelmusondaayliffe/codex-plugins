@@ -47,8 +47,8 @@ export default function Home() {
               packaged.
             </h1>
             <p className="hero-lede">
-              Fifteen field-tested plugins for research, strategy, creation,
-              operations, and delivery in Codex.
+              {totals.plugins} field-tested plugins for research, strategy,
+              creation, operations, and delivery in Codex.
             </p>
             <div className="hero-actions">
               <a className="button button-primary" href="#plugins">

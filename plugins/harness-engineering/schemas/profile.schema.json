@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Harness profile",
+  "type": "object",
+  "required": ["schema_version", "user", "scope", "decisions"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "user": {"type": "object"},
+    "scope": {"type": "object"},
+    "decisions": {"type": "array"},
+    "assumptions": {"type": "array"},
+    "exclusions": {"type": "array"}
+  },
+  "additionalProperties": true
+}

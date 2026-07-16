@@ -1,0 +1,30 @@
+---
+name: harness-builder
+description: Apply an approved Harness Engineering operations plan to local Codex and workspace files with dry-run, hash preconditions, backups, atomic writes, receipts, and rollback. Use when a user approves a harness plan, asks to create the workspace and instruction files, fill approved harness gaps, or execute a defined batch of local configuration changes.
+---
+
+# Harness Builder
+
+Apply only the approved operation groups. Do not reinterpret the plan during execution.
+
+## Start gate
+
+1. Validate the operations plan.
+2. Run dry-run and review the receipt.
+3. Confirm approved groups and allowed roots.
+4. Re-read current hashes. Stop on drift.
+
+## Apply
+
+Use:
+
+```text
+python3 ../../scripts/harnessctl.py apply PLAN.json --mode dry-run --receipt DRY.json
+python3 ../../scripts/harnessctl.py apply PLAN.json --mode apply --approved GROUP --backup-dir BACKUPS --receipt APPLY.json --manifest MANIFEST.json
+```
+
+Run one approval group at a time. Preserve unrelated files. If reality invalidates the plan, log the deviation and return to planning.
+
+## Rollback
+
+Use `python3 ../../scripts/harnessctl.py rollback MANIFEST.json --receipt ROLLBACK.json`. Verify restored hashes before reporting recovery.

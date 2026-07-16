@@ -1,0 +1,30 @@
+{
+  "name": "harness-engineering",
+  "version": "1.0.0",
+  "description": "Design, build, verify, and maintain a personalized Codex harness through a source-first interview and reversible guided workflow.",
+  "author": {
+    "name": "Israel Ayliffe",
+    "url": "https://github.com/Israelmusondaayliffe"
+  },
+  "homepage": "https://github.com/Israelmusondaayliffe/codex-plugins/tree/main/plugins/harness-engineering",
+  "repository": "https://github.com/Israelmusondaayliffe/codex-plugins",
+  "license": "MIT",
+  "keywords": ["codex", "harness", "agents", "skills", "plugins", "verification"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Harness Engineering",
+    "shortDescription": "Build a personal Codex operating harness.",
+    "longDescription": "Interview the user, inspect the current Codex environment, plan a right-sized harness, apply approved changes with backups, and verify the result with fresh evidence.",
+    "developerName": "Israel Ayliffe",
+    "category": "Productivity",
+    "capabilities": ["Interactive", "Write"],
+    "websiteURL": "https://israel-codex-plugins.israelayliffe.chatgpt.site/plugins/harness-engineering",
+    "privacyPolicyURL": "https://github.com/Israelmusondaayliffe/codex-plugins/blob/main/plugins/harness-engineering/PRIVACY.md",
+    "termsOfServiceURL": "https://github.com/Israelmusondaayliffe/codex-plugins/blob/main/plugins/harness-engineering/TERMS.md",
+    "defaultPrompt": [
+      "Design and build my Codex harness.",
+      "Audit my current Codex setup.",
+      "Verify that my harness really works."
+    ]
+  }
+}

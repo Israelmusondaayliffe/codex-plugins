@@ -1,0 +1,4 @@
+interface:
+  display_name: "Harness Engineering"
+  short_description: "Design, build, and verify a Codex harness."
+  default_prompt: "Use $harness-engineering to design and build my Codex harness."
