@@ -136,6 +136,126 @@ export const plugins = [
     "bundlesApp": false
   },
   {
+    "slug": "matt-partok-bundled-plugin-for-knowledge-work",
+    "name": "Matt Partok Bundled Plugin For Knowledge Work",
+    "shortDescription": "Matt Pocock's full workflow, adapted for Codex.",
+    "longDescription": "Clarify ideas, record shared language, research unknowns, prototype questions, write specs, split work, execute bounded slices, hand off across threads, and review against evidence. Includes coding and knowledge-work tracks.",
+    "description": "A Codex-native adaptation of Matt Pocock's complete promoted workflow, extended for coding and general knowledge work.",
+    "version": "1.0.0+codex.20260717203901",
+    "category": "Productivity",
+    "license": "MIT",
+    "capabilities": [
+      "Reason",
+      "Write",
+      "Analyze",
+      "Code"
+    ],
+    "defaultPrompts": [
+      "Ask Matt which workflow fits this task.",
+      "Grill me, then turn this into a spec and slices.",
+      "Create a durable handoff for a fresh thread."
+    ],
+    "skills": [
+      {
+        "name": "matt-ask-matt",
+        "description": "Route an explicitly requested Matt workflow across coding and knowledge work. Use when the user says ask Matt, use the Matt Partok bundle, follow Matt Pocock's flow, choose a Matt skill, or take work from idea to verified result with the bundled system."
+      },
+      {
+        "name": "matt-code-review",
+        "description": "Review a software diff from a fixed point on two independent axes, Code Standards and Spec Fidelity. Use when the user explicitly invokes Matt Code Review, reviews a Matt implementation slice, or asks to check a branch or PR against its originating spec."
+      },
+      {
+        "name": "matt-codebase-design",
+        "description": "Apply Matt's deep-module vocabulary inside an explicitly selected Matt software workflow. Use when Matt TDD, architecture review, or code planning needs to improve a module interface, choose a seam, or make code more testable and easier to inspect."
+      },
+      {
+        "name": "matt-diagnosing-bugs",
+        "description": "Run Matt's reproduce-minimize-hypothesize-instrument-fix loop for a hard software bug inside an explicitly selected Matt workflow. Use when the user invokes Matt diagnosis or a Matt ticket covers a regression, failure, flake, or performance problem."
+      },
+      {
+        "name": "matt-domain-modeling",
+        "description": "Build and sharpen terminology and durable decisions inside an explicitly selected Matt workflow. Use when Matt grilling exposes fuzzy or overloaded terms, a hard-to-reverse decision needs an ADR, or coding or knowledge work needs a shared language."
+      },
+      {
+        "name": "matt-grill-me",
+        "description": "Run Matt's relentless one-question-at-a-time interview to sharpen a plan or design. Use when the user explicitly invokes Matt Grill Me for coding or knowledge work."
+      },
+      {
+        "name": "matt-grill-with-docs",
+        "description": "Run Matt's interview while maintaining a durable glossary and selected decisions. Use when the user explicitly invokes Matt Grill With Docs in a coding or knowledge-work project."
+      },
+      {
+        "name": "matt-grilling",
+        "description": "Run the one-question-at-a-time interview primitive inside an explicitly selected Matt workflow. Use when the user invokes a Matt grill or another Matt-prefixed skill needs unresolved decision branches settled before action."
+      },
+      {
+        "name": "matt-handoff",
+        "description": "Create a durable, redacted Matt-flow handoff so a fresh Codex thread or delegated agent can resume one bounded slice. Use when the user says handoff, switch threads, preserve context, delegate this slice, or continue the Matt workflow in a fresh context."
+      },
+      {
+        "name": "matt-implement",
+        "description": "Execute one approved Matt-flow ticket or bounded work slice with continuous feedback and fresh proof. Use when the user explicitly asks to implement a Matt ticket, execute the next Matt slice, or continue a Matt spec after slicing."
+      },
+      {
+        "name": "matt-improve-codebase-architecture",
+        "description": "Scan a codebase for deep-module opportunities inside an explicitly selected Matt software workflow, present an inspectable report, and grill through the chosen candidate. Use when the user invokes Matt architecture improvement or a Matt review finds repeated structural friction."
+      },
+      {
+        "name": "matt-prototype",
+        "description": "Build a cheap, explicitly temporary artifact to answer one design question in a Matt workflow. Use for logic or UI experiments, evidence spikes, sample analyses, draft fragments, or other questions that cannot be settled reliably in conversation."
+      },
+      {
+        "name": "matt-research",
+        "description": "Investigate one bounded Matt-flow question against high-trust primary sources and capture cited findings as a durable artifact. Use for a research ticket, documentation question, factual blocker, or evidence spike inside an explicitly selected Matt workflow."
+      },
+      {
+        "name": "matt-resolving-merge-conflicts",
+        "description": "Resolve an in-progress git merge or rebase conflict by tracing both sides to their intent inside an explicitly selected Matt software workflow. Use when the user invokes Matt conflict resolution and the repository is already in a conflicted state."
+      },
+      {
+        "name": "matt-setup-matt-pocock-skills",
+        "description": "Configure a project for the Matt-prefixed Codex workflow by recording its tracker, terminology and decision docs, output paths, and verification surfaces. Use once before a project runs the full Matt flow or when its workflow configuration changes."
+      },
+      {
+        "name": "matt-tdd",
+        "description": "Apply Matt's red-green-refactor discipline to one software slice inside an explicitly selected Matt workflow. Use when the user invokes Matt TDD or a Matt implementation ticket requires test-first coding at an agreed seam."
+      },
+      {
+        "name": "matt-teach",
+        "description": "Run Matt's stateful teaching workspace for a concept or skill. Use when the user explicitly invokes Matt Teach for a multi-session learning program with lessons and learning records."
+      },
+      {
+        "name": "matt-to-spec",
+        "description": "Synthesize a resolved Matt-flow conversation into a durable specification for software or knowledge work. Use when the user explicitly says Matt to spec, turn this Matt thread into a spec, or preserve the agreed destination before multi-session execution."
+      },
+      {
+        "name": "matt-to-tickets",
+        "description": "Break an approved Matt spec or plan into bounded tracer-bullet tickets with explicit blocking edges. Use when the user explicitly says Matt to tickets or asks to split a Matt-flow outcome into fresh-context execution slices."
+      },
+      {
+        "name": "matt-triage",
+        "description": "Apply Matt's triage state machine to incoming issues or requests inside an explicitly selected Matt workflow. Use when the user invokes Matt Triage to categorize, verify, clarify, or prepare an agent-ready brief."
+      },
+      {
+        "name": "matt-wayfinder",
+        "description": "Map a large, foggy Matt-flow effort as durable decision tickets, then resolve one frontier decision per fresh context. Use when the user explicitly invokes Matt Wayfinder for coding or knowledge work too large to specify in one session."
+      },
+      {
+        "name": "matt-writing-great-skills",
+        "description": "Apply Matt's vocabulary for writing predictable skills inside an explicitly selected Matt workflow. Use when the user invokes Matt Writing Great Skills or asks to inspect or adapt one of the bundled skills."
+      }
+    ],
+    "counts": {
+      "skills": 22,
+      "assets": 0,
+      "references": 0,
+      "scripts": 2,
+      "files": 75
+    },
+    "bundlesMcp": false,
+    "bundlesApp": false
+  },
+  {
     "slug": "proofloop",
     "name": "ProofLoop",
     "shortDescription": "Run evidence-gated learning loops.",
@@ -963,11 +1083,11 @@ export const plugins = [
   }
 ] as const;
 export const totals = {
-  "plugins": 17,
-  "skills": 121,
+  "plugins": 18,
+  "skills": 143,
   "assets": 258,
   "references": 385,
-  "scripts": 320,
-  "files": 1327
+  "scripts": 322,
+  "files": 1402
 } as const;
 export type Plugin = (typeof plugins)[number];

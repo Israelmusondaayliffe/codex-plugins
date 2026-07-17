@@ -37,6 +37,7 @@ task capability inventory.
 | harness-engineering | Interview, design, build, verify, and maintain a personalized Codex harness |
 | knowledge-work-superpowers | Research, analyze, draft, review, and verify evidence-backed work |
 | loopkit | Design, run, verify, resume, schedule, and diagnose bounded Codex loops |
+| matt-partok-bundled-plugin-for-knowledge-work | Apply Matt Pocock's promoted workflow to coding and general knowledge work |
 | model-evaluation-lab | Plan, run, and interpret model evaluations |
 | model-prompt-lab | Design, migrate, and benchmark production prompts |
 | outcome-engine | Turn unclear goals into verified outcomes |
@@ -46,7 +47,7 @@ task capability inventory.
 | web-product-studio | Design, build, test, and ship web products |
 | writing-quality | Route, improve, and verify serious writing work |
 
-The marketplace currently contains 17 plugins and 121 skills. The packages also
+The marketplace currently contains 18 plugins and 143 skills. The packages also
 include their supporting scripts, references, assets, and agent definitions.
 LoopKit includes local lifecycle hooks. The marketplace does not currently
 bundle MCP servers or app connectors.
