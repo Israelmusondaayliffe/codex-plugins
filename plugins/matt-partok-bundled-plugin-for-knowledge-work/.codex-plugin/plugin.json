@@ -1,0 +1,38 @@
+{
+  "name": "matt-partok-bundled-plugin-for-knowledge-work",
+  "version": "1.0.0+codex.20260717203901",
+  "description": "A Codex-native adaptation of Matt Pocock's complete promoted workflow, extended for coding and general knowledge work.",
+  "author": {
+    "name": "Israel A."
+  },
+  "homepage": "https://github.com/mattpocock/skills",
+  "repository": "https://github.com/mattpocock/skills",
+  "license": "MIT",
+  "keywords": [
+    "knowledge-work",
+    "engineering",
+    "grilling",
+    "specification",
+    "handoff",
+    "verification"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Matt Partok Bundled Plugin For Knowledge Work",
+    "shortDescription": "Matt Pocock's full workflow, adapted for Codex.",
+    "longDescription": "Clarify ideas, record shared language, research unknowns, prototype questions, write specs, split work, execute bounded slices, hand off across threads, and review against evidence. Includes coding and knowledge-work tracks.",
+    "developerName": "Israel A. and Matt Pocock",
+    "category": "Productivity",
+    "capabilities": [
+      "Reason",
+      "Write",
+      "Analyze",
+      "Code"
+    ],
+    "defaultPrompt": [
+      "Ask Matt which workflow fits this task.",
+      "Grill me, then turn this into a spec and slices.",
+      "Create a durable handoff for a fresh thread."
+    ]
+  }
+}

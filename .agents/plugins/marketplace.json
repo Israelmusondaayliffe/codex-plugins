@@ -29,6 +29,18 @@
       "category": "Productivity"
     },
     {
+      "name": "matt-partok-bundled-plugin-for-knowledge-work",
+      "source": {
+        "source": "local",
+        "path": "./plugins/matt-partok-bundled-plugin-for-knowledge-work"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
       "name": "proofloop",
       "source": {
         "source": "local",

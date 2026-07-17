@@ -9,6 +9,9 @@ every file under one license.
 - outcome-engine declares MIT in its plugin manifest and includes NOTICE.md.
 - loopkit declares MIT in its plugin manifest and includes a LICENSE file.
 - harness-engineering declares MIT in its plugin manifest and includes a LICENSE file.
+- matt-partok-bundled-plugin-for-knowledge-work declares MIT in its plugin
+  manifest and includes a LICENSE and NOTICE.md attributing the original
+  `mattpocock/skills` work to Matt Pocock.
 - Other plugins do not currently declare a top-level package license. Copyright
   remains with the relevant author unless a file or package states otherwise.
 - Third-party notices and license files inside plugin folders remain in force.

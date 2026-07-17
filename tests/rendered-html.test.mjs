@@ -30,7 +30,7 @@ test("server-renders the public marketplace homepage", async () => {
   const html = await response.text();
   assert.match(html, /<title>Israel&#x27;s Codex Plugins<\/title>/i);
   assert.match(html, /A working system/);
-  assert.match(html, /17(?:<!--.*?-->)? field-tested plugins/);
+  assert.match(html, /18(?:<!--.*?-->)? field-tested plugins/);
   assert.match(html, /codex plugin marketplace add Israelmusondaayliffe/);
   assert.match(html, /knowledge-work-superpowers/);
   assert.match(html, /LoopKit/);

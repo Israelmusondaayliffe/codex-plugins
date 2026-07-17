@@ -1,0 +1,19 @@
+{
+  "skill": "matt-ask-matt",
+  "should_trigger": [
+    "Use the Matt Partok plugin for this project.",
+    "Ask Matt which skill comes next.",
+    "Follow Matt Pocock's idea-to-ship flow.",
+    "Run Matt grill with docs, then make a spec.",
+    "Use Matt Wayfinder for this large effort.",
+    "Create a Matt handoff for a new thread."
+  ],
+  "should_not_trigger": [
+    "Research this market using primary sources.",
+    "Grill me on this consequential decision.",
+    "Turn this fuzzy goal into a plan.",
+    "Review this report before I send it.",
+    "Build a recurring monitoring loop.",
+    "Write a polished customer memo."
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "run_date": "2026-07-17",
+  "source_commit": "9603c1cc8118d08bc1b3bf34cf714f62178dea3b",
+  "cases": [
+    {
+      "id": 1,
+      "name": "knowledge-work-wayfinder",
+      "result": "pass",
+      "observed_route": ["matt-ask-matt", "matt-wayfinder"],
+      "notes": "Kept the foggy board-memo effort in planning, asked for the destination, and did not draft or create tracker state."
+    },
+    {
+      "id": 2,
+      "name": "one-session-code-flow",
+      "result": "pass-after-one-revision",
+      "observed_route": ["matt-ask-matt", "matt-grill-with-docs", "matt-implement", "matt-tdd", "matt-code-review"],
+      "notes": "The first run inserted a needless spec. Router wording was revised, and the second run correctly skipped specs, tickets, and handoff."
+    },
+    {
+      "id": 3,
+      "name": "large-strategy-wayfinder",
+      "result": "pass",
+      "observed_route": ["matt-wayfinder", "matt-research"],
+      "notes": "Produced a planning-only durable map with destination, decisions, fog, scope, frontier, and no unauthorized tracker writes."
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "total": 3,
+    "revisions": 1
+  }
+}

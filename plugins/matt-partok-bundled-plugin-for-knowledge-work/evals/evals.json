@@ -1,0 +1,38 @@
+{
+  "skill_name": "matt-ask-matt",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Use the Matt Partok plugin to turn my rough board memo idea into a multi-thread plan. I am not ready to write yet.",
+      "expected_output": "Routes the foggy multi-thread effort to matt-wayfinder, then returns to a spec and bounded tickets after the map clears, without drafting prematurely.",
+      "files": [],
+      "expectations": [
+        "Selects matt-wayfinder and begins with the destination and decision frontier",
+        "Does not execute or publish before decisions are resolved",
+        "Explains the handoff point for fresh threads"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Run Matt's flow for this small code change. It fits in one session and I want test-first implementation plus a final review.",
+      "expected_output": "Routes directly from clarification to matt-implement, uses matt-tdd, and closes with matt-code-review.",
+      "files": [],
+      "expectations": [
+        "Avoids unnecessary spec and ticket ceremony for a one-session change",
+        "Names matt-tdd and matt-code-review",
+        "Does not promise an automatic commit"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Use Matt Wayfinder for a research-heavy strategy project whose major decisions are still foggy.",
+      "expected_output": "Creates a planning-only decision map with destination, frontier, fog, and durable handoffs before delivery work.",
+      "files": [],
+      "expectations": [
+        "Separates decision tickets from deliverable tickets",
+        "Uses local durable state unless external tracker writes are authorized",
+        "Returns to matt-to-spec after the map clears"
+      ]
+    }
+  ]
+}
