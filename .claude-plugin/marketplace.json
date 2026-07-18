@@ -5,8 +5,7 @@
     "url": "https://github.com/Israelmusondaayliffe"
   },
   "metadata": {
-    "description": "Israel's plugin marketplace, dual format for Codex and Claude Code / Cowork.",
-    "website": "https://israel-codex-plugins.israelayliffe.chatgpt.site"
+    "description": "Israel's plugin marketplace, dual format for Codex and Claude Code / Cowork."
   },
   "plugins": [
     {

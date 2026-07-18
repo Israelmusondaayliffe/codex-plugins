@@ -485,7 +485,7 @@ export const plugins = [
       },
       {
         "name": "citizen-triage",
-        "description": "Classify a confirmed Citizen Forge app by application shape and four-part blast radius, then invoke deterministic policy for its route. Use for safety checks, suitability decisions, second-consumer graduation, sensitive-data changes, external exposure, uncertainty, or questions such as \"is this safe?"
+        "description": "Classify a confirmed Citizen Forge app by application shape and four-part blast radius, then invoke deterministic policy for its route. Use for safety checks, suitability decisions, second-consumer graduation, sensitive-data changes, external exposure, uncertainty, or questions such as \"is this safe?\""
       }
     ],
     "counts": {
@@ -1304,7 +1304,7 @@ export const plugins = [
       "assets": 2,
       "references": 6,
       "scripts": 13,
-      "files": 51
+      "files": 52
     },
     "bundlesMcp": false,
     "bundlesApp": false
@@ -1316,6 +1316,6 @@ export const totals = {
   "assets": 280,
   "references": 398,
   "scripts": 357,
-  "files": 1568
+  "files": 1569
 } as const;
 export type Plugin = (typeof plugins)[number];

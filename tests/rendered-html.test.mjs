@@ -98,9 +98,27 @@ test("server-renders the Citizen Forge release", async () => {
   const html = await response.text();
   assert.match(html, /Citizen Forge/);
   assert.match(html, /citizen-release/);
+  assert.match(html, /questions such as &quot;is this safe\?&quot;/);
   assert.match(
     html,
     /codex plugin add citizen-forge@israel-codex-plugins/,
+  );
+});
+
+test("server-renders the Operating Graph release", async () => {
+  const response = await render("/plugins/operating-graph");
+  assert.equal(response.status, 200);
+
+  const html = await response.text();
+  assert.match(html, /Operating Graph/);
+  assert.match(html, /graph-verify/);
+  assert.match(
+    html,
+    /codex plugin add operating-graph@israel-codex-plugins/,
+  );
+  assert.match(
+    html,
+    /\/plugin install operating-graph@israel-codex-plugins/,
   );
 });
 
