@@ -20,9 +20,9 @@ export async function generateMetadata(): Promise<Metadata> {
   const host = incoming.get("x-forwarded-host") ?? incoming.get("host");
   const protocol = incoming.get("x-forwarded-proto") ?? "https";
   const origin = host ? protocol + "://" + host : "http://localhost:3000";
-  const title = "Israel's Codex Plugins";
+  const title = "Israel's Plugin Registry";
   const description =
-    `A public Codex marketplace with ${totals.plugins} plugins and ${totals.skills} skills for research, strategy, creation, operations, and delivery.`;
+    `A public marketplace with ${totals.plugins} plugins and ${totals.skills} skills for Codex, Claude Code, and Claude Cowork.`;
 
   return {
     metadataBase: new URL(origin),

@@ -1,5 +1,8 @@
 # Install and update
 
+This repository supports Codex, Claude Code, and Claude Cowork from the same
+public source.
+
 ## Add the marketplace
 
 Run this once:
@@ -51,3 +54,18 @@ a completely new one. Task inventories can remain stale after installation.
 Some skills call optional tools or external services. Read that skill's
 instructions for required CLIs, environment variables, accounts, or connectors.
 No secrets are included in this repository.
+
+## Claude Code
+
+Add the marketplace and install a plugin from inside Claude Code:
+
+    /plugin marketplace add Israelmusondaayliffe/codex-plugins
+    /plugin install <plugin-name>@israel-codex-plugins
+
+## Claude Cowork
+
+Open Customize, select Plugins, then Add marketplace. Paste the repository URL:
+
+    https://github.com/Israelmusondaayliffe/codex-plugins
+
+Choose a plugin from the marketplace and select Install.

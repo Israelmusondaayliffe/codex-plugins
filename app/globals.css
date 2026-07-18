@@ -538,6 +538,23 @@ h3 {
   margin-top: clamp(54px, 7vw, 88px);
 }
 
+.platform-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 20px;
+}
+
+.platform-list span {
+  border: 1px solid var(--line-strong);
+  color: var(--paper-soft);
+  font-family: var(--font-ibm-plex-mono), monospace;
+  font-size: 0.56rem;
+  letter-spacing: 0.06em;
+  padding: 6px 8px;
+  text-transform: uppercase;
+}
+
 .preview-copy h3 {
   font-size: clamp(2.5rem, 4.5vw, 5rem);
   line-height: 0.91;
@@ -590,6 +607,14 @@ h3 {
   margin-top: 19px;
   padding-bottom: 6px;
   text-transform: uppercase;
+}
+
+.preview-install-note {
+  color: var(--paper-soft);
+  font-family: var(--font-ibm-plex-mono), monospace;
+  font-size: 0.58rem;
+  line-height: 1.55;
+  margin: 12px 0 0;
 }
 
 .copy-command {
@@ -686,45 +711,71 @@ h3 {
   font-size: clamp(3rem, 5vw, 5.7rem);
 }
 
-.install-steps {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+.platform-install-grid {
+  display: grid;
+  gap: 1px;
 }
 
-.install-steps li {
-  border-bottom: 1px solid var(--line);
-  padding: 34px 0 42px;
+.platform-install-card {
+  background: var(--panel);
+  padding: clamp(26px, 4vw, 44px);
 }
 
-.install-steps li:first-child {
-  padding-top: 0;
-}
-
-.step-heading {
-  align-items: baseline;
+.platform-card-heading {
+  align-items: start;
   display: grid;
   gap: 18px;
-  grid-template-columns: 36px 1fr;
+  grid-template-columns: 34px 1fr;
   margin-bottom: 24px;
 }
 
-.step-heading span {
+.platform-card-heading > span {
   color: var(--accent);
   font-family: var(--font-ibm-plex-mono), monospace;
   font-size: 0.66rem;
+  padding-top: 7px;
 }
 
-.step-heading h3 {
-  font-size: clamp(1.6rem, 2.6vw, 2.7rem);
+.platform-card-heading h3 {
+  font-size: clamp(2rem, 3.5vw, 3.8rem);
+  line-height: 0.95;
   margin: 0;
 }
 
-.install-steps li > p {
+.platform-eyebrow {
+  color: var(--paper-soft);
+  font-family: var(--font-ibm-plex-mono), monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.09em;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.platform-install-card > p:not(.platform-note) {
   color: var(--paper-soft);
   line-height: 1.65;
-  margin: 0 0 0 54px;
-  max-width: 620px;
+  margin-bottom: 22px;
+  max-width: 680px;
+}
+
+.platform-install-card .copy-command + .copy-command {
+  margin-top: 10px;
+}
+
+.platform-note,
+.platform-doc-link {
+  color: var(--paper-soft);
+  font-family: var(--font-ibm-plex-mono), monospace;
+  font-size: 0.62rem;
+  line-height: 1.6;
+  margin: 16px 0 0;
+}
+
+.platform-doc-link {
+  border-bottom: 1px solid var(--line-strong);
+  display: inline-block;
+  padding-bottom: 5px;
+  text-transform: uppercase;
 }
 
 .inventory-section {
@@ -880,6 +931,16 @@ footer {
 .detail-install h2 {
   font-size: clamp(2.4rem, 4.5vw, 4.9rem);
   margin: 0;
+}
+
+.detail-platform-installs {
+  display: grid;
+  gap: 28px;
+}
+
+.detail-platform-installs article + article {
+  border-top: 1px solid var(--line);
+  padding-top: 28px;
 }
 
 .install-note {
@@ -1131,10 +1192,6 @@ footer {
 
   .copy-command button {
     min-height: 46px;
-  }
-
-  .install-steps li > p {
-    margin-left: 0;
   }
 
   .footer-grid {

@@ -1,7 +1,7 @@
-# Israel's Codex Plugins
+# Israel's Plugin Registry
 
-A public marketplace for the personal Codex plugins I use to research, plan,
-create, operate, evaluate, and ship work.
+A public marketplace for the personal plugins I use to research, plan, create,
+operate, evaluate, and ship work in Codex, Claude Code, and Claude Cowork.
 
 Website: https://israel-codex-plugins.israelayliffe.chatgpt.site
 
@@ -36,9 +36,13 @@ repository serves Codex and Claude. Plugin skills load namespaced (loopkit:loop-
 
 ## Install (Claude Cowork)
 
-Cowork installs plugins from .plugin bundles accepted in chat. Either ask Claude in a
-Cowork session to package the plugin you want from this repository, or use a prebuilt
-bundle if one was shared with you. Accepting the bundle installs it.
+Open Customize, select Plugins, then Add marketplace. Paste either repository form:
+
+    Israelmusondaayliffe/codex-plugins
+    https://github.com/Israelmusondaayliffe/codex-plugins
+
+The plugins in this repository will appear in Cowork's marketplace. Select any plugin
+and install it from the catalog.
 
 ## Included plugins
 

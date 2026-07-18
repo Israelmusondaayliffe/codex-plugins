@@ -20,6 +20,11 @@ export const plugins = [
       "Turn this rough request into a clear knowledge-work plan.",
       "Audit this draft for unsupported claims and missing evidence."
     ],
+    "platforms": [
+      "Codex",
+      "Claude Code",
+      "Claude Cowork"
+    ],
     "skills": [
       {
         "name": "dispatching-parallel-research",
@@ -75,7 +80,7 @@ export const plugins = [
       "assets": 6,
       "references": 0,
       "scripts": 1,
-      "files": 26
+      "files": 27
     },
     "bundlesMcp": false,
     "bundlesApp": false
@@ -98,6 +103,11 @@ export const plugins = [
       "Grill me on this idea before I commit.",
       "Turn this conversation into an outcome brief.",
       "Run Outcome Engine from idea to verified result."
+    ],
+    "platforms": [
+      "Codex",
+      "Claude Code",
+      "Claude Cowork"
     ],
     "skills": [
       {
@@ -130,7 +140,7 @@ export const plugins = [
       "assets": 3,
       "references": 3,
       "scripts": 2,
-      "files": 18
+      "files": 19
     },
     "bundlesMcp": false,
     "bundlesApp": false
@@ -154,6 +164,11 @@ export const plugins = [
       "Ask Matt which workflow fits this task.",
       "Grill me, then turn this into a spec and slices.",
       "Create a durable handoff for a fresh thread."
+    ],
+    "platforms": [
+      "Codex",
+      "Claude Code",
+      "Claude Cowork"
     ],
     "skills": [
       {
@@ -250,7 +265,7 @@ export const plugins = [
       "assets": 0,
       "references": 0,
       "scripts": 2,
-      "files": 75
+      "files": 76
     },
     "bundlesMcp": false,
     "bundlesApp": false
@@ -269,6 +284,11 @@ export const plugins = [
       "Run this task through ProofLoop.",
       "Review these ProofLoop candidate lessons.",
       "Audit whether ProofLoop is helping."
+    ],
+    "platforms": [
+      "Codex",
+      "Claude Code",
+      "Claude Cowork"
     ],
     "skills": [
       {
@@ -289,7 +309,7 @@ export const plugins = [
       "assets": 0,
       "references": 10,
       "scripts": 18,
-      "files": 37
+      "files": 38
     },
     "bundlesMcp": false,
     "bundlesApp": false
@@ -308,6 +328,11 @@ export const plugins = [
       "Route this writing task and produce the requested result.",
       "Review this draft without rewriting it.",
       "Check the factual claim boundaries in this draft."
+    ],
+    "platforms": [
+      "Codex",
+      "Claude Code",
+      "Claude Cowork"
     ],
     "skills": [
       {
@@ -332,7 +357,7 @@ export const plugins = [
       "assets": 3,
       "references": 14,
       "scripts": 7,
-      "files": 33
+      "files": 34
     },
     "bundlesMcp": false,
     "bundlesApp": false
@@ -352,6 +377,11 @@ export const plugins = [
       "Inventory my current Codex capabilities.",
       "Audit skill overlap without changing anything.",
       "Verify that this plugin is visible in a clean task."
+    ],
+    "platforms": [
+      "Codex",
+      "Claude Code",
+      "Claude Cowork"
     ],
     "skills": [
       {
@@ -388,7 +418,7 @@ export const plugins = [
       "assets": 8,
       "references": 14,
       "scripts": 19,
-      "files": 61
+      "files": 62
     },
     "bundlesMcp": false,
     "bundlesApp": false
@@ -407,6 +437,11 @@ export const plugins = [
       "Design a bounded agent system for this outcome.",
       "Audit this agent system before it runs.",
       "Route this reusable agent architecture."
+    ],
+    "platforms": [
+      "Codex",
+      "Claude Code",
+      "Claude Cowork"
     ],
     "skills": [
       {
@@ -439,7 +474,7 @@ export const plugins = [
       "assets": 8,
       "references": 17,
       "scripts": 7,
-      "files": 55
+      "files": 56
     },
     "bundlesMcp": false,
     "bundlesApp": false
@@ -458,6 +493,11 @@ export const plugins = [
       "Route this brief into a complete video production plan.",
       "Turn this product launch into a finished video workflow.",
       "Run delivery QC on this rendered video."
+    ],
+    "platforms": [
+      "Codex",
+      "Claude Code",
+      "Claude Cowork"
     ],
     "skills": [
       {
@@ -526,7 +566,7 @@ export const plugins = [
       "assets": 157,
       "references": 206,
       "scripts": 91,
-      "files": 532
+      "files": 533
     },
     "bundlesMcp": false,
     "bundlesApp": false
@@ -545,6 +585,11 @@ export const plugins = [
       "Route and build this web product from the brief.",
       "Redesign this existing interface and verify the main flows.",
       "Turn this screenshot into a working web surface."
+    ],
+    "platforms": [
+      "Codex",
+      "Claude Code",
+      "Claude Cowork"
     ],
     "skills": [
       {
@@ -593,7 +638,7 @@ export const plugins = [
       "assets": 7,
       "references": 7,
       "scripts": 6,
-      "files": 41
+      "files": 42
     },
     "bundlesMcp": false,
     "bundlesApp": false
@@ -612,6 +657,11 @@ export const plugins = [
       "Route this prompt job to the right verified model workflow.",
       "Audit this prompt before migrating it to another model.",
       "Design a representative benchmark for this production prompt."
+    ],
+    "platforms": [
+      "Codex",
+      "Claude Code",
+      "Claude Cowork"
     ],
     "skills": [
       {
@@ -648,7 +698,7 @@ export const plugins = [
       "assets": 9,
       "references": 34,
       "scripts": 8,
-      "files": 76
+      "files": 77
     },
     "bundlesMcp": false,
     "bundlesApp": false
@@ -667,6 +717,11 @@ export const plugins = [
       "Pressure-test this decision before I commit resources.",
       "Generate distinct options and synthesize a recommendation.",
       "Create an assumption register for this choice."
+    ],
+    "platforms": [
+      "Codex",
+      "Claude Code",
+      "Claude Cowork"
     ],
     "skills": [
       {
@@ -699,7 +754,7 @@ export const plugins = [
       "assets": 12,
       "references": 9,
       "scripts": 7,
-      "files": 46
+      "files": 47
     },
     "bundlesMcp": false,
     "bundlesApp": false
@@ -718,6 +773,11 @@ export const plugins = [
       "Turn this approved positioning into a production-ready brand brief.",
       "Choose the right image model and prompt workflow for this visual job.",
       "Check this image series against the approved brand system."
+    ],
+    "platforms": [
+      "Codex",
+      "Claude Code",
+      "Claude Cowork"
     ],
     "skills": [
       {
@@ -754,7 +814,7 @@ export const plugins = [
       "assets": 9,
       "references": 23,
       "scripts": 7,
-      "files": 65
+      "files": 66
     },
     "bundlesMcp": false,
     "bundlesApp": false
@@ -773,6 +833,11 @@ export const plugins = [
       "Research recent signals and build an evidence-backed early-customer hypothesis.",
       "Turn this validated ICP into a commercial narrative.",
       "Draft a bounded outreach sequence without sending anything."
+    ],
+    "platforms": [
+      "Codex",
+      "Claude Code",
+      "Claude Cowork"
     ],
     "skills": [
       {
@@ -809,7 +874,7 @@ export const plugins = [
       "assets": 8,
       "references": 16,
       "scripts": 115,
-      "files": 153
+      "files": 154
     },
     "bundlesMcp": false,
     "bundlesApp": false
@@ -828,6 +893,11 @@ export const plugins = [
       "Extract reusable knowledge from this source without replacing it.",
       "Decide where this knowledge belongs and preserve its authority.",
       "Audit these sources for staleness and instruction conflicts."
+    ],
+    "platforms": [
+      "Codex",
+      "Claude Code",
+      "Claude Cowork"
     ],
     "skills": [
       {
@@ -856,7 +926,7 @@ export const plugins = [
       "assets": 7,
       "references": 12,
       "scripts": 5,
-      "files": 39
+      "files": 40
     },
     "bundlesMcp": false,
     "bundlesApp": false
@@ -875,6 +945,11 @@ export const plugins = [
       "Choose the right output format for this checked analysis.",
       "Audit whether each chart supports the claim beside it.",
       "Turn this evidence into an executive readout with decisions and caveats."
+    ],
+    "platforms": [
+      "Codex",
+      "Claude Code",
+      "Claude Cowork"
     ],
     "skills": [
       {
@@ -895,7 +970,7 @@ export const plugins = [
       "assets": 6,
       "references": 3,
       "scripts": 6,
-      "files": 24
+      "files": 25
     },
     "bundlesMcp": false,
     "bundlesApp": false
@@ -914,6 +989,11 @@ export const plugins = [
       "Design a reproducible evaluation for this model decision.",
       "Normalize these raw benchmark results into a stable comparison.",
       "Write a model-selection memo that separates results from judgment."
+    ],
+    "platforms": [
+      "Codex",
+      "Claude Code",
+      "Claude Cowork"
     ],
     "skills": [
       {
@@ -938,7 +1018,7 @@ export const plugins = [
       "assets": 8,
       "references": 4,
       "scripts": 8,
-      "files": 31
+      "files": 32
     },
     "bundlesMcp": false,
     "bundlesApp": false
@@ -962,6 +1042,11 @@ export const plugins = [
       "Turn this recurring task into a bounded Codex loop.",
       "Resume the active LoopKit run from its checkpoint.",
       "Diagnose why this loop keeps repeating."
+    ],
+    "platforms": [
+      "Codex",
+      "Claude Code",
+      "Claude Cowork"
     ],
     "skills": [
       {
@@ -998,7 +1083,7 @@ export const plugins = [
       "assets": 3,
       "references": 7,
       "scripts": 10,
-      "files": 43
+      "files": 45
     },
     "bundlesMcp": false,
     "bundlesApp": false
@@ -1020,6 +1105,11 @@ export const plugins = [
       "Design and build my Codex harness.",
       "Audit my current Codex setup.",
       "Verify that my harness really works."
+    ],
+    "platforms": [
+      "Codex",
+      "Claude Code",
+      "Claude Cowork"
     ],
     "skills": [
       {
@@ -1076,7 +1166,7 @@ export const plugins = [
       "assets": 4,
       "references": 6,
       "scripts": 3,
-      "files": 47
+      "files": 48
     },
     "bundlesMcp": false,
     "bundlesApp": false
@@ -1088,6 +1178,6 @@ export const totals = {
   "assets": 258,
   "references": 385,
   "scripts": 322,
-  "files": 1402
+  "files": 1421
 } as const;
 export type Plugin = (typeof plugins)[number];

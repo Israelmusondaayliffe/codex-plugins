@@ -5,9 +5,14 @@ import { useState } from "react";
 type CopyCommandProps = {
   command: string;
   compact?: boolean;
+  label?: string;
 };
 
-export function CopyCommand({ command, compact = false }: CopyCommandProps) {
+export function CopyCommand({
+  command,
+  compact = false,
+  label = "command",
+}: CopyCommandProps) {
   const [copied, setCopied] = useState(false);
 
   async function copy() {
@@ -33,14 +38,14 @@ export function CopyCommand({ command, compact = false }: CopyCommandProps) {
     <div className={"copy-command" + (compact ? " copy-command-compact" : "")}>
       <code>{command}</code>
       <button
-        aria-label={copied ? "Command copied" : "Copy command: " + command}
+        aria-label={copied ? label + " copied" : "Copy " + label + ": " + command}
         onClick={copy}
         type="button"
       >
         {copied ? "Copied" : "Copy"}
       </button>
       <span className="sr-only" aria-live="polite">
-        {copied ? "Command copied to clipboard" : ""}
+        {copied ? label + " copied to clipboard" : ""}
       </span>
     </div>
   );
