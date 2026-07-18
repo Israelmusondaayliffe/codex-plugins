@@ -24,6 +24,22 @@ Example:
 Start a new Codex task after installation so the new skills are loaded into the
 task capability inventory.
 
+## Install (Claude Code)
+
+Add the marketplace once, then install any plugin:
+
+    /plugin marketplace add Israelmusondaayliffe/codex-plugins
+    /plugin install loopkit@israel-codex-plugins
+
+Every plugin carries both a .codex-plugin and a .claude-plugin manifest, so the same
+repository serves Codex and Claude. Plugin skills load namespaced (loopkit:loop-runner).
+
+## Install (Claude Cowork)
+
+Cowork installs plugins from .plugin bundles accepted in chat. Either ask Claude in a
+Cowork session to package the plugin you want from this repository, or use a prebuilt
+bundle if one was shared with you. Accepting the bundle installs it.
+
 ## Included plugins
 
 | Plugin | Purpose |

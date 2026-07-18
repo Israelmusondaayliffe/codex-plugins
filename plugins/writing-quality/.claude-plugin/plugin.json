@@ -1,0 +1,8 @@
+{
+  "name": "writing-quality",
+  "version": "0.1.0+codex.20260714115137",
+  "description": "Intent-aware drafting, rewriting, detect-only review, claim boundaries, and final prose validation.",
+  "author": {
+    "name": "Israel Ayliffe"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "name": "model-prompt-lab",
+  "version": "0.1.0+codex.20260714121935",
+  "description": "Verified model routing, production prompt architecture, migration audits, and benchmark design.",
+  "author": {
+    "name": "Israel Ayliffe"
+  }
+}

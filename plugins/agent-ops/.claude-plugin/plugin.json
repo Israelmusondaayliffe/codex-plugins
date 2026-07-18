@@ -1,0 +1,8 @@
+{
+  "name": "agent-ops",
+  "version": "0.2.0",
+  "description": "Design, route, and audit reusable agent systems with explicit authority, evidence, stops, and failure behavior.",
+  "author": {
+    "name": "Israel Ayliffe"
+  }
+}

@@ -1,0 +1,177 @@
+{
+  "name": "israel-codex-plugins",
+  "owner": {
+    "name": "Israel Ayliffe",
+    "url": "https://github.com/Israelmusondaayliffe"
+  },
+  "metadata": {
+    "description": "Israel's plugin marketplace, dual format for Codex and Claude Code / Cowork.",
+    "website": "https://israel-codex-plugins.israelayliffe.chatgpt.site"
+  },
+  "plugins": [
+    {
+      "name": "agent-ops",
+      "source": "./plugins/agent-ops",
+      "description": "Design, route, and audit reusable agent systems with explicit authority, evidence, stops, and failure behavior.",
+      "version": "0.2.0",
+      "author": {
+        "name": "Israel Ayliffe"
+      }
+    },
+    {
+      "name": "brand-world-studio",
+      "source": "./plugins/brand-world-studio",
+      "description": "Brand briefs, visual systems, image-model routing, production prompt packs, and consistency verification.",
+      "version": "0.1.0+codex.20260714121935",
+      "author": {
+        "name": "Israel Ayliffe"
+      }
+    },
+    {
+      "name": "capability-operator",
+      "source": "./plugins/capability-operator",
+      "description": "Capability routing, read-only inventories, overlap audits, portfolio governance, skill creation, and fresh-task discovery proof.",
+      "version": "0.1.1",
+      "author": {
+        "name": "Israel Ayliffe"
+      }
+    },
+    {
+      "name": "continuity-vault",
+      "source": "./plugins/continuity-vault",
+      "description": "Source-preserving extraction, knowledge promotion, graph routing, recall, and staleness auditing.",
+      "version": "0.1.0+codex.20260714121935",
+      "author": {
+        "name": "Israel Ayliffe"
+      }
+    },
+    {
+      "name": "data-storytelling-studio",
+      "source": "./plugins/data-storytelling-studio",
+      "description": "Routes checked analysis into decision-facing visual stories, executive readouts, reports, decks, dashboards, and publishable sites.",
+      "version": "0.1.0+codex.20260714130032",
+      "author": {
+        "name": "Israel Ayliffe"
+      }
+    },
+    {
+      "name": "founder-revenue-engine",
+      "source": "./plugins/founder-revenue-engine",
+      "description": "Signal research, ICP definition, commercial narrative, bounded outreach drafts, and founder-led content.",
+      "version": "0.1.0+codex.20260714121935",
+      "author": {
+        "name": "Israel Ayliffe"
+      }
+    },
+    {
+      "name": "harness-engineering",
+      "source": "./plugins/harness-engineering",
+      "description": "Design, build, verify, and maintain a personalized Codex harness through a source-first interview and reversible guided workflow.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Israel Ayliffe",
+        "url": "https://github.com/Israelmusondaayliffe"
+      }
+    },
+    {
+      "name": "knowledge-work-superpowers",
+      "source": "./plugins/knowledge-work-superpowers",
+      "description": "A disciplined workflow system for research, analysis, writing, review, and evidence-backed delivery.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Israel A."
+      }
+    },
+    {
+      "name": "loopkit",
+      "source": "./plugins/loopkit",
+      "description": "Design, run, verify, resume, schedule, and diagnose bounded Codex loops with durable state and evidence-gated completion.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Israel Ayliffe",
+        "url": "https://github.com/Israelmusondaayliffe"
+      }
+    },
+    {
+      "name": "matt-partok-bundled-plugin-for-knowledge-work",
+      "source": "./plugins/matt-partok-bundled-plugin-for-knowledge-work",
+      "description": "A Codex-native adaptation of Matt Pocock's complete promoted workflow, extended for coding and general knowledge work.",
+      "version": "1.0.0+codex.20260717203901",
+      "author": {
+        "name": "Israel A."
+      }
+    },
+    {
+      "name": "model-evaluation-lab",
+      "source": "./plugins/model-evaluation-lab",
+      "description": "Plans reproducible model evaluations, normalizes benchmark runs, and produces measured model-selection decisions.",
+      "version": "0.1.0+codex.20260714130940",
+      "author": {
+        "name": "Israel Ayliffe"
+      }
+    },
+    {
+      "name": "model-prompt-lab",
+      "source": "./plugins/model-prompt-lab",
+      "description": "Verified model routing, production prompt architecture, migration audits, and benchmark design.",
+      "version": "0.1.0+codex.20260714121935",
+      "author": {
+        "name": "Israel Ayliffe"
+      }
+    },
+    {
+      "name": "outcome-engine",
+      "source": "./plugins/outcome-engine",
+      "description": "Turn unclear goals into verified outcomes across research, writing, operations, creative work, personal planning, and software.",
+      "version": "1.0.0+codex.20260710154316",
+      "author": {
+        "name": "Israel A."
+      }
+    },
+    {
+      "name": "proofloop",
+      "source": "./plugins/proofloop",
+      "description": "Governed agent learning ledger and evaluation wrapper with bounded refinement, verification, quarantined memory, and read-only audit.",
+      "version": "0.1.0+codex.20260713133858",
+      "author": {
+        "name": "Israel Ayliffe"
+      }
+    },
+    {
+      "name": "strategy-room",
+      "source": "./plugins/strategy-room",
+      "description": "Pre-commitment interviews, assumption challenge, option generation, decision synthesis, and uncertainty tracking.",
+      "version": "0.1.0+codex.20260714121935",
+      "author": {
+        "name": "Israel Ayliffe"
+      }
+    },
+    {
+      "name": "video-production-studio",
+      "source": "./plugins/video-production-studio",
+      "description": "End-to-end routing, prompting, production, captions, graphics, runtime implementation, and delivery checks for video.",
+      "version": "0.1.0+codex.20260714115922",
+      "author": {
+        "name": "Israel Ayliffe"
+      }
+    },
+    {
+      "name": "web-product-studio",
+      "source": "./plugins/web-product-studio",
+      "description": "Route, build, redesign, implement from images, and verify web products with one visual authority.",
+      "version": "0.1.0+codex.20260714115137",
+      "author": {
+        "name": "Israel Ayliffe"
+      }
+    },
+    {
+      "name": "writing-quality",
+      "source": "./plugins/writing-quality",
+      "description": "Intent-aware drafting, rewriting, detect-only review, claim boundaries, and final prose validation.",
+      "version": "0.1.0+codex.20260714115137",
+      "author": {
+        "name": "Israel Ayliffe"
+      }
+    }
+  ]
+}

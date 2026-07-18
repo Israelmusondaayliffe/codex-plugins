@@ -1,0 +1,8 @@
+{
+  "name": "continuity-vault",
+  "version": "0.1.0+codex.20260714121935",
+  "description": "Source-preserving extraction, knowledge promotion, graph routing, recall, and staleness auditing.",
+  "author": {
+    "name": "Israel Ayliffe"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "name": "harness-engineering",
+  "version": "1.0.0",
+  "description": "Design, build, verify, and maintain a personalized Codex harness through a source-first interview and reversible guided workflow.",
+  "author": {
+    "name": "Israel Ayliffe",
+    "url": "https://github.com/Israelmusondaayliffe"
+  },
+  "homepage": "https://github.com/Israelmusondaayliffe/codex-plugins/tree/main/plugins/harness-engineering",
+  "repository": "https://github.com/Israelmusondaayliffe/codex-plugins",
+  "license": "MIT",
+  "keywords": [
+    "codex",
+    "harness",
+    "agents",
+    "skills",
+    "plugins",
+    "verification"
+  ]
+}

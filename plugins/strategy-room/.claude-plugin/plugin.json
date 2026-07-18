@@ -1,0 +1,8 @@
+{
+  "name": "strategy-room",
+  "version": "0.1.0+codex.20260714121935",
+  "description": "Pre-commitment interviews, assumption challenge, option generation, decision synthesis, and uncertainty tracking.",
+  "author": {
+    "name": "Israel Ayliffe"
+  }
+}

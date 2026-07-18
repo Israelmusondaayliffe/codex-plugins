@@ -1,0 +1,8 @@
+{
+  "name": "video-production-studio",
+  "version": "0.1.0+codex.20260714115922",
+  "description": "End-to-end routing, prompting, production, captions, graphics, runtime implementation, and delivery checks for video.",
+  "author": {
+    "name": "Israel Ayliffe"
+  }
+}

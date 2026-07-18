@@ -1,0 +1,16 @@
+{
+  "name": "outcome-engine",
+  "version": "1.0.0+codex.20260710154316",
+  "description": "Turn unclear goals into verified outcomes across research, writing, operations, creative work, personal planning, and software.",
+  "author": {
+    "name": "Israel A."
+  },
+  "license": "MIT",
+  "keywords": [
+    "planning",
+    "decision-making",
+    "execution",
+    "verification",
+    "system-design"
+  ]
+}

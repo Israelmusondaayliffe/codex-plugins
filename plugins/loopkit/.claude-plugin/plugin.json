@@ -1,0 +1,21 @@
+{
+  "name": "loopkit",
+  "version": "0.1.0",
+  "description": "Design, run, verify, resume, schedule, and diagnose bounded Codex loops with durable state and evidence-gated completion.",
+  "author": {
+    "name": "Israel Ayliffe",
+    "url": "https://github.com/Israelmusondaayliffe"
+  },
+  "homepage": "https://github.com/Israelmusondaayliffe/codex-plugins/tree/main/plugins/loopkit",
+  "repository": "https://github.com/Israelmusondaayliffe/codex-plugins",
+  "license": "MIT",
+  "keywords": [
+    "codex",
+    "goals",
+    "loops",
+    "verification",
+    "scheduling",
+    "state"
+  ],
+  "hooks": "./hooks/claude-hooks.json"
+}
