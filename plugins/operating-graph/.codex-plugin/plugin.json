@@ -1,0 +1,23 @@
+{
+  "name": "operating-graph",
+  "version": "0.1.0",
+  "description": "Design, run, inspect, and safely reorganize adaptive agent operating graphs.",
+  "author": {"name": "Israel Ayliffe"},
+  "license": "MIT",
+  "keywords": ["agents", "graphs", "orchestration", "workflows", "runtime", "adaptive-systems"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Operating Graph",
+    "shortDescription": "Engineer and run adaptive agent organizations.",
+    "longDescription": "Transforms complex goals into typed, executable agent graphs with shared state, evidence, verification, bounded runtime restructuring, and human authority controls.",
+    "developerName": "The House of Curiosity",
+    "category": "Productivity",
+    "capabilities": ["Interactive", "Write"],
+    "defaultPrompt": [
+      "Design an operating graph for this goal.",
+      "Run this goal as an adaptive agent graph.",
+      "Inspect and improve the current operating graph."
+    ],
+    "brandColor": "#62E6A7"
+  }
+}

@@ -1245,14 +1245,77 @@ export const plugins = [
     },
     "bundlesMcp": false,
     "bundlesApp": false
+  },
+  {
+    "slug": "operating-graph",
+    "name": "Operating Graph",
+    "shortDescription": "Engineer and run adaptive agent organizations.",
+    "longDescription": "Transforms complex goals into typed, executable agent graphs with shared state, evidence, verification, bounded runtime restructuring, and human authority controls.",
+    "description": "Design, run, inspect, and safely reorganize adaptive agent operating graphs.",
+    "version": "0.1.0",
+    "category": "Productivity",
+    "license": "MIT",
+    "capabilities": [
+      "Interactive",
+      "Write"
+    ],
+    "defaultPrompts": [
+      "Design an operating graph for this goal.",
+      "Run this goal as an adaptive agent graph.",
+      "Inspect and improve the current operating graph."
+    ],
+    "platforms": [
+      "Codex",
+      "Claude Code",
+      "Claude Cowork"
+    ],
+    "skills": [
+      {
+        "name": "graph-debug",
+        "description": "Diagnose operating graph failures read-only by replaying events, checking hashes and graph versions, reconstructing transitions, validating artifacts, finding deadlocks, and distinguishing node, edge, state, policy, and budget failures. Use when a graph run is stuck, corrupt, inconsistent, or unexpectedly failed."
+      },
+      {
+        "name": "graph-design",
+        "description": "Convert a goal into a typed, validated operating graph with explicit authority, approvals, node contracts, dependencies, deliverables, independent evaluation, budgets, and safe parallel work. Use for new graph design or topology planning before execution."
+      },
+      {
+        "name": "graph-engineering",
+        "description": "Route operating graph, graph engineering, agent organization design, dynamic agent organization, adaptive multi-agent workflow, and graph-level loop requests to the correct design, run, inspect, rewrite, debug, or verify workflow."
+      },
+      {
+        "name": "graph-inspect",
+        "description": "Inspect an operating graph run read-only, including event-chain integrity, graph version, node status, attempts, budgets, blockers, approvals, artifact lineage, rewrites, bottlenecks, dependencies, and a compact Mermaid view."
+      },
+      {
+        "name": "graph-rewrite",
+        "description": "Diagnose inadequate operating graph topology and propose or apply the smallest bounded rewrite with evidence, primitive operations, risk classification, policy checks, full-graph validation, approval handling, and rollback information."
+      },
+      {
+        "name": "graph-run",
+        "description": "Initialize, execute, resume, and coordinate a validated operating graph with deterministic scheduling, bounded concurrency, node packets, artifact registration, policy-gated rewrites, and terminal verification. Use when the user asks to run or continue an operating graph."
+      },
+      {
+        "name": "graph-verify",
+        "description": "Verify an operating graph outcome against its immutable original goal, completion criteria, deliverables, artifact integrity, evaluator independence, evidence provenance, critical-node status, approvals, and mutation history. Use for terminal verification or completion decisions."
+      }
+    ],
+    "counts": {
+      "skills": 7,
+      "assets": 2,
+      "references": 6,
+      "scripts": 13,
+      "files": 51
+    },
+    "bundlesMcp": false,
+    "bundlesApp": false
   }
 ] as const;
 export const totals = {
-  "plugins": 19,
-  "skills": 153,
-  "assets": 278,
-  "references": 392,
-  "scripts": 344,
-  "files": 1517
+  "plugins": 20,
+  "skills": 160,
+  "assets": 280,
+  "references": 398,
+  "scripts": 357,
+  "files": 1568
 } as const;
 export type Plugin = (typeof plugins)[number];

@@ -1,0 +1,23 @@
+{
+  "proposalId": "rewrite-0001",
+  "runId": "run-valid-graph-fixture",
+  "baseGraphVersion": 1,
+  "trigger": "budget-pressure",
+  "evidenceEventIds": [
+    "evt-000010"
+  ],
+  "riskLevel": "low",
+  "reason": "Reduce optional scheduling pressure within current limits.",
+  "predictedEffect": "Prioritize the critical builder before optional work.",
+  "operations": [
+    {
+      "kind": "set_priority",
+      "params": {
+        "nodeId": "builder",
+        "priority": 85
+      }
+    }
+  ],
+  "approvalRequired": false,
+  "rollbackVersion": 1
+}

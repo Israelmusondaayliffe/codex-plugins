@@ -62,13 +62,14 @@ and install it from the catalog.
 | model-evaluation-lab | Plan, run, and interpret model evaluations |
 | model-prompt-lab | Design, migrate, and benchmark production prompts |
 | outcome-engine | Turn unclear goals into verified outcomes |
+| operating-graph | Design, run, inspect, and safely reorganize adaptive agent operating graphs |
 | proofloop | Run governed, evidence-gated learning loops |
 | strategy-room | Frame decisions, pressure-test strategy, and produce action-ready direction |
 | video-production-studio | Plan and produce video systems, captions, and motion assets |
 | web-product-studio | Design, build, test, and ship web products |
 | writing-quality | Route, improve, and verify serious writing work |
 
-The marketplace currently contains 19 plugins and 153 skills. The packages also
+The marketplace currently contains 20 plugins and 160 skills. The packages also
 include their supporting scripts, references, assets, and agent definitions.
 LoopKit includes local lifecycle hooks. The marketplace does not currently
 bundle MCP servers or app connectors.

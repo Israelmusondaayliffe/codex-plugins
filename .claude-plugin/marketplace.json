@@ -138,6 +138,15 @@
       }
     },
     {
+      "name": "operating-graph",
+      "source": "./plugins/operating-graph",
+      "description": "Design, run, inspect, and safely reorganize adaptive agent operating graphs.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Israel Ayliffe"
+      }
+    },
+    {
       "name": "proofloop",
       "source": "./plugins/proofloop",
       "description": "Governed agent learning ledger and evaluation wrapper with bounded refinement, verification, quarantined memory, and read-only audit.",
