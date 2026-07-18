@@ -424,6 +424,81 @@ export const plugins = [
     "bundlesApp": false
   },
   {
+    "slug": "citizen-forge",
+    "name": "Citizen Forge",
+    "shortDescription": "Build governed internal tools without hidden expert steps.",
+    "longDescription": "Citizen Forge turns plain-language ideas into classified, paved-road internal applications. Deterministic code owns policy, state, checks, change gates, and release decisions.",
+    "description": "Governed internal application creation for non-technical owners, with deterministic policy and lifecycle controls.",
+    "version": "1.0.0+codex.20260718160314",
+    "category": "Developer Tools",
+    "license": "MIT",
+    "capabilities": [
+      "Interactive",
+      "Write"
+    ],
+    "defaultPrompts": [
+      "Help me turn an internal-tool idea into a safe application.",
+      "Check whether my Citizen Forge app is ready to release.",
+      "Explain why this application change was blocked."
+    ],
+    "platforms": [
+      "Codex",
+      "Claude Code",
+      "Claude Cowork"
+    ],
+    "skills": [
+      {
+        "name": "citizen-build",
+        "description": "Build a Citizen Forge application in small verified increments inside its approved paved road. Use when an approved and provisioned app needs implementation, routine repair, synchronized documentation, or a next build increment. Re-triage before implementing any change to users, data, writes, exposure, autonomy, reversibility, authentication, or infrastructure."
+      },
+      {
+        "name": "citizen-change",
+        "description": "Govern a Citizen Forge change from plain-language request through delta triage, deterministic classification, implementation, checks, gate, release, documentation, and audit. Use before changing a running or provisioned app, especially for new users, data, dependencies, integrations, writes, exposure, autonomy, permissions, policy, recovery, or infrastructure."
+      },
+      {
+        "name": "citizen-explain",
+        "description": "Explain Citizen Forge code, architecture, risk decisions, failed controls, recovery, and technical terms to a complete beginner without changing application state. Use when someone asks why an app was blocked, what a term means, whether it is safe, what changed, or what happens next."
+      },
+      {
+        "name": "citizen-forge",
+        "description": "Orchestrate the complete Citizen Forge lifecycle for governed internal applications. Use when someone says build an app, create an internal tool, turn a spreadsheet into software, release or change a Citizen Forge app, check app status, or asks what to do next. Route idea, registration, triage, provisioning, building, release, change, operation, and plain-language explanation to the owned focused skill."
+      },
+      {
+        "name": "citizen-idea",
+        "description": "Turn a non-technical person's plain-language internal-tool idea into a confirmed Citizen Forge brief and ownership record. Use for new app ideas, spreadsheet-to-app requests, vague internal workflows, or when brief facts are missing. Ask one unresolved question at a time, explain why it matters, and initialize the project only after material assumptions are confirmed."
+      },
+      {
+        "name": "citizen-operate",
+        "description": "Manage Citizen Forge status, ownership, recovery, usage review, transfer, archive recommendation, retirement, documentation, policy history, and release history. Use for questions such as \"who owns this?\", \"what happens if it breaks?\", \"can I undo this?\", \"is it stale?\", or when ownership is lost."
+      },
+      {
+        "name": "citizen-provision",
+        "description": "Select and create a Citizen Forge project only from an approved versioned paved road. Use after deterministic triage approves a route, when a user asks to set up the project, or when production capabilities and adapter availability must be distinguished from local scaffolding."
+      },
+      {
+        "name": "citizen-register",
+        "description": "Register a confirmed Citizen Forge application and check a selected workspace or project catalog for overlapping tools. Use when an app has a confirmed brief, needs a stable ID, may duplicate an existing app, or must graduate from personal prototype to shared software."
+      },
+      {
+        "name": "citizen-release",
+        "description": "Run Citizen Forge's 35 controls and deterministic release decision. Use when a user asks whether an app is ready, requests a release, wants failed controls explained, or needs a governed transition from release candidate to running."
+      },
+      {
+        "name": "citizen-triage",
+        "description": "Classify a confirmed Citizen Forge app by application shape and four-part blast radius, then invoke deterministic policy for its route. Use for safety checks, suitability decisions, second-consumer graduation, sensitive-data changes, external exposure, uncertainty, or questions such as \"is this safe?"
+      }
+    ],
+    "counts": {
+      "skills": 10,
+      "assets": 20,
+      "references": 7,
+      "scripts": 22,
+      "files": 96
+    },
+    "bundlesMcp": false,
+    "bundlesApp": false
+  },
+  {
     "slug": "agent-ops",
     "name": "Agent Ops",
     "shortDescription": "Design and audit bounded agent systems.",
@@ -1173,11 +1248,11 @@ export const plugins = [
   }
 ] as const;
 export const totals = {
-  "plugins": 18,
-  "skills": 143,
-  "assets": 258,
-  "references": 385,
-  "scripts": 322,
-  "files": 1421
+  "plugins": 19,
+  "skills": 153,
+  "assets": 278,
+  "references": 392,
+  "scripts": 344,
+  "files": 1517
 } as const;
 export type Plugin = (typeof plugins)[number];

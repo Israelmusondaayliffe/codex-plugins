@@ -1,0 +1,4 @@
+interface:
+  display_name: "Citizen Explain"
+  short_description: "Explain technical decisions without changing state."
+  default_prompt: "Use $citizen-explain to explain why this app was blocked in plain language."

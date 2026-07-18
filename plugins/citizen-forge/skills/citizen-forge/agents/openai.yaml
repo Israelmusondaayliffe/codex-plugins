@@ -1,0 +1,4 @@
+interface:
+  display_name: "Citizen Forge"
+  short_description: "Guide an idea through a governed app lifecycle."
+  default_prompt: "Use $citizen-forge to turn my internal-tool idea into a safe, governed application."

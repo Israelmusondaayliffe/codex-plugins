@@ -77,6 +77,18 @@
       "category": "Productivity"
     },
     {
+      "name": "citizen-forge",
+      "source": {
+        "source": "local",
+        "path": "./plugins/citizen-forge"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    },
+    {
       "name": "agent-ops",
       "source": {
         "source": "local",

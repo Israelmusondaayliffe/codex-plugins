@@ -1,0 +1,4 @@
+interface:
+  display_name: "Citizen Triage"
+  short_description: "Classify app risk with deterministic policy."
+  default_prompt: "Use $citizen-triage to classify this app and explain the safest allowed route."

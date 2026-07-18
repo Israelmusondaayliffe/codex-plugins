@@ -1,0 +1,1 @@
+"""Citizen Forge integration verification."""

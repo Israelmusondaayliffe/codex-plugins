@@ -1,0 +1,4 @@
+interface:
+  display_name: "Citizen Change"
+  short_description: "Classify and govern an application change."
+  default_prompt: "Use $citizen-change to assess this requested change before any code is modified."

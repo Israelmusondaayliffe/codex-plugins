@@ -1,0 +1,4 @@
+interface:
+  display_name: "Citizen Release"
+  short_description: "Run release checks and decide readiness."
+  default_prompt: "Use $citizen-release to check whether this app is ready and explain any block."

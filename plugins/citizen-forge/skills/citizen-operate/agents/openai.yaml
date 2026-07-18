@@ -1,0 +1,4 @@
+interface:
+  display_name: "Citizen Operate"
+  short_description: "Manage ownership, recovery, and lifecycle."
+  default_prompt: "Use $citizen-operate to show app status, ownership, recovery, and next review."

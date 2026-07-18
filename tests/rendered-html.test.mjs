@@ -31,7 +31,7 @@ test("server-renders the public marketplace homepage", async () => {
   const html = await response.text();
   assert.match(html, /<title>Israel&#x27;s Plugin Registry<\/title>/i);
   assert.match(html, /A working system/);
-  assert.match(html, /18(?:<!--.*?-->)? field-tested plugins/);
+  assert.match(html, /19(?:<!--.*?-->)? field-tested plugins/);
   assert.match(html, /Codex, Claude Code, and(?:<!--.*?-->)?\s*Claude Cowork/);
   assert.match(html, /codex plugin marketplace add Israelmusondaayliffe/);
   assert.match(html, /\/plugin marketplace add Israelmusondaayliffe/);
@@ -91,6 +91,19 @@ test("server-renders the LoopKit release", async () => {
   );
 });
 
+test("server-renders the Citizen Forge release", async () => {
+  const response = await render("/plugins/citizen-forge");
+  assert.equal(response.status, 200);
+
+  const html = await response.text();
+  assert.match(html, /Citizen Forge/);
+  assert.match(html, /citizen-release/);
+  assert.match(
+    html,
+    /codex plugin add citizen-forge@israel-codex-plugins/,
+  );
+});
+
 test("publishes every plugin across both manifest formats and all install surfaces", async () => {
   const codexMarketplace = JSON.parse(
     readFileSync(
@@ -109,7 +122,7 @@ test("publishes every plugin across both manifest formats and all install surfac
     .map((plugin) => plugin.name)
     .sort();
 
-  assert.equal(codexNames.length, 18);
+  assert.equal(codexNames.length, 19);
   assert.deepEqual(claudeNames, codexNames);
 
   for (const name of codexNames) {

@@ -51,6 +51,7 @@ and install it from the catalog.
 | agent-ops | Design, route, and audit durable agent systems |
 | brand-world-studio | Build brand systems, briefs, visuals, and consistency checks |
 | capability-operator | Route, inventory, govern, and verify Codex capabilities |
+| citizen-forge | Turn internal-tool ideas into governed, verified application lifecycles |
 | continuity-vault | Extract, structure, and govern durable working knowledge |
 | data-storytelling-studio | Turn analysis into clear executive stories |
 | founder-revenue-engine | Find customers, build outreach, and shape market narratives |
@@ -67,7 +68,7 @@ and install it from the catalog.
 | web-product-studio | Design, build, test, and ship web products |
 | writing-quality | Route, improve, and verify serious writing work |
 
-The marketplace currently contains 18 plugins and 143 skills. The packages also
+The marketplace currently contains 19 plugins and 153 skills. The packages also
 include their supporting scripts, references, assets, and agent definitions.
 LoopKit includes local lifecycle hooks. The marketplace does not currently
 bundle MCP servers or app connectors.

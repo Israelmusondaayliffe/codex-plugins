@@ -1,0 +1,4 @@
+interface:
+  display_name: "Citizen Idea"
+  short_description: "Turn plain-language intent into a safe brief."
+  default_prompt: "Use $citizen-idea to help me describe the internal tool I want without technical jargon."

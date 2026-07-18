@@ -1,0 +1,4 @@
+interface:
+  display_name: "Citizen Register"
+  short_description: "Register an app and check for overlap."
+  default_prompt: "Use $citizen-register to register this Citizen Forge app and check for existing tools."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Citizen Provision"
+  short_description: "Create an approved local paved-road project."
+  default_prompt: "Use $citizen-provision to create the approved local project structure for this app."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Citizen Build"
+  short_description: "Build safely inside an approved paved road."
+  default_prompt: "Use $citizen-build to implement the next verified increment of this approved app."
