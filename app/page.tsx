@@ -12,7 +12,7 @@ export default function Home() {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "Israel's Codex Plugins",
+    name: "Israel's Plugin Registry",
     numberOfItems: plugins.length,
     itemListElement: plugins.map((plugin, index) => ({
       "@type": "ListItem",
@@ -25,9 +25,9 @@ export default function Home() {
   return (
     <>
       <header className="site-header shell">
-        <Link className="wordmark" href="/" aria-label="Israel's Codex Plugins">
+        <Link className="wordmark" href="/" aria-label="Israel's Plugin Registry">
           <span className="wordmark-mark">IA</span>
-          <span>CODEX PLUGINS</span>
+          <span>PLUGIN REGISTRY</span>
         </Link>
         <nav aria-label="Primary navigation">
           <a href="#plugins">Plugins</a>
@@ -49,15 +49,15 @@ export default function Home() {
             />
           </figure>
           <div className="hero-copy">
-            <p className="kicker">A public Codex marketplace</p>
+            <p className="kicker">One marketplace. Three agent surfaces.</p>
             <h1 id="hero-title">
               A working system,
               <br />
               packaged.
             </h1>
             <p className="hero-lede">
-              {totals.plugins} field-tested plugins for repeatable research,
-              creation, strategy, and operations.
+              {totals.plugins} field-tested plugins for Codex, Claude Code, and
+              Claude Cowork. One source, packaged for all three.
             </p>
             <div className="hero-actions">
               <a className="button button-primary" href="#plugins">
@@ -84,17 +84,17 @@ export default function Home() {
             <span>Support files</span>
           </div>
           <div>
-            <strong>1</strong>
-            <span>Copyable marketplace</span>
+            <strong>3</strong>
+            <span>Supported agent surfaces</span>
           </div>
         </section>
 
         <section className="catalog-section shell" id="plugins">
           <div className="section-heading">
-            <h2>Find the capability. Inspect the package. Copy the command.</h2>
+            <h2>Find the capability. Inspect the package. Choose your surface.</h2>
             <p>
               Search every plugin and skill, select a record, then install only
-              what belongs in your Codex setup.
+              what belongs in your agent setup.
             </p>
           </div>
           <Catalog />
@@ -103,39 +103,70 @@ export default function Home() {
         <section className="install-section" id="install">
           <div className="shell install-layout">
             <div className="install-intro">
-              <p className="kicker">Install in Codex</p>
-              <h2>One marketplace. Any plugin.</h2>
+              <p className="kicker">Install your way</p>
+              <h2>Choose your surface. Keep the same plugin.</h2>
               <p>
-                Add the public source once, install what you need, then open a
-                fresh task so Codex can load the new capability inventory.
+                The repository carries native manifests for Codex and Claude.
+                Add the public source once, then install only what you need.
               </p>
             </div>
-            <ol className="install-steps">
-              <li>
-                <div className="step-heading">
+            <div className="platform-install-grid">
+              <article className="platform-install-card">
+                <div className="platform-card-heading">
                   <span>01</span>
-                  <h3>Add the marketplace</h3>
+                  <div>
+                    <p className="platform-eyebrow">Terminal</p>
+                    <h3>Codex</h3>
+                  </div>
                 </div>
+                <p>Add the marketplace, then install any plugin by name.</p>
                 <CopyCommand command="codex plugin marketplace add Israelmusondaayliffe/codex-plugins --ref main" />
-              </li>
-              <li>
-                <div className="step-heading">
-                  <span>02</span>
-                  <h3>Install a plugin</h3>
-                </div>
                 <CopyCommand command="codex plugin add loopkit@israel-codex-plugins" />
-              </li>
-              <li>
-                <div className="step-heading">
+                <p className="platform-note">
+                  Start a fresh Codex task after installation.
+                </p>
+              </article>
+
+              <article className="platform-install-card">
+                <div className="platform-card-heading">
+                  <span>02</span>
+                  <div>
+                    <p className="platform-eyebrow">Slash commands</p>
+                    <h3>Claude Code</h3>
+                  </div>
+                </div>
+                <p>Run both commands inside Claude Code.</p>
+                <CopyCommand command="/plugin marketplace add Israelmusondaayliffe/codex-plugins" />
+                <CopyCommand command="/plugin install loopkit@israel-codex-plugins" />
+                <p className="platform-note">
+                  Skills load under their plugin namespace.
+                </p>
+              </article>
+
+              <article className="platform-install-card">
+                <div className="platform-card-heading">
                   <span>03</span>
-                  <h3>Start a new task</h3>
+                  <div>
+                    <p className="platform-eyebrow">Customize → Plugins</p>
+                    <h3>Claude Cowork</h3>
+                  </div>
                 </div>
                 <p>
-                  Fresh tasks load the installed plugin inventory. Existing
-                  tasks may retain their earlier capability list.
+                  Select Add marketplace, paste the GitHub repository, then
+                  choose any plugin from the catalog.
                 </p>
-              </li>
-            </ol>
+                <CopyCommand
+                  command="https://github.com/Israelmusondaayliffe/codex-plugins"
+                  label="marketplace URL"
+                />
+                <a
+                  className="platform-doc-link"
+                  href="https://claude.com/docs/cowork/guide/plugins"
+                >
+                  Official Cowork install guide
+                </a>
+              </article>
+            </div>
           </div>
         </section>
 
@@ -143,9 +174,10 @@ export default function Home() {
           <div className="inventory-statement">
             <h2>Skills first. Claims kept exact.</h2>
             <p>
-              This release includes skills, scripts, references, assets, and
-              agent definitions. It does not currently bundle MCP servers or
-              app connectors.
+              Every plugin carries both Codex and Claude manifests. This release
+              includes skills, scripts, references, assets, and agent
+              definitions. It does not currently bundle MCP servers or app
+              connectors.
             </p>
             <Link className="text-link" href="/plugins/capability-operator">
               Inspect a complete plugin record
@@ -158,15 +190,15 @@ export default function Home() {
             </div>
             <div>
               <dt>Marketplace</dt>
-              <dd>israel-codex-plugins</dd>
+              <dd>One GitHub source</dd>
             </div>
             <div>
               <dt>Install surface</dt>
-              <dd>Codex CLI</dd>
+              <dd>Codex + Claude</dd>
             </div>
             <div>
               <dt>Discovery</dt>
-              <dd>Fresh task required</dd>
+              <dd>Platform-native</dd>
             </div>
           </dl>
         </section>
@@ -175,8 +207,8 @@ export default function Home() {
       <footer>
         <div className="shell footer-grid">
           <div>
-            <p className="footer-name">Israel&apos;s Codex Plugins</p>
-            <p>Public packages for repeatable, verifiable work.</p>
+            <p className="footer-name">Israel&apos;s Plugin Registry</p>
+            <p>Public packages for Codex, Claude Code, and Claude Cowork.</p>
           </div>
           <div className="footer-links">
             <a href={repositoryUrl}>Source</a>

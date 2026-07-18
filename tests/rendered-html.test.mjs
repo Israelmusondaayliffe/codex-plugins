@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { existsSync, readFileSync } from "node:fs";
 import test from "node:test";
 
 async function render(pathname = "/") {
@@ -28,10 +29,17 @@ test("server-renders the public marketplace homepage", async () => {
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
-  assert.match(html, /<title>Israel&#x27;s Codex Plugins<\/title>/i);
+  assert.match(html, /<title>Israel&#x27;s Plugin Registry<\/title>/i);
   assert.match(html, /A working system/);
   assert.match(html, /18(?:<!--.*?-->)? field-tested plugins/);
+  assert.match(html, /Codex, Claude Code, and(?:<!--.*?-->)?\s*Claude Cowork/);
   assert.match(html, /codex plugin marketplace add Israelmusondaayliffe/);
+  assert.match(html, /\/plugin marketplace add Israelmusondaayliffe/);
+  assert.match(
+    html,
+    /https:\/\/github.com\/Israelmusondaayliffe\/codex-plugins/,
+  );
+  assert.match(html, /Official Cowork install guide/);
   assert.match(html, /knowledge-work-superpowers/);
   assert.match(html, /LoopKit/);
   assert.match(html, /Harness Engineering/);
@@ -50,6 +58,11 @@ test("server-renders plugin detail pages", async () => {
     html,
     /codex plugin add capability-operator@israel-codex-plugins/,
   );
+  assert.match(
+    html,
+    /\/plugin install capability-operator@israel-codex-plugins/,
+  );
+  assert.match(html, /In Customize → Plugins/);
 });
 
 test("server-renders the Harness Engineering release", async () => {
@@ -76,4 +89,59 @@ test("server-renders the LoopKit release", async () => {
     html,
     /codex plugin add loopkit@israel-codex-plugins/,
   );
+});
+
+test("publishes every plugin across both manifest formats and all install surfaces", async () => {
+  const codexMarketplace = JSON.parse(
+    readFileSync(
+      new URL("../.agents/plugins/marketplace.json", import.meta.url),
+      "utf8",
+    ),
+  );
+  const claudeMarketplace = JSON.parse(
+    readFileSync(
+      new URL("../.claude-plugin/marketplace.json", import.meta.url),
+      "utf8",
+    ),
+  );
+  const codexNames = codexMarketplace.plugins.map((plugin) => plugin.name).sort();
+  const claudeNames = claudeMarketplace.plugins
+    .map((plugin) => plugin.name)
+    .sort();
+
+  assert.equal(codexNames.length, 18);
+  assert.deepEqual(claudeNames, codexNames);
+
+  for (const name of codexNames) {
+    assert.equal(
+      existsSync(
+        new URL(`../plugins/${name}/.codex-plugin/plugin.json`, import.meta.url),
+      ),
+      true,
+      `${name} must include a Codex manifest`,
+    );
+    assert.equal(
+      existsSync(
+        new URL(`../plugins/${name}/.claude-plugin/plugin.json`, import.meta.url),
+      ),
+      true,
+      `${name} must include a Claude manifest`,
+    );
+
+    const response = await render(`/plugins/${name}`);
+    assert.equal(response.status, 200, `${name} detail page must render`);
+    const html = await response.text();
+    assert.ok(
+      html.includes(`codex plugin add ${name}@israel-codex-plugins`),
+      `${name} must expose its Codex install command`,
+    );
+    assert.ok(
+      html.includes(`/plugin install ${name}@israel-codex-plugins`),
+      `${name} must expose its Claude Code install command`,
+    );
+    assert.ok(
+      html.includes("Claude Cowork"),
+      `${name} must expose its Claude Cowork install path`,
+    );
+  }
 });

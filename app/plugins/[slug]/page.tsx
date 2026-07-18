@@ -37,7 +37,7 @@ export default async function PluginPage({ params }: PluginPageProps) {
       <header className="site-header shell detail-header">
         <Link className="wordmark" href="/" aria-label="Back to plugin catalog">
           <span className="wordmark-mark">IA</span>
-          <span>CODEX PLUGINS</span>
+          <span>PLUGIN REGISTRY</span>
         </Link>
         <Link className="back-link" href="/#plugins">
           Back to catalog
@@ -65,6 +65,10 @@ export default async function PluginPage({ params }: PluginPageProps) {
               <dd>{plugin.counts.files}</dd>
             </div>
             <div>
+              <dt>Platforms</dt>
+              <dd>{plugin.platforms.length}</dd>
+            </div>
+            <div>
               <dt>License</dt>
               <dd>{plugin.license ?? "See legal"}</dd>
             </div>
@@ -73,18 +77,47 @@ export default async function PluginPage({ params }: PluginPageProps) {
 
         <section className="detail-install" aria-labelledby="install-title">
           <div>
-            <h2 id="install-title">Add this plugin to Codex.</h2>
-          </div>
-          <div>
-            <CopyCommand
-              command={
-                "codex plugin add " + plugin.slug + "@" + marketplaceName
-              }
-            />
+            <h2 id="install-title">Install it on your surface.</h2>
             <p className="install-note">
-              Add the marketplace first if needed, then start a new Codex task
-              after installation.
+              The same package is available in Codex, Claude Code, and Claude
+              Cowork.
             </p>
+          </div>
+          <div className="detail-platform-installs">
+            <article>
+              <p className="platform-eyebrow">Codex</p>
+              <CopyCommand
+                command={
+                  "codex plugin add " + plugin.slug + "@" + marketplaceName
+                }
+                label="Codex install command"
+              />
+              <p className="install-note">
+                Add the marketplace first if needed, then start a fresh task.
+              </p>
+            </article>
+            <article>
+              <p className="platform-eyebrow">Claude Code</p>
+              <CopyCommand
+                command={
+                  "/plugin install " + plugin.slug + "@" + marketplaceName
+                }
+                label="Claude Code install command"
+              />
+              <p className="install-note">
+                Add this repository as a marketplace first if needed.
+              </p>
+            </article>
+            <article>
+              <p className="platform-eyebrow">Claude Cowork</p>
+              <CopyCommand
+                command={repositoryUrl}
+                label="marketplace URL"
+              />
+              <p className="install-note">
+                In Customize → Plugins, add this marketplace and select {plugin.name}.
+              </p>
+            </article>
           </div>
         </section>
 
@@ -139,7 +172,7 @@ export default async function PluginPage({ params }: PluginPageProps) {
 
       <footer>
         <div className="shell footer-grid">
-          <p className="footer-name">Israel&apos;s Codex Plugins</p>
+          <p className="footer-name">Israel&apos;s Plugin Registry</p>
           <Link href="/#plugins">Browse all plugins</Link>
         </div>
       </footer>

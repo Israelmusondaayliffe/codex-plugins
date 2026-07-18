@@ -186,6 +186,11 @@ export function Catalog() {
               <span>{selectedPlugin.category}</span>
               <span>{selectedPlugin.counts.skills} skills</span>
             </div>
+            <div className="platform-list" aria-label="Supported platforms">
+              {selectedPlugin.platforms.map((platform) => (
+                <span key={platform}>{platform}</span>
+              ))}
+            </div>
             <div className="preview-copy">
               <h3>{selectedPlugin.name}</h3>
               <p>{selectedPlugin.longDescription}</p>
@@ -207,7 +212,11 @@ export function Catalog() {
                   marketplaceName
                 }
                 compact
+                label="Codex install command"
               />
+              <p className="preview-install-note">
+                Claude Code and Cowork instructions are inside the full record.
+              </p>
               <Link href={"/plugins/" + selectedPlugin.slug}>
                 Open plugin record
               </Link>

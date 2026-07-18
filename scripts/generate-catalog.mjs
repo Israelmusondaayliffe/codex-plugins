@@ -1,9 +1,44 @@
-import { readdirSync, readFileSync, statSync, writeFileSync } from "node:fs";
+import {
+  existsSync,
+  readdirSync,
+  readFileSync,
+  statSync,
+  writeFileSync,
+} from "node:fs";
 import { join, relative } from "node:path";
 
 const root = new URL("../", import.meta.url).pathname;
 const marketplacePath = join(root, ".agents/plugins/marketplace.json");
 const marketplace = JSON.parse(readFileSync(marketplacePath, "utf8"));
+const claudeMarketplacePath = join(root, ".claude-plugin/marketplace.json");
+const claudeMarketplace = JSON.parse(
+  readFileSync(claudeMarketplacePath, "utf8"),
+);
+const claudePluginNames = new Set(
+  claudeMarketplace.plugins.map((plugin) => plugin.name),
+);
+const codexPluginNames = new Set(marketplace.plugins.map((plugin) => plugin.name));
+const missingFromClaude = [...codexPluginNames].filter(
+  (name) => !claudePluginNames.has(name),
+);
+const missingFromCodex = [...claudePluginNames].filter(
+  (name) => !codexPluginNames.has(name),
+);
+
+if (missingFromClaude.length || missingFromCodex.length) {
+  throw new Error(
+    [
+      missingFromClaude.length
+        ? `Missing from Claude marketplace: ${missingFromClaude.join(", ")}`
+        : "",
+      missingFromCodex.length
+        ? `Missing from Codex marketplace: ${missingFromCodex.join(", ")}`
+        : "",
+    ]
+      .filter(Boolean)
+      .join("\n"),
+  );
+}
 
 function walk(directory) {
   return readdirSync(directory, { withFileTypes: true }).flatMap((entry) => {
@@ -20,7 +55,7 @@ function walk(directory) {
 }
 
 function cleanText(value) {
-  return String(value ?? "").replace(/[—–]/g, "-");
+  return String(value ?? "").replace(/[\u2014\u2013]/g, "-");
 }
 
 function frontmatterValue(source, key) {
@@ -35,6 +70,12 @@ const plugins = marketplace.plugins.map((entry) => {
   const manifest = JSON.parse(
     readFileSync(join(pluginRoot, ".codex-plugin/plugin.json"), "utf8"),
   );
+  const claudeManifestPath = join(pluginRoot, ".claude-plugin/plugin.json");
+  const supportsClaude =
+    existsSync(claudeManifestPath) && claudePluginNames.has(entry.name);
+  if (!supportsClaude) {
+    throw new Error(`Missing Claude manifest for ${entry.name}`);
+  }
   const files = walk(pluginRoot);
   const skillRoot = join(pluginRoot, "skills");
   const skills = statSync(skillRoot).isDirectory()
@@ -76,6 +117,9 @@ const plugins = marketplace.plugins.map((entry) => {
     license: manifest.license ?? null,
     capabilities: manifest.interface?.capabilities ?? [],
     defaultPrompts: (manifest.interface?.defaultPrompt ?? []).map(cleanText),
+    platforms: supportsClaude
+      ? ["Codex", "Claude Code", "Claude Cowork"]
+      : ["Codex"],
     skills,
     counts,
     bundlesMcp: Boolean(manifest.mcpServers),
