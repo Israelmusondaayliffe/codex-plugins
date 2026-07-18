@@ -10,6 +10,7 @@ every file under one license.
 - loopkit declares MIT in its plugin manifest and includes a LICENSE file.
 - harness-engineering declares MIT in its plugin manifest and includes a LICENSE file.
 - citizen-forge declares MIT in its plugin manifest and includes a LICENSE file.
+- operating-graph declares MIT in its plugin manifest and includes a LICENSE file.
 - matt-partok-bundled-plugin-for-knowledge-work declares MIT in its plugin
   manifest and includes a LICENSE and NOTICE.md attributing the original
   `mattpocock/skills` work to Matt Pocock.

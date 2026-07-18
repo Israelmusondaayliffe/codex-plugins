@@ -17,6 +17,9 @@ const claudeMarketplace = JSON.parse(
 const claudePluginNames = new Set(
   claudeMarketplace.plugins.map((plugin) => plugin.name),
 );
+const claudePluginsByName = new Map(
+  claudeMarketplace.plugins.map((plugin) => [plugin.name, plugin]),
+);
 const codexPluginNames = new Set(marketplace.plugins.map((plugin) => plugin.name));
 const missingFromClaude = [...codexPluginNames].filter(
   (name) => !claudePluginNames.has(name),
@@ -58,11 +61,19 @@ function cleanText(value) {
   return String(value ?? "").replace(/[\u2014\u2013]/g, "-");
 }
 
+function unquoteFrontmatterValue(value) {
+  const trimmed = value.trim();
+  const first = trimmed.at(0);
+  const last = trimmed.at(-1);
+  return trimmed.length >= 2 &&
+    ((first === '"' && last === '"') || (first === "'" && last === "'"))
+    ? trimmed.slice(1, -1)
+    : trimmed;
+}
+
 function frontmatterValue(source, key) {
   const match = source.match(new RegExp(`^${key}:\\s*(.+)$`, "m"));
-  return match
-    ? cleanText(match[1].replace(/^['\"]|['\"]$/g, "").trim())
-    : "";
+  return match ? cleanText(unquoteFrontmatterValue(match[1])) : "";
 }
 
 const plugins = marketplace.plugins.map((entry) => {
@@ -71,10 +82,24 @@ const plugins = marketplace.plugins.map((entry) => {
     readFileSync(join(pluginRoot, ".codex-plugin/plugin.json"), "utf8"),
   );
   const claudeManifestPath = join(pluginRoot, ".claude-plugin/plugin.json");
+  const claudeMarketplaceEntry = claudePluginsByName.get(entry.name);
   const supportsClaude =
     existsSync(claudeManifestPath) && claudePluginNames.has(entry.name);
   if (!supportsClaude) {
     throw new Error(`Missing Claude manifest for ${entry.name}`);
+  }
+  const claudeManifest = JSON.parse(readFileSync(claudeManifestPath, "utf8"));
+  const expectedSource = `./plugins/${entry.name}`;
+  if (
+    entry.source?.path !== expectedSource ||
+    claudeMarketplaceEntry?.source !== expectedSource
+  ) {
+    throw new Error(`Marketplace source mismatch for ${entry.name}`);
+  }
+  for (const field of ["name", "version", "description", "license"]) {
+    if ((manifest[field] ?? null) !== (claudeManifest[field] ?? null)) {
+      throw new Error(`Manifest ${field} mismatch for ${entry.name}`);
+    }
   }
   const files = walk(pluginRoot);
   const skillRoot = join(pluginRoot, "skills");
