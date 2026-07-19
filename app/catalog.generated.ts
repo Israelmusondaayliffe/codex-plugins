@@ -91,7 +91,7 @@ export const plugins = [
     "shortDescription": "Turn unclear goals into verified results.",
     "longDescription": "Clarify decisions, write durable briefs, create independent action slices, execute from evidence, and improve the systems behind the work.",
     "description": "Turn unclear goals into verified outcomes across research, writing, operations, creative work, personal planning, and software.",
-    "version": "1.0.0+codex.20260710154316",
+    "version": "1.0.1",
     "category": "Productivity",
     "license": "MIT",
     "capabilities": [
@@ -140,7 +140,7 @@ export const plugins = [
       "assets": 3,
       "references": 3,
       "scripts": 2,
-      "files": 19
+      "files": 20
     },
     "bundlesMcp": false,
     "bundlesApp": false
@@ -276,7 +276,7 @@ export const plugins = [
     "shortDescription": "Run evidence-gated learning loops.",
     "longDescription": "ProofLoop adds bounded task execution, quarantined learning records, governed memory review, and read-only audits without adding external authority.",
     "description": "Governed agent learning ledger and evaluation wrapper with bounded refinement, verification, quarantined memory, and read-only audit.",
-    "version": "0.1.0+codex.20260713133858",
+    "version": "0.1.1",
     "category": "Productivity",
     "license": null,
     "capabilities": [],
@@ -418,7 +418,7 @@ export const plugins = [
       "assets": 8,
       "references": 14,
       "scripts": 19,
-      "files": 62
+      "files": 63
     },
     "bundlesMcp": false,
     "bundlesApp": false
@@ -840,7 +840,7 @@ export const plugins = [
     "shortDescription": "Turn approved positioning into a coherent visual world.",
     "longDescription": "Brand World Studio routes approved strategy into a visual brief, identity system, image-model choice, production prompt pack, and consistency review without inventing upstream positioning.",
     "description": "Brand briefs, visual systems, image-model routing, production prompt packs, and consistency verification.",
-    "version": "0.1.0+codex.20260714121935",
+    "version": "0.1.1",
     "category": "Design",
     "license": null,
     "capabilities": [],
@@ -1012,7 +1012,7 @@ export const plugins = [
     "shortDescription": "Turn checked analysis into decision-facing stories.",
     "longDescription": "Data Storytelling Studio preserves the analytical source of truth while routing it to the right delivery format, auditing visual claims, and producing an answer-first executive readout with explicit evidence and caveats.",
     "description": "Routes checked analysis into decision-facing visual stories, executive readouts, reports, decks, dashboards, and publishable sites.",
-    "version": "0.1.0+codex.20260714130032",
+    "version": "0.1.1",
     "category": "Productivity",
     "license": null,
     "capabilities": [],
@@ -1056,7 +1056,7 @@ export const plugins = [
     "shortDescription": "Plan, run, normalize, and decide model evaluations.",
     "longDescription": "Model Evaluation Lab turns a model choice into a fixed evaluation plan, a reproducible run contract, normalized results, and a decision memo that separates measurement from judgment and deployment conditions.",
     "description": "Plans reproducible model evaluations, normalizes benchmark runs, and produces measured model-selection decisions.",
-    "version": "0.1.0+codex.20260714130940",
+    "version": "0.1.1",
     "category": "Developer Tools",
     "license": null,
     "capabilities": [],
@@ -1316,6 +1316,6 @@ export const totals = {
   "assets": 283,
   "references": 402,
   "scripts": 357,
-  "files": 1577
+  "files": 1579
 } as const;
 export type Plugin = (typeof plugins)[number];

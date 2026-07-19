@@ -1,6 +1,6 @@
 # Capability Operator
 
-Capability Operator is the routing, maintenance, and governance plugin for personal Codex capabilities.
+Capability Operator is the routing, maintenance, and governance plugin for personal capabilities on Claude Code, Claude Cowork, and Codex.
 
 ## Owned skills
 
@@ -18,6 +18,11 @@ Capability Operator is the routing, maintenance, and governance plugin for perso
 - Plugin Eval for analysis and benchmarks
 - ProofLoop for bounded verification
 - Claude Mem for recall only, never as a source of truth
+
+## Host surfaces
+
+- Claude Code and Claude Cowork: `~/.claude/` is the config home. Installed plugins are recorded in `enabledPlugins` inside `~/.claude/settings.json`, `~/.claude/plugins/installed_plugins.json`, and the cached marketplaces under `~/.claude/plugins/marketplaces/`. Loose skills live in `~/.claude/skills/` and agents in `~/.claude/agents/`. Live listing comes from `claude plugin list` or the `/plugin` command. Fresh-task discovery evidence is the skill inventory of a fresh `claude -p` session.
+- Codex: `~/.codex/` (or `CODEX_HOME`) is the config home, holding `config.toml` and `~/.codex/skills/`. Live listing comes from `codex plugin list`. Fresh-task discovery evidence is a clean-task prompt from `codex debug prompt-input`.
 
 ## Boundaries
 

@@ -40,7 +40,7 @@
     {
       "id": "loopkit-composite",
       "kind": "composite",
-      "task": "Design, run, verify, and schedule a bounded Codex loop with durable state.",
+      "task": "Design, run, verify, and schedule a bounded agent loop with durable state.",
       "expected": {"primary_route": "loopkit:loopkit", "route_type": "plugin-router", "plugin": "loopkit", "skill": "loopkit", "companions": [], "excluded_routes": []}
     },
     {
@@ -214,7 +214,7 @@
     {
       "id": "collision-agent-loopkit",
       "kind": "collision",
-      "task": "Design a reusable agent system, then hand its execution contract to a bounded Codex loop.",
+      "task": "Design a reusable agent system, then hand its execution contract to a bounded agent loop.",
       "expected": {"primary_route": "agent-ops:agent-ops-router", "route_type": "plugin-router", "plugin": "agent-ops", "skill": "agent-ops-router", "companions": ["loopkit"], "excluded_routes": ["loopkit:loopkit as primary before the agent contract exists"]}
     },
     {

@@ -71,7 +71,7 @@
     },
     {
       "id": "agents-versus-loops",
-      "match_all": ["reusable agent system", "bounded codex loop"],
+      "match_all": ["reusable agent system", "bounded agent loop"],
       "plugin": "agent-ops",
       "skill": "agent-ops-router",
       "route_type": "plugin-router",
@@ -157,7 +157,7 @@
     {
       "plugin": "capability-operator",
       "display_name": "Capability Operator",
-      "purpose": "Inventory, route, audit, govern, and verify Codex capabilities.",
+      "purpose": "Inventory, route, audit, govern, and verify capabilities across Claude Code, Claude Cowork, and Codex.",
       "front_door": "capability-router",
       "composite_triggers": ["plugin or skill ownership is unclear", "inventory and route it"],
       "owned_skills": ["capability-inventory", "capability-router", "fresh-task-discovery-verifier", "harness-meta-audit", "plugin-portfolio-manager", "skill-creator-pro", "skill-overlap-audit"],
@@ -189,18 +189,18 @@
       ],
       "companions": ["loopkit", "proofloop"],
       "handoffs": ["Send approved generic Goal and loop execution contracts to LoopKit.", "Use ProofLoop only after an explicit request for learning and quarantined memory."],
-      "exclusions": ["Do not own generic Codex Goal, loop, resume, verification, or scheduling work.", "Do not infer ProofLoop from ordinary agent verification."],
+      "exclusions": ["Do not own generic host Goal, loop, resume, verification, or scheduling work.", "Do not infer ProofLoop from ordinary agent verification."],
       "lifecycle": {"state": "active", "visibility": "installed"}
     },
     {
       "plugin": "loopkit",
       "display_name": "LoopKit",
-      "purpose": "Design, run, verify, resume, schedule, and diagnose bounded Codex loops with durable state.",
+      "purpose": "Design, run, verify, resume, schedule, and diagnose bounded agent loops with durable state on Claude Code, Claude Cowork, or Codex.",
       "front_door": "loopkit",
-      "composite_triggers": ["design run verify and schedule a bounded codex loop", "durable plan act verify loop with state on disk"],
+      "composite_triggers": ["design run verify and schedule a bounded agent loop", "durable plan act verify loop with state on disk"],
       "owned_skills": ["loop-designer", "loop-doctor", "loop-resumer", "loop-runner", "loop-scheduler", "loop-verifier", "loopkit"],
       "direct_routes": [
-        {"skill": "loop-designer", "triggers": ["turn this into a bounded codex loop"]},
+        {"skill": "loop-designer", "triggers": ["turn this into a bounded agent loop"]},
         {"skill": "loop-doctor", "triggers": ["diagnose this repeating loop"]},
         {"skill": "loop-resumer", "triggers": ["resume the active loopkit run"]},
         {"skill": "loop-runner", "triggers": ["run this initialized loopkit contract"]},

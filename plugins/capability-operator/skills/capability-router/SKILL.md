@@ -1,6 +1,6 @@
 ---
 name: capability-router
-description: Routes unclear, multi-stage, or cross-plugin Codex requests to one primary personal plugin or owned skill, with bounded companions, handoffs, exclusions, load order, and verification needs. Use when plugin versus skill ownership is unclear, several personal plugins overlap, a request spans capability domains, or the harness needs a deterministic routing decision. Explicit user selections still win, and focused requests should call the narrow owned skill directly.
+description: Routes unclear, multi-stage, or cross-plugin requests on Claude Code, Claude Cowork, or Codex to one primary personal plugin or owned skill, with bounded companions, handoffs, exclusions, load order, and verification needs. Use when plugin versus skill ownership is unclear, several personal plugins overlap, a request spans capability domains, or the harness needs a deterministic routing decision. Explicit user selections still win, and focused requests should call the narrow owned skill directly.
 ---
 
 # Capability Router
