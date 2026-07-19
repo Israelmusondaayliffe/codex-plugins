@@ -175,8 +175,8 @@
     {
       "name": "web-product-studio",
       "source": "./plugins/web-product-studio",
-      "description": "Route, build, redesign, implement from images, and verify web products with one visual authority.",
-      "version": "0.1.0+codex.20260714115137",
+      "description": "Route, build, redesign, implement from images, and verify web products with one visual authority on Claude Code, Claude Cowork, or Codex.",
+      "version": "0.2.0",
       "author": {
         "name": "Israel Ayliffe"
       }

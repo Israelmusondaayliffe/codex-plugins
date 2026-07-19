@@ -1,14 +1,19 @@
 # Playwright CLI Reference
 
-Use the wrapper script unless the CLI is already installed globally:
+Use the wrapper script unless the CLI is already installed globally. Set `PWCLI` for the host you are running on:
 
 ```bash
-export CODEX_HOME="${CODEX_HOME:-$HOME/.codex}"
-export PWCLI="$CODEX_HOME/skills/playwright/scripts/playwright_cli.sh"
+if [ -n "$CLAUDECODE" ]; then  # Claude Code / Claude Cowork
+  export PWCLI="$HOME/.claude/skills/playwright/scripts/playwright_cli.sh"
+else                            # Codex
+  export CODEX_HOME="${CODEX_HOME:-$HOME/.codex}"
+  export PWCLI="$CODEX_HOME/skills/playwright/scripts/playwright_cli.sh"
+fi
+
 "$PWCLI" --help
 ```
 
-User-scoped skills install under `$CODEX_HOME/skills` (default: `~/.codex/skills`).
+User-scoped skills install under the host home skills directory: `~/.claude/skills` on Claude Code / Cowork, `$CODEX_HOME/skills` (default: `~/.codex/skills`) on Codex.
 
 Optional convenience alias:
 

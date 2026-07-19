@@ -365,16 +365,16 @@ export const plugins = [
   {
     "slug": "capability-operator",
     "name": "Capability Operator",
-    "shortDescription": "Route, inventory, and govern Codex capabilities.",
-    "longDescription": "Capability Operator selects one primary plugin or skill route, inventories capability layers, finds overlap and drift, manages lifecycle decisions, builds validated skills, and proves clean-task discovery after installation.",
-    "description": "Capability routing, read-only inventories, overlap audits, portfolio governance, skill creation, and fresh-task discovery proof.",
-    "version": "0.1.1",
+    "shortDescription": "Route, inventory, and govern capabilities on Claude Code, Cowork, or Codex.",
+    "longDescription": "Capability Operator selects one primary plugin or skill route, inventories capability layers, finds overlap and drift, manages lifecycle decisions, builds validated skills, and proves clean-task discovery after installation on Claude Code, Claude Cowork, and Codex.",
+    "description": "Capability routing, read-only inventories, overlap audits, portfolio governance, skill creation, and fresh-task discovery proof on Claude Code, Claude Cowork, or Codex.",
+    "version": "0.2.0",
     "category": "Productivity",
-    "license": null,
+    "license": "MIT",
     "capabilities": [],
     "defaultPrompts": [
       "Choose the right plugin or skill for this request.",
-      "Inventory my current Codex capabilities.",
+      "Inventory my current capabilities on this host.",
       "Audit skill overlap without changing anything.",
       "Verify that this plugin is visible in a clean task."
     ],
@@ -386,15 +386,15 @@ export const plugins = [
     "skills": [
       {
         "name": "capability-inventory",
-        "description": "Builds a read-only inventory of loose skills, plugin source bundles, installed plugins, caches, and optional task-visible capabilities. Use before global skill or plugin work, after installs, or when filesystem presence and Codex visibility may disagree. Emits exact paths and fingerprints so later audits can distinguish duplicates from drift."
+        "description": "Builds a read-only inventory of loose skills, plugin source bundles, installed plugins, caches, and optional task-visible capabilities. Use before global skill or plugin work, after installs, or when filesystem presence and host visibility may disagree on Claude Code, Claude Cowork, or Codex. Emits exact paths and fingerprints so later audits can distinguish duplicates from drift."
       },
       {
         "name": "capability-router",
-        "description": "Routes unclear, multi-stage, or cross-plugin Codex requests to one primary personal plugin or owned skill, with bounded companions, handoffs, exclusions, load order, and verification needs. Use when plugin versus skill ownership is unclear, several personal plugins overlap, a request spans capability domains, or the harness needs a deterministic routing decision. Explicit user selections still win, and focused requests should call the narrow owned skill directly."
+        "description": "Routes unclear, multi-stage, or cross-plugin requests on Claude Code, Claude Cowork, or Codex to one primary personal plugin or owned skill, with bounded companions, handoffs, exclusions, load order, and verification needs. Use when plugin versus skill ownership is unclear, several personal plugins overlap, a request spans capability domains, or the harness needs a deterministic routing decision. Explicit user selections still win, and focused requests should call the narrow owned skill directly."
       },
       {
         "name": "fresh-task-discovery-verifier",
-        "description": "Proves that newly installed plugin skills appear in a clean Codex task prompt. Use after plugin install, reinstall, cache update, or visibility debugging. Checks expected names against fresh prompt input and returns machine-readable missing and found sets, preventing stale open-task inventories from being mistaken for installation failure."
+        "description": "Proves that newly installed plugin skills appear in a fresh host session, meaning a clean Codex task prompt on Codex or a fresh claude -p session's skill inventory on Claude Code and Claude Cowork. Use after plugin install, reinstall, cache update, or visibility debugging. Checks expected names against fresh prompt input and returns machine-readable missing and found sets, preventing stale open-task inventories from being mistaken for installation failure."
       },
       {
         "name": "harness-meta-audit",

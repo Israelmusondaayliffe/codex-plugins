@@ -1,6 +1,6 @@
 ---
 name: image-to-code
-description: Elite website image-to-code skill for Codex. For visually important web tasks, it must first generate the design image(s) itself, deeply analyze them, then implement the website to match them as closely as possible. In Codex, it must prefer large, readable, section-specific images instead of tiny compressed boards, generate fresh standalone images for sections or detail views instead of cropping old ones, avoid lazy under-generation, avoid cards-inside-cards-inside-cards UI, and keep the hero clean, spacious, readable, and visible on a small laptop.
+description: Elite website image-to-code skill for Claude Code, Claude Cowork, and Codex. For visually important web tasks, it must first generate the design image(s) itself, deeply analyze them, then implement the website to match them as closely as possible. On any of these hosts, it must prefer large, readable, section-specific images instead of tiny compressed boards, generate fresh standalone images for sections or detail views instead of cropping old ones, avoid lazy under-generation, avoid cards-inside-cards-inside-cards UI, and keep the hero clean, spacious, readable, and visible on a small laptop.
 ---
 
 # CORE DIRECTIVE: IMAGE-FIRST WEBSITE DESIGN TO CODE
@@ -102,7 +102,7 @@ Interpretation:
 - If the user says “editorial”, allow stronger type and more asymmetry.
 - Keep sections breathable.
 - Prefer readability over squeezing too much into one image.
-- In Codex, bias strongly toward larger, more analyzable section images.
+- In Claude Code, Claude Cowork, or Codex, bias strongly toward larger, more analyzable section images.
 - If more images would improve extraction quality, generate more images.
 - Do not be lazy with image count.
 - Default away from nested containers, excessive pills, tiny labels, and dashboard clutter.
@@ -159,13 +159,13 @@ Never reduce image count just for convenience if that harms quality.
 
 ---
 
-## 4. CODEX-SPECIFIC SECTION IMAGE RULE
+## 4. HOST-SPECIFIC SECTION IMAGE RULE
 
-Inside Codex, do not compress too many website sections into one single image if that would make the text, spacing, buttons, or layout details too small to analyze properly.
+Inside Claude Code, Claude Cowork, or Codex, do not compress too many website sections into one single image if that would make the text, spacing, buttons, or layout details too small to analyze properly.
 
-In Codex, prefer separate large images per section.
+On these hosts, prefer separate large images per section.
 
-Default rule inside Codex:
+Default rule inside these hosts:
 - 1 section requested → generate 1 image
 - 2 sections requested → generate 2 images
 - 3 sections requested → generate 3 images
@@ -194,8 +194,8 @@ Do not default to:
 
 If necessary, generate more images rather than shrinking everything.
 
-Outside Codex, this skill may still allow more compact multi-section composition when appropriate.
-Inside Codex, prioritize section clarity and extraction accuracy.
+Outside an agent host, this skill may still allow more compact multi-section composition when appropriate.
+Inside Claude Code, Claude Cowork, or Codex, prioritize section clarity and extraction accuracy.
 
 ---
 
@@ -365,9 +365,9 @@ Only after this deep analysis should you implement the frontend.
 
 ---
 
-## 10. IMAGE-FIRST CODEX WEBSITE WORKFLOW
+## 10. IMAGE-FIRST HOST WEBSITE WORKFLOW
 
-When this skill is used inside Codex or any environment that supports image generation plus implementation, default to an image-first workflow for website design tasks.
+When this skill is used inside Claude Code, Claude Cowork, or Codex, or any environment that supports image generation plus implementation, default to an image-first workflow for website design tasks.
 
 Preferred execution order:
 1. infer the section count
@@ -641,7 +641,7 @@ Prefer:
 
 ## 18. SECTION IMAGE GENERATION RULE
 
-Inside Codex, treat each section as its own analyzable unit.
+Inside Claude Code, Claude Cowork, or Codex, treat each section as its own analyzable unit.
 
 If the user asks for:
 - a hero only → generate 1 hero image
@@ -1060,7 +1060,7 @@ Not:
 11. FAQ
 12. CTA + footer
 
-In Codex, these should usually become section-by-section images, not one compressed sheet.
+In Claude Code, Claude Cowork, or Codex, these should usually become section-by-section images, not one compressed sheet.
 
 ---
 
@@ -1100,7 +1100,7 @@ Before finalizing, verify internally:
 14. Is it free of obvious AI tells?
 15. Can someone code from this faithfully?
 16. If multiple images exist, do they clearly belong together?
-17. Has Codex avoided compressing too many sections into one tiny image?
+17. Has the agent (on Claude Code, Claude Cowork, or Codex) avoided compressing too many sections into one tiny image?
 18. Was the analysis clean, structured, and specific?
 19. Has unnecessary nested boxing been removed?
 20. Is the first screen still clean and readable on a small laptop?
@@ -1116,7 +1116,7 @@ When the user asks for a website design in an image-to-code workflow:
 1. infer site type
 2. infer number of sections
 3. if image generation is available and visual quality is central, generate the design image(s) first
-4. inside Codex, prefer one large image per section
+4. inside Claude Code, Claude Cowork, or Codex, prefer one large image per section
 5. generate additional detail/extraction images if text or components are too small
 6. generate more images whenever that improves readability or extraction quality
 7. do not be lazy with image count
@@ -1138,7 +1138,7 @@ When the user asks for a website design in an image-to-code workflow:
 
 Do not ask unnecessary follow-up questions if a strong interpretation is possible.
 Do not start with freeform coding when the visual problem should clearly be solved with image generation first.
-Do not compress many sections into one unreadable image in Codex.
+Do not compress many sections into one unreadable image in Claude Code, Claude Cowork, or Codex.
 Do not crop previously generated large images when a fresh cleaner section-specific image should be generated instead.
 
 ---
@@ -1164,7 +1164,7 @@ User:
 “design me an 8-section landing page”
 
 Interpretation:
-- generate 8 separate section images in Codex
+- generate 8 separate section images on the host (Claude Code, Claude Cowork, or Codex)
 - one per section
 - generate extra detail images where necessary
 - deeply analyze all 8 sections
@@ -1178,7 +1178,7 @@ User:
 “make a premium creative agency website with 4 sections”
 
 Interpretation:
-- generate 4 separate section images in Codex
+- generate 4 separate section images on the host (Claude Code, Claude Cowork, or Codex)
 - keep the hero very clean
 - ensure text remains readable
 - deeply analyze each section
@@ -1204,7 +1204,7 @@ Generate website reference images that feel:
 
 For visual website work, the skill must first generate the image(s) itself, then deeply and cleanly analyze those generated image(s), then use them as the primary visual source, then build the frontend to match them closely.
 
-Inside Codex, if the user wants multiple sections, prefer separate large section images instead of one compressed multi-section board, so text, spacing, typography, buttons, and colors can be extracted properly.
+Inside Claude Code, Claude Cowork, or Codex, if the user wants multiple sections, prefer separate large section images instead of one compressed multi-section board, so text, spacing, typography, buttons, and colors can be extracted properly.
 
 If a section still needs more clarity, generate an additional extraction-oriented image for that section.
 

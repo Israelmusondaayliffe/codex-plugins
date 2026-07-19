@@ -16,7 +16,7 @@ Define success as observable behavior, not as a claim that the code looks correc
 3. Keep actions atomic and expected observations visible in the browser.
 4. Name the evidence required for every step.
 5. Run scripts/validate_flows.py.
-6. Execute flows in the built-in Browser. Use Playwright when repeatability or diagnostics add value.
+6. Execute flows in the host browser surface: the in-app browser pane on Claude Code, the built-in Browser on Codex. Use Playwright when repeatability or diagnostics add value.
 7. Save pass, fail, or blocked evidence for each flow.
 
 ## Error Handling

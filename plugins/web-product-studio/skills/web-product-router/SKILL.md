@@ -17,7 +17,7 @@ Choose the build mode before loading implementation and design skills. Keep visu
 4. Define browser-verifiable flows with acceptance-flow.
 5. Record assets/route-template.json and run scripts/validate_route.py.
 6. Load only the route owners and implement.
-7. Verify the acceptance flows in the built-in Browser. Use Playwright when repeatable automation or browser diagnostics are needed.
+7. Verify the acceptance flows in the host browser surface: the in-app browser pane on Claude Code, the built-in Browser on Codex. Use Playwright when repeatable automation or browser diagnostics are needed.
 
 ## Error Handling
 

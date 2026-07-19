@@ -32,8 +32,8 @@ These style skills are not bundled. The selector loads exactly one when needed.
 - Build Web Apps
 - Supabase
 - GitHub
-- Codex Security
-- Browser, with Playwright for repeatable automation and diagnostics
+- Security review tooling: Codex Security on Codex, the security review command on Claude Code
+- Browser tooling (the in-app browser pane on Claude Code, the built-in Browser on Codex), with Playwright for repeatable automation and diagnostics
 
 ## Boundaries
 
@@ -43,4 +43,4 @@ These style skills are not bundled. The selector loads exactly one when needed.
 
 ## Verification
 
-Run scripts/verify_bundle.py, validate route and acceptance artifacts, then execute the named flows in the built-in Browser.
+Run scripts/verify_bundle.py, validate route and acceptance artifacts, then execute the named flows in the host browser surface: the in-app browser pane on Claude Code, the built-in Browser on Codex.
