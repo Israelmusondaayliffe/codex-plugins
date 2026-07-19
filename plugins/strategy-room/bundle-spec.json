@@ -1,6 +1,6 @@
 {
   "plugin": "strategy-room",
-  "version": "0.1.0+codex.20260714121935",
+  "version": "0.1.1",
   "skills": [
     "assumption-challenger",
     "assumption-register",

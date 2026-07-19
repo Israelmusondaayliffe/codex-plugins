@@ -39,7 +39,7 @@
       "name": "citizen-forge",
       "source": "./plugins/citizen-forge",
       "description": "Governed internal application creation for non-technical owners, with deterministic policy and lifecycle controls.",
-      "version": "1.0.0+codex.20260718160314",
+      "version": "1.0.1",
       "author": {
         "name": "Israel Ayliffe"
       }
@@ -158,7 +158,7 @@
       "name": "strategy-room",
       "source": "./plugins/strategy-room",
       "description": "Pre-commitment interviews, assumption challenge, option generation, decision synthesis, and uncertainty tracking.",
-      "version": "0.1.0+codex.20260714121935",
+      "version": "0.1.1",
       "author": {
         "name": "Israel Ayliffe"
       }
@@ -167,7 +167,7 @@
       "name": "video-production-studio",
       "source": "./plugins/video-production-studio",
       "description": "End-to-end routing, prompting, production, captions, graphics, runtime implementation, and delivery checks for video.",
-      "version": "0.1.0+codex.20260714115922",
+      "version": "0.1.1",
       "author": {
         "name": "Israel Ayliffe"
       }
@@ -185,7 +185,7 @@
       "name": "writing-quality",
       "source": "./plugins/writing-quality",
       "description": "Intent-aware drafting, rewriting, detect-only review, claim boundaries, and final prose validation.",
-      "version": "0.1.0+codex.20260714115137",
+      "version": "0.1.1",
       "author": {
         "name": "Israel Ayliffe"
       }

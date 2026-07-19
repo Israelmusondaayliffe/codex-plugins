@@ -24,7 +24,7 @@ codex plugin marketplace add Israelmusondaayliffe/codex-plugins --ref main
 codex plugin add citizen-forge@israel-codex-plugins
 ```
 
-Start a new Codex task after installation so the plugin skills appear in the task capability inventory.
+Start a new Claude Code, Claude Cowork, or Codex task after installation so the plugin skills appear in the task capability inventory.
 
 ## Included skills
 

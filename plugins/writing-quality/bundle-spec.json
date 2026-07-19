@@ -1,6 +1,6 @@
 {
   "plugin": "writing-quality",
-  "version": "0.1.0+codex.20260714115137",
+  "version": "0.1.1",
   "skills": [
     "business-writing-intent-enforcer",
     "claim-boundary-checker",

@@ -1,6 +1,6 @@
 {
   "plugin": "video-production-studio",
-  "version": "0.1.0+codex.20260714115922",
+  "version": "0.1.1",
   "skills": [
     "embedded-captions",
     "faceless-explainer",
