@@ -1,4 +1,4 @@
 interface:
   display_name: "Skill Engineer"
   short_description: "Create missing harness skills with validation."
-  default_prompt: "Use $skill-engineer to create a missing Codex skill."
+  default_prompt: "Use $skill-engineer to create a missing skill."

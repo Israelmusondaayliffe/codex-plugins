@@ -1,6 +1,6 @@
 ---
 name: skill-engineer
-description: Create or upgrade a missing Codex skill identified during harness design, using the official Skill Creator workflow and evidence that the skill fixes a repeated failure. Use when the harness plan requires a new reusable workflow, validator, script, reference set, or asset bundle that is not already supplied by an installed skill or plugin.
+description: Create or upgrade a missing skill identified during harness design for Claude Code, Claude Cowork, or Codex, with evidence that the skill fixes a repeated failure. Use when the harness plan requires a new reusable workflow, validator, script, reference set, or asset bundle that is not already supplied by an installed skill or plugin.
 ---
 
 # Skill Engineer
@@ -11,12 +11,11 @@ Reuse an existing capability when it already owns the task. Create a skill only 
 
 1. Define concrete trigger examples and the failure the skill prevents.
 2. Search installed namespaced and loose skills for an existing owner.
-3. Load the system `skill-creator` skill.
-4. Initialize the skill with its provided `init_skill.py` script.
-5. Keep `SKILL.md` concise and move depth into directly linked references.
-6. Add deterministic scripts only when exact behavior warrants them.
-7. Generate matching `agents/openai.yaml` metadata.
-8. Run the official quick validator and realistic forward tests.
-9. Add the skill to the harness plan and discovery checks.
+3. Author to the shared format: a directory with `SKILL.md`, YAML frontmatter carrying `name` and a third-person `description` with specific trigger phrases, and depth moved into linked `references/`.
+4. On Codex, load the system `skill-creator` skill, initialize with its `init_skill.py`, and generate matching `agents/openai.yaml` metadata. On Claude Code and Cowork, use an installed skill-creation skill when present; otherwise author the directory directly.
+5. Add deterministic scripts only when exact behavior warrants them.
+6. Validate: the Codex quick validator on Codex, `claude plugin validate` when the skill ships inside a Claude Code plugin, structural checks (frontmatter parses, description present, no placeholders) on Cowork.
+7. Place it where the platform discovers it, per the platform file: personal or project skills directory, or inside a plugin.
+8. Run realistic forward tests and add the skill to the harness plan and discovery checks.
 
 Do not create a broad everything-skill or load an entire library by default.

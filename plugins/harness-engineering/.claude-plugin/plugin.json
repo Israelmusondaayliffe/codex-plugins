@@ -1,7 +1,7 @@
 {
   "name": "harness-engineering",
-  "version": "1.0.0",
-  "description": "Design, build, verify, and maintain a personalized Codex harness through a source-first interview and reversible guided workflow.",
+  "version": "2.0.0",
+  "description": "Design, build, verify, and maintain a personalized AI operating harness on Claude Code, Claude Cowork, or Codex through a source-first interview and reversible guided workflow.",
   "author": {
     "name": "Israel Ayliffe",
     "url": "https://github.com/Israelmusondaayliffe"
@@ -10,11 +10,14 @@
   "repository": "https://github.com/Israelmusondaayliffe/codex-plugins",
   "license": "MIT",
   "keywords": [
+    "claude-code",
+    "cowork",
     "codex",
     "harness",
     "agents",
     "skills",
     "plugins",
     "verification"
-  ]
+  ],
+  "skills": "./skills/"
 }

@@ -1,17 +1,17 @@
 ---
 name: harness-maintainer
-description: Audit and update an existing Codex harness after model changes, Codex releases, plugin updates, repeated corrections, stale instructions, failed automations, or capability drift. Use for weekly, monthly, or quarterly harness reviews, model-jump audits, obsolete-skill removal, routing parity checks, maintenance planning, and safe in-place upgrades.
+description: Audit and update an existing harness after model changes, platform releases of Claude Code, Cowork, or Codex, plugin updates, repeated corrections, stale instructions, failed automations, or capability drift. Use for weekly, monthly, or quarterly harness reviews, model-jump audits, obsolete-skill removal, routing parity checks, maintenance planning, and safe in-place upgrades.
 ---
 
 # Harness Maintainer
 
-Treat maintenance as a new audit and plan. Do not assume the previous harness state is current.
+Treat maintenance as a new audit and plan. Do not assume the previous harness state is current, and do not assume the platform still behaves the way the platform reference file describes; those files carry a verification date and go stale.
 
 ## Cadence
 
-- Weekly: review outputs, Goal stops, automation results, failed checks, and repeated corrections.
-- Monthly: review instruction chains, memory staleness, plugin and skill use, hooks, rules, and output hygiene.
-- Quarterly or after major Codex changes: verify official platform behavior, model-specific prompt blocks, connectors, Browser, Computer Use, discovery, and security boundaries.
+- Weekly: review outputs, run stops, automation and scheduled-task results, failed checks, and repeated corrections.
+- Monthly: review instruction chains, memory staleness, plugin and skill use, hooks or validators, and output hygiene.
+- Quarterly or after major platform changes: re-verify official platform behavior against the platform reference files, model-specific prompt blocks, connectors, optional capability bundles, discovery, and security boundaries. Update the platform files when reality has moved.
 
 ## Workflow
 

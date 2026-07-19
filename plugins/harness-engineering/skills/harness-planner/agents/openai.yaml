@@ -1,4 +1,4 @@
 interface:
   display_name: "Harness Planner"
   short_description: "Turn intake and audit evidence into an approved plan."
-  default_prompt: "Use $harness-planner to plan my Codex harness."
+  default_prompt: "Use $harness-planner to plan my operating harness."

@@ -289,7 +289,7 @@ def skill_names(root: Path) -> list[str]:
     return sorted(set(names))
 
 
-def plugin_inventory() -> list[dict[str, Any]]:
+def codex_plugin_inventory() -> list[dict[str, Any]]:
     try:
         run = subprocess.run(["codex", "plugin", "list", "--json"], check=True, capture_output=True, text=True, timeout=20)
         payload = json.loads(run.stdout)
@@ -309,33 +309,112 @@ def plugin_inventory() -> list[dict[str, Any]]:
     )
 
 
-def audit_environment(codex_home: Path, workspace: Path | None) -> dict[str, Any]:
-    home = codex_home.expanduser().resolve(strict=False)
-    workspace_resolved = workspace.expanduser().resolve(strict=False) if workspace else None
-    agents: list[str] = []
-    global_agents = home / "AGENTS.md"
-    if global_agents.is_file():
-        agents.append(str(global_agents))
-    if workspace_resolved:
-        candidate = workspace_resolved / "AGENTS.md"
+def directory_plugin_inventory(root: Path) -> list[dict[str, Any]]:
+    """List plugins by reading manifests under a plugin directory (Claude Code cache or Cowork synced dir)."""
+    plugins: list[dict[str, Any]] = []
+    if not root.is_dir():
+        return plugins
+    for manifest in sorted(root.glob("*/.claude-plugin/plugin.json")) + sorted(root.glob("*/.codex-plugin/plugin.json")):
+        try:
+            data = json.loads(manifest.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            continue
+        plugins.append({"name": data.get("name"), "version": data.get("version"), "path": str(manifest.parents[1])})
+    return sorted(plugins, key=lambda item: str(item["name"]))
+
+
+def json_key_names(path: Path) -> dict[str, Any]:
+    """Record top-level key names of a JSON settings file, redacting sensitive names. Never records values."""
+    if not path.is_file():
+        return {"exists": False, "keys": []}
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return {"exists": True, "keys": [], "parse_error": True}
+    keys = []
+    if isinstance(data, dict):
+        for key in data:
+            keys.append("redacted-sensitive-key" if SECRET_KEY.search(key) else key)
+    return {"exists": True, "keys": sorted(keys)}
+
+
+def detect_platform() -> str:
+    if Path("/mnt/user-data/uploads").is_dir() and (Path.home() / ".claude" / "plugins" / "synced").is_dir():
+        return "cowork"
+    if shutil.which("claude") or (Path.home() / ".claude" / "settings.json").is_file():
+        return "claude-code"
+    if shutil.which("codex") or Path(os.environ.get("CODEX_HOME", Path.home() / ".codex")).is_dir():
+        return "codex"
+    return "unknown"
+
+
+def default_home(target: str) -> Path:
+    if target == "codex":
+        return Path(os.environ.get("CODEX_HOME", Path.home() / ".codex"))
+    return Path(os.environ.get("CLAUDE_CONFIG_DIR", Path.home() / ".claude"))
+
+
+def instruction_chain(target: str, home: Path, workspace: Path | None) -> list[str]:
+    chain: list[str] = []
+    if target == "codex":
+        names = ["AGENTS.md"]
+    else:
+        names = ["CLAUDE.md"]
+    for name in names:
+        candidate = home / name
         if candidate.is_file():
-            agents.append(str(candidate))
-    return {
+            chain.append(str(candidate))
+    if workspace:
+        for name in (names + ["CLAUDE.local.md"] if target != "codex" else names):
+            candidate = workspace / name
+            if candidate.is_file():
+                chain.append(str(candidate))
+        dot_claude = workspace / ".claude" / "CLAUDE.md"
+        if target != "codex" and dot_claude.is_file():
+            chain.append(str(dot_claude))
+    return chain
+
+
+def audit_environment(target: str, home_path: Path, workspace: Path | None) -> dict[str, Any]:
+    if target == "auto":
+        target = detect_platform()
+    home = home_path.expanduser().resolve(strict=False)
+    workspace_resolved = workspace.expanduser().resolve(strict=False) if workspace else None
+
+    if target == "codex":
+        config = parse_config_keys(home / "config.toml")
+        plugins: list[dict[str, Any]] = codex_plugin_inventory()
+    else:
+        config = json_key_names(home / "settings.json")
+        plugins = directory_plugin_inventory(home / "plugins" / "cache") or directory_plugin_inventory(home / "plugins" / "synced")
+
+    report: dict[str, Any] = {
         "schema_version": SCHEMA_VERSION,
+        "target_platform": target,
         "platform": {"system": platform.system(), "release": platform.release(), "python": platform.python_version()},
-        "codex_home": str(home),
+        "home": str(home),
         "workspace": str(workspace_resolved) if workspace_resolved else None,
-        "agents_chain": agents,
-        "config": parse_config_keys(home / "config.toml"),
+        "instruction_chain": instruction_chain(target, home, workspace_resolved),
+        "config": config,
         "skills": skill_names(home / "skills"),
-        "plugins": plugin_inventory(),
+        "plugins": plugins,
         "surfaces": {
             "hooks_file": (home / "hooks.json").is_file(),
             "rules_directory": (home / "rules").is_dir(),
             "memories_directory": (home / "memories").is_dir(),
+            "agents_directory": (home / "agents").is_dir(),
+            "commands_directory": (home / "commands").is_dir(),
             "computer_use_bundle": (home / "computer-use").exists(),
         },
     }
+    if target == "cowork" and workspace_resolved:
+        contract: list[str] = []
+        for name in ("CLAUDE.md", "about-me.md", "voice-and-style.md", "working-rules.md"):
+            candidate = workspace_resolved / name
+            if candidate.is_file():
+                contract.append(name)
+        report["cowork_contract_files"] = contract
+    return report
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -344,7 +423,9 @@ def build_parser() -> argparse.ArgumentParser:
 
     audit = sub.add_parser("audit")
     audit.add_argument("--output", required=True, type=Path)
-    audit.add_argument("--codex-home", type=Path, default=Path(os.environ.get("CODEX_HOME", Path.home() / ".codex")))
+    audit.add_argument("--platform", choices=["auto", "claude-code", "cowork", "codex"], default="auto", dest="target_platform")
+    audit.add_argument("--home", type=Path, help="config home override; defaults per platform")
+    audit.add_argument("--codex-home", type=Path, help="deprecated alias for --home with --platform codex")
     audit.add_argument("--workspace", type=Path)
 
     profile = sub.add_parser("validate-profile")
@@ -371,7 +452,15 @@ def main(argv: list[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
     try:
         if args.command == "audit":
-            write_json(args.output, audit_environment(args.codex_home, args.workspace))
+            target = args.target_platform
+            if args.codex_home is not None and args.home is None:
+                target = "codex" if target == "auto" else target
+                home = args.codex_home
+            else:
+                resolved = detect_platform() if target == "auto" else target
+                home = args.home if args.home is not None else default_home(resolved)
+                target = resolved
+            write_json(args.output, audit_environment(target, home, args.workspace))
         elif args.command == "validate-profile":
             validate_profile(load_json(args.path))
             print("profile valid")

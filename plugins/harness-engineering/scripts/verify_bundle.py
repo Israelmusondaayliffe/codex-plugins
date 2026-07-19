@@ -32,9 +32,11 @@ def fail(message: str) -> None:
 
 def main() -> int:
     root = Path(sys.argv[1] if len(sys.argv) > 1 else Path(__file__).resolve().parents[1]).resolve()
-    manifest_path = root / ".codex-plugin" / "plugin.json"
+    manifest_path = root / ".claude-plugin" / "plugin.json"
+    if not manifest_path.is_file():
+        manifest_path = root / ".codex-plugin" / "plugin.json"
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
-    if manifest.get("name") != "harness-engineering" or manifest.get("version") != "1.0.0":
+    if manifest.get("name") != "harness-engineering" or manifest.get("version") != "2.0.0":
         fail("manifest identity or version is incorrect")
     if manifest.get("author", {}).get("name") != "Israel Ayliffe" or manifest.get("license") != "MIT":
         fail("publisher or license metadata is incorrect")
@@ -49,12 +51,19 @@ def main() -> int:
     validations = []
     for name in sorted(EXPECTED_SKILLS):
         skill_dir = root / "skills" / name
-        result = subprocess.run([sys.executable, str(validator), str(skill_dir)], capture_output=True, text=True)
-        if result.returncode != 0:
-            fail(f"skill validation failed for {name}: {result.stdout}{result.stderr}")
-        metadata = (skill_dir / "agents" / "openai.yaml").read_text(encoding="utf-8")
-        if f"${name}" not in metadata:
-            fail(f"default prompt does not name ${name}")
+        if validator.is_file():
+            result = subprocess.run([sys.executable, str(validator), str(skill_dir)], capture_output=True, text=True)
+            if result.returncode != 0:
+                fail(f"skill validation failed for {name}: {result.stdout}{result.stderr}")
+        else:
+            text = (skill_dir / "SKILL.md").read_text(encoding="utf-8")
+            if not text.startswith("---") or "description:" not in text.splitlines()[2][:12] and not any(l.startswith("description:") for l in text.splitlines()[:6]):
+                fail(f"SKILL.md frontmatter incomplete for {name}")
+        metadata_path = skill_dir / "agents" / "openai.yaml"
+        if metadata_path.is_file():
+            metadata = metadata_path.read_text(encoding="utf-8")
+            if f"${name}" not in metadata:
+                fail(f"default prompt does not name ${name}")
         validations.append(name)
 
     for path in root.rglob("*"):

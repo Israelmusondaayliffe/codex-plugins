@@ -1166,10 +1166,10 @@ export const plugins = [
   {
     "slug": "harness-engineering",
     "name": "Harness Engineering",
-    "shortDescription": "Build a personal Codex operating harness.",
-    "longDescription": "Interview the user, inspect the current Codex environment, plan a right-sized harness, apply approved changes with backups, and verify the result with fresh evidence.",
-    "description": "Design, build, verify, and maintain a personalized Codex harness through a source-first interview and reversible guided workflow.",
-    "version": "1.0.0",
+    "shortDescription": "Build a personal AI operating harness on Claude Code, Cowork, or Codex.",
+    "longDescription": "Interview the user, inspect the current environment on the resolved platform, plan a right-sized harness, apply approved changes with backups, and verify the result with fresh evidence. Platform-aware: CLAUDE.md chains and settings on Claude Code, contract files and .plugin delivery on Claude Cowork, AGENTS.md chains and marketplaces on Codex.",
+    "description": "Design, build, verify, and maintain a personalized AI operating harness on Claude Code, Claude Cowork, or Codex through a source-first interview and reversible guided workflow.",
+    "version": "2.0.0",
     "category": "Productivity",
     "license": "MIT",
     "capabilities": [
@@ -1177,8 +1177,8 @@ export const plugins = [
       "Write"
     ],
     "defaultPrompts": [
-      "Design and build my Codex harness.",
-      "Audit my current Codex setup.",
+      "Design and build my AI operating harness.",
+      "Audit my current Claude Code, Cowork, or Codex setup.",
       "Verify that my harness really works."
     ],
     "platforms": [
@@ -1189,59 +1189,59 @@ export const plugins = [
     "skills": [
       {
         "name": "agents-md-engineer",
-        "description": "Design, rewrite, split, or verify a Codex AGENTS.md instruction chain across global, workspace, project, and nested scopes. Use when users ask what belongs in AGENTS.md, want instructions modeled on an existing harness, need shorter or clearer agent guidance, have conflicting instruction files, or need templates that encode role, boundaries, routing, workflow, and verification."
+        "description": "Design, rewrite, split, or verify agent instruction files across scopes on any supported platform, a CLAUDE.md chain for Claude Code, contract files at connected-folder roots for Claude Cowork, or an AGENTS.md chain for Codex. Use when users ask what belongs in CLAUDE.md or AGENTS.md, want instructions modeled on an existing harness, need shorter or clearer agent guidance, have conflicting instruction files, or need templates that encode role, boundaries, routing, workflow, and verification."
       },
       {
         "name": "harness-audit",
-        "description": "Inspect a current Codex home, workspace, project, or imported agent setup without changing it. Use for harness audits, setup inventories, AGENTS.md chain checks, installed skill or plugin reviews, connector and MCP inventories, rules or hook inspection, drift detection, secret-exposure checks, and gap analysis before a harness plan or upgrade."
+        "description": "Inspect a current Claude Code home, Cowork workspace, Codex home, project, or imported agent setup without changing it. Use for harness audits, setup inventories, CLAUDE.md or AGENTS.md chain checks, Cowork contract-file reviews, installed skill or plugin reviews, connector and MCP inventories, rules or hook inspection, drift detection, secret-exposure checks, and gap analysis before a harness plan or upgrade."
       },
       {
         "name": "harness-builder",
-        "description": "Apply an approved Harness Engineering operations plan to local Codex and workspace files with dry-run, hash preconditions, backups, atomic writes, receipts, and rollback. Use when a user approves a harness plan, asks to create the workspace and instruction files, fill approved harness gaps, or execute a defined batch of local configuration changes."
+        "description": "Apply an approved Harness Engineering operations plan to local Claude Code, Cowork connected-folder, or Codex files with dry-run, hash preconditions, backups, atomic writes, receipts, and rollback. Use when a user approves a harness plan, asks to create the workspace and instruction files, fill approved harness gaps, or execute a defined batch of local configuration changes."
       },
       {
         "name": "harness-engineering",
-        "description": "Design, build, verify, or maintain a personalized Codex harness from a vague brief or an existing setup. Use when a user asks for a Codex operating system, harness, AGENTS.md chain, workspace architecture, capability stack, guided setup, harness upgrade, or an end-to-end workflow that combines interview, audit, planning, reversible implementation, and verification. Route focused requests to the owned skill that matches the current phase."
+        "description": "Design, build, verify, or maintain a personalized AI operating harness on Claude Code, Claude Cowork, or Codex from a vague brief or an existing setup. Use when a user asks for an operating system for their AI, a harness, a CLAUDE.md or AGENTS.md chain, Cowork contract files, workspace architecture, capability stack, guided setup, harness upgrade, or an end-to-end workflow combining interview, audit, planning, reversible implementation, and verification. Route focused requests to the owned skill that matches the current phase."
       },
       {
         "name": "harness-interview",
-        "description": "Conduct a persistent, source-first interview that converts a user's incomplete Codex setup idea into a confirmed harness profile. Use when the user says grill me, interview me, design my harness, set up Codex for me, ask what I need, or gives a thin brief whose answers could change global instructions, workspace structure, permissions, skills, plugins, connectors, verification, or maintenance."
+        "description": "Conduct a persistent, source-first interview that converts a user's incomplete harness idea into a confirmed profile for Claude Code, Claude Cowork, or Codex. Use when the user says grill me, interview me, design my harness, set up Claude Code or Cowork or Codex for me, ask what I need, or gives a thin brief whose answers could change global instructions, contract files, workspace structure, permissions, skills, plugins, connectors, verification, or maintenance."
       },
       {
         "name": "harness-maintainer",
-        "description": "Audit and update an existing Codex harness after model changes, Codex releases, plugin updates, repeated corrections, stale instructions, failed automations, or capability drift. Use for weekly, monthly, or quarterly harness reviews, model-jump audits, obsolete-skill removal, routing parity checks, maintenance planning, and safe in-place upgrades."
+        "description": "Audit and update an existing harness after model changes, platform releases of Claude Code, Cowork, or Codex, plugin updates, repeated corrections, stale instructions, failed automations, or capability drift. Use for weekly, monthly, or quarterly harness reviews, model-jump audits, obsolete-skill removal, routing parity checks, maintenance planning, and safe in-place upgrades."
       },
       {
         "name": "harness-planner",
-        "description": "Turn a confirmed harness profile and read-only audit into a decision-complete architecture and reversible operation plan. Use when a user asks for a harness plan, implementation plan, workspace blueprint, capability plan, migration plan, or wants to see exact proposed changes and checks before Codex edits global or project files."
+        "description": "Turn a confirmed harness profile and read-only audit into a decision-complete architecture and reversible operation plan for Claude Code, Claude Cowork, or Codex. Use when a user asks for a harness plan, implementation plan, workspace blueprint, capability plan, migration plan, or wants to see exact proposed changes and checks before any global, folder, or project files are edited."
       },
       {
         "name": "harness-runner",
-        "description": "Execute an approved Harness Engineering plan as a bounded Goal with durable state, iteration receipts, approval stops, resume behavior, and a verifier handoff. Use when a user says run the harness build, keep going until verified, use a Goal, resume the build, or carry an approved multi-stage harness implementation to a named terminal state."
+        "description": "Execute an approved Harness Engineering plan as a bounded autonomous run with durable state, iteration receipts, approval stops, resume behavior, and a verifier handoff, on Claude Code, Claude Cowork, or Codex. Use when a user says run the harness build, keep going until verified, resume the build, or carry an approved multi-stage harness implementation to a named terminal state."
       },
       {
         "name": "harness-verifier",
-        "description": "Verify a generated or upgraded Codex harness against its approved profile, operations plan, current files, live capability state, and fresh discovery evidence. Use when a user asks whether the harness is complete, installed, global, visible, safe, restart-ready, or actually operational rather than merely present on disk."
+        "description": "Verify a generated or upgraded harness against its approved profile, operations plan, current files, live capability state, and fresh discovery evidence, on Claude Code, Claude Cowork, or Codex. Use when a user asks whether the harness is complete, installed, global, visible, safe, restart-ready, or actually operational rather than merely present on disk."
       },
       {
         "name": "model-prompt-engineer",
-        "description": "Create, migrate, or test prompts used by a Codex harness while adapting to the selected current OpenAI model and prompt surface. Use for global instruction prompts, Goal prompts, verification prompts, API system prompts, model migrations, prompt regressions, or requests to support GPT-5.6 and later models without freezing the harness to one model generation."
+        "description": "Create, migrate, or test prompts used by a harness while adapting to the selected current model and prompt surface, Anthropic models for Claude Code and Cowork harnesses, OpenAI models for Codex harnesses. Use for global instruction prompts, autonomous-run prompts, verification prompts, API system prompts, model migrations, prompt regressions, or requests to support the latest model without freezing the harness to one model generation."
       },
       {
         "name": "plugin-engineer",
-        "description": "Create, update, validate, install, or package a Codex plugin required by an approved harness architecture. Use when several related skills need a public or team bundle, when the harness needs plugin metadata or a marketplace entry, or when an existing local plugin must be updated and reinstalled with source-cache and fresh-discovery proof."
+        "description": "Create, update, validate, install, or package a plugin required by an approved harness architecture, for Claude Code, Claude Cowork, or Codex. Use when several related skills need a public or team bundle, when the harness needs plugin metadata or a marketplace entry, when a plugin must be repackaged as an installable .plugin file, or when an existing local plugin must be updated and reinstalled with source-cache and fresh-discovery proof."
       },
       {
         "name": "skill-engineer",
-        "description": "Create or upgrade a missing Codex skill identified during harness design, using the official Skill Creator workflow and evidence that the skill fixes a repeated failure. Use when the harness plan requires a new reusable workflow, validator, script, reference set, or asset bundle that is not already supplied by an installed skill or plugin."
+        "description": "Create or upgrade a missing skill identified during harness design for Claude Code, Claude Cowork, or Codex, with evidence that the skill fixes a repeated failure. Use when the harness plan requires a new reusable workflow, validator, script, reference set, or asset bundle that is not already supplied by an installed skill or plugin."
       }
     ],
     "counts": {
       "skills": 12,
-      "assets": 4,
-      "references": 6,
+      "assets": 7,
+      "references": 10,
       "scripts": 3,
-      "files": 48
+      "files": 55
     },
     "bundlesMcp": false,
     "bundlesApp": false
@@ -1313,9 +1313,9 @@ export const plugins = [
 export const totals = {
   "plugins": 20,
   "skills": 160,
-  "assets": 280,
-  "references": 398,
+  "assets": 283,
+  "references": 402,
   "scripts": 357,
-  "files": 1569
+  "files": 1576
 } as const;
 export type Plugin = (typeof plugins)[number];

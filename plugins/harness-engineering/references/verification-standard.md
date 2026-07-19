@@ -6,7 +6,7 @@ Completion requires fresh evidence from the installed environment.
 
 - Required files exist at the approved paths.
 - JSON, TOML, YAML, and Markdown parse or validate where a validator exists.
-- The `AGENTS.md` chain resolves in the intended order.
+- The instruction chain (CLAUDE.md, contract files, or AGENTS.md per platform) resolves in the intended order.
 - Plugin and skill manifests contain no placeholders.
 - Generated files contain no secrets or user-specific sample data.
 
@@ -16,7 +16,7 @@ Completion requires fresh evidence from the installed environment.
 - Command policy allows safe examples and blocks forbidden examples.
 - Hooks run only after review and trust.
 - Connectors return an authenticated profile or a precise setup requirement.
-- Browser and Computer Use are tested only when the harness depends on them.
+- Optional capability bundles (browser, computer use, device bridge) are tested only when the harness depends on them.
 
 ## Completion receipt
 

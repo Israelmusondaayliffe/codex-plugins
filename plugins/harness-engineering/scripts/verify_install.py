@@ -25,7 +25,10 @@ def file_map(root: Path) -> dict[str, str]:
 
 def main() -> int:
     source = Path(sys.argv[1] if len(sys.argv) > 1 else Path(__file__).resolve().parents[1]).resolve()
-    manifest = json.loads((source / ".codex-plugin" / "plugin.json").read_text(encoding="utf-8"))
+    manifest_path = source / ".claude-plugin" / "plugin.json"
+    if not manifest_path.is_file():
+        manifest_path = source / ".codex-plugin" / "plugin.json"
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
     version = manifest["version"]
     listing = subprocess.run(["codex", "plugin", "list", "--json"], check=True, capture_output=True, text=True)
     installed = [item for item in json.loads(listing.stdout).get("installed", []) if item.get("name") == "harness-engineering" and item.get("marketplaceName") == "personal"]

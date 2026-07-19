@@ -1,21 +1,25 @@
 ---
 name: plugin-engineer
-description: Create, update, validate, install, or package a Codex plugin required by an approved harness architecture. Use when several related skills need a public or team bundle, when the harness needs plugin metadata or a marketplace entry, or when an existing local plugin must be updated and reinstalled with source-cache and fresh-discovery proof.
+description: Create, update, validate, install, or package a plugin required by an approved harness architecture, for Claude Code, Claude Cowork, or Codex. Use when several related skills need a public or team bundle, when the harness needs plugin metadata or a marketplace entry, when a plugin must be repackaged as an installable .plugin file, or when an existing local plugin must be updated and reinstalled with source-cache and fresh-discovery proof.
 ---
 
 # Plugin Engineer
 
-Use the system `plugin-creator` skill as the source of truth for scaffolding, manifests, marketplace entries, validation, cachebusters, and reinstall behavior.
+The manifest schema is shared; the packaging, install, and proof paths are not. Resolve the platform first, then follow its branch. Update means new version, never a silent overwrite.
 
-## Workflow
+## Shared workflow
 
 1. Confirm that a plugin is justified instead of a local skill.
-2. Define owned skills, front door, external tools, hooks, apps, and explicit exclusions.
-3. Scaffold with Plugin Creator. Do not hand-write initial marketplace structure.
-4. Include only component fields backed by real files.
-5. Validate every owned skill and the complete plugin.
-6. Install or reinstall from the correct marketplace.
-7. Compare source and installed cache.
-8. Prove visibility from a new task or fresh prompt inventory.
+2. Define owned skills, front door, external tools, hooks, agents, and explicit exclusions.
+3. Keep the manifest at `.claude-plugin/plugin.json` (Codex historically used `.codex-plugin`; check what the installed version expects). Include only component fields backed by real files.
+4. Validate every owned skill and the complete plugin.
+5. Bump the semver version on every change.
+6. Prove visibility from a new task or fresh capability inventory after install.
 
-Public repository creation and marketplace submission remain separate external actions.
+## Platform branches
+
+- Claude Cowork: package the plugin directory as a `.plugin` zip with the manifest at the archive root and deliver the file in chat so the install card renders. That is the primary path; do not route users through marketplaces, folder copies, or manual installs unless they ask.
+- Claude Code: scaffold or validate with `claude plugin validate`, install with `/plugin` or `claude plugin install` (test via `--plugin-dir`), and compare source against the cache under `~/.claude/plugins/cache/` after marketplace installs.
+- Codex: scaffold with the system `plugin-creator` skill, install through `codex plugin marketplace add` and `codex plugin add`, verify with `codex plugin list --json` and `scripts/verify_install.py` source-cache parity.
+
+Public repository creation and marketplace submission remain separate external actions on every platform.
