@@ -4,7 +4,7 @@
 
 - Local harness: use when the model endpoint and dataset can be invoked reproducibly in the current environment.
 - Hugging Face Jobs: use when remote compute, dataset access, or tracked community evaluation is needed and the companion is installed.
-- External authorized runner: use when credentials or production infrastructure must remain outside Codex. Export the frozen plan and require the stable raw result contract on return.
+- External authorized runner: use when credentials or production infrastructure must remain outside the host platform. Export the frozen plan and require the stable raw result contract on return.
 
 ## Raw result contract
 

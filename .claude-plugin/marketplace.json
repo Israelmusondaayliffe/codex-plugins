@@ -21,7 +21,7 @@
       "name": "brand-world-studio",
       "source": "./plugins/brand-world-studio",
       "description": "Brand briefs, visual systems, image-model routing, production prompt packs, and consistency verification.",
-      "version": "0.1.0+codex.20260714121935",
+      "version": "0.1.1",
       "author": {
         "name": "Israel Ayliffe"
       }
@@ -57,7 +57,7 @@
       "name": "data-storytelling-studio",
       "source": "./plugins/data-storytelling-studio",
       "description": "Routes checked analysis into decision-facing visual stories, executive readouts, reports, decks, dashboards, and publishable sites.",
-      "version": "0.1.0+codex.20260714130032",
+      "version": "0.1.1",
       "author": {
         "name": "Israel Ayliffe"
       }
@@ -113,7 +113,7 @@
       "name": "model-evaluation-lab",
       "source": "./plugins/model-evaluation-lab",
       "description": "Plans reproducible model evaluations, normalizes benchmark runs, and produces measured model-selection decisions.",
-      "version": "0.1.0+codex.20260714130940",
+      "version": "0.1.1",
       "author": {
         "name": "Israel Ayliffe"
       }
@@ -131,7 +131,7 @@
       "name": "outcome-engine",
       "source": "./plugins/outcome-engine",
       "description": "Turn unclear goals into verified outcomes across research, writing, operations, creative work, personal planning, and software.",
-      "version": "1.0.0+codex.20260710154316",
+      "version": "1.0.1",
       "author": {
         "name": "Israel A."
       }
@@ -149,7 +149,7 @@
       "name": "proofloop",
       "source": "./plugins/proofloop",
       "description": "Governed agent learning ledger and evaluation wrapper with bounded refinement, verification, quarantined memory, and read-only audit.",
-      "version": "0.1.0+codex.20260713133858",
+      "version": "0.1.1",
       "author": {
         "name": "Israel Ayliffe"
       }

@@ -11,7 +11,7 @@ Confidence levels flagged inline. Revisit in 2 to 4 weeks as the docs firm up.
 
 Model ID: `gpt-image-2`
 
-Integrated in Codex without a separate API key.
+Integrated in Codex without a separate API key; on Claude Code or Claude Cowork, use a standard OpenAI API key.
 
 ## Core parameters
 
@@ -70,7 +70,7 @@ Specific RPM / TPM values are tier-dependent and not consistently documented at 
 
 Standard OpenAI API key.
 
-Codex integration: no separate key required (inherits the session).
+Codex integration: no separate key required (inherits the session). Other hosts (Claude Code, Claude Cowork) use the standard key above.
 
 ## Provenance and watermarking
 

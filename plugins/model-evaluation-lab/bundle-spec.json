@@ -1,6 +1,6 @@
 {
   "plugin": "model-evaluation-lab",
-  "version": "0.1.0+codex.20260714130940",
+  "version": "0.1.1",
   "skills": [
     "benchmark-runner",
     "model-evaluation-plan",

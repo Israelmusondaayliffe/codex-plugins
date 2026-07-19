@@ -1,6 +1,6 @@
 {
   "name": "outcome-engine",
-  "version": "1.0.0+codex.20260710154316",
+  "version": "1.0.1",
   "description": "Turn unclear goals into verified outcomes across research, writing, operations, creative work, personal planning, and software.",
   "author": {
     "name": "Israel A."
@@ -11,7 +11,9 @@
     "decision-making",
     "execution",
     "verification",
-    "system-design"
+    "system-design",
+    "claude-code",
+    "cowork"
   ],
   "skills": "./skills/",
   "interface": {
