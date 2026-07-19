@@ -6,8 +6,9 @@ import {
   writeFileSync,
 } from "node:fs";
 import { join, relative } from "node:path";
+import { fileURLToPath } from "node:url";
 
-const root = new URL("../", import.meta.url).pathname;
+const root = fileURLToPath(new URL("../", import.meta.url));
 const marketplacePath = join(root, ".agents/plugins/marketplace.json");
 const marketplace = JSON.parse(readFileSync(marketplacePath, "utf8"));
 const claudeMarketplacePath = join(root, ".claude-plugin/marketplace.json");
