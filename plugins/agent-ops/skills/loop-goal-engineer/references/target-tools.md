@@ -1,6 +1,6 @@
 # Target Tools
 
-Load before writing any final prompt. Covers Claude Code, Codex CLI, and the orchestrator layer.
+Load before writing any final prompt. Covers Claude Code, Claude Cowork, Codex, and the orchestrator layer. Resolve the target host first; never port a command or capability between hosts on similarity alone.
 
 ## Claude Code
 
@@ -37,10 +37,14 @@ Version gates: /loop requires v2.1.72 or later, /goal requires v2.1.139 or later
 
 - Skills: saved instruction sets, referenced by name inside loops ("use the verify-research skill after each section").
 - CLAUDE.md: read at every session start, gives the loop its constraints on every run. Keep it short, it is paid for on every beat.
-- Subagents: can be deployed inside loops, each starts with a fresh context window. Use for verifier agents at checkpoints.
+- Subagents: defined as `agents/*.md` files in a plugin or `.claude/agents/` and dispatched via the Agent tool (parallel dispatch = multiple Agent calls in one message; long-lived agents continued via SendMessage; no config.toml equivalent). Can be deployed inside loops, each starts with a fresh context window. Use for verifier agents at checkpoints.
 - /compact: run manually before long sessions.
 - Reasoning effort: xhigh is the recommended default for agentic and coding work on frontier models (Fable 5, Opus 4.7 and later, Sonnet 5). Drop to high or medium for routine loops where each beat is simple, effort is paid on every beat.
 - Role strength: reviewing. Claude Code tends to be strong at reading a builder's output and finding spec violations, safety issues, error states, and security holes.
+
+### Claude Cowork note
+
+Cowork shares the Claude artifact shapes but not the terminal surfaces: recurring work becomes an in-session scheduled task, the session sandbox is ephemeral so durable loop state must live in a connected folder, and hooks are rarely available, so verify /goal and evaluator availability in the live session before relying on them.
 
 ## Codex (app and CLI)
 
@@ -52,14 +56,14 @@ Version gates: /loop requires v2.1.72 or later, /goal requires v2.1.139 or later
 ```
 
 - Prompt style: GPT-5.5 is outcome-first. State the outcome, criteria, and constraints, let the model pick the path. Step-by-step procedural prompts make it brittle. Never write a Codex goal as a numbered procedure.
-- Constraints placement: Codex reads a four-layer AGENTS.md chain on every task (global ~/.codex/AGENTS.md, override, workspace, project, most-specific wins). Standing constraints belong in the right chain layer, not repeated inside every goal. Goal text carries only task-specific boundaries.
+- Constraints placement: the instruction chain owns standing constraints on every host. On Codex that is the four-layer AGENTS.md chain read on every task (global ~/.codex/AGENTS.md under `${CODEX_HOME:-~/.codex}`, override, workspace, project, most-specific wins). On Claude Code the equivalent is the CLAUDE.md chain (global ~/.claude/CLAUDE.md, workspace, project, same most-specific-wins rule). Standing constraints belong in the right chain layer, not repeated inside every goal. Goal text carries only task-specific boundaries.
 - Recurring work: Codex uses Automations for scheduled runs and Goals for sustained autonomous work. /loop and /schedule are Claude Code vocabulary, do not emit them for Codex.
-- Subagents: first-class, configured under [agents] in ~/.codex/config.toml with named pre-scoped blocks and lifecycle verbs (spawn_agent, wait_agent, close_agent). Each subagent is a full model round-trip, cost scales, cap max_concurrent. Verifier agents inside Codex loops use this mechanism.
+- Subagents: first-class (MultiAgentV2), configured under [agents] in ~/.codex/config.toml with named pre-scoped blocks and lifecycle verbs (spawn_agent, send_input, wait_agent, resume_agent, followup_task, close_agent). The Codex counterpart of the Claude Code Agent tool: definition lives in config, dispatch lives in the verbs. Each subagent is a full model round-trip, cost scales, cap max_concurrent. Verifier agents inside Codex loops use this mechanism.
 - Role strength: building and sustained Goal-driven execution with tool chaining. The proven cross-tool pattern: plan in Claude with explicit success criteria, paste into Codex prefixed with /goal, review the diff.
 
-## Harness inheritance (both tools)
+## Harness inheritance (all hosts)
 
-When the user runs an operating harness (CLAUDE.md or AGENTS.md contract chain, a single dated write destination like CLAUDE-OUTPUTS/ or CODEX-OUTPUTS/YYYY-MM-DD/, validators, a four-phase workflow), generated goals and loops inherit it: scope defaults to the harness output folder with versioned naming and an announced output path, verification maps onto the harness verify phase (score 0 to 10, revise once below 8), and the prompt repeats nothing the contract chain already loads every turn, every duplicated line is paid on every beat.
+When the user runs an operating harness (CLAUDE.md or AGENTS.md contract chain, a single dated write destination like OUTPUTS/ or CODEX-OUTPUTS/YYYY-MM-DD/, validators, a four-phase workflow), generated goals and loops inherit it: scope defaults to the harness output folder with versioned naming and an announced output path, verification maps onto the harness verify phase (score 0 to 10, revise once below 8), and the prompt repeats nothing the contract chain already loads every turn, every duplicated line is paid on every beat.
 
 ## The distinction that matters for both
 

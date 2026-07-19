@@ -9,7 +9,7 @@ PATTERN: [single call / chaining / routing / parallelization / orchestrator-work
 REJECTED SIMPLER RUNG: [the rung below and the concrete reason it fails this task]
 TRADE ACCEPTED: [what this costs in latency and dollars, what it buys]
 
-TARGET: [Claude Code / Codex / both]
+TARGET: [Claude Code / Claude Cowork / Codex / multiple]
 
 AUGMENTATIONS:
 - Retrieval: [what, or none]
@@ -30,7 +30,7 @@ ITERATION POLICY: [how the agent chooses the next action between attempts, e.g. 
 
 PAUSE POINTS: [where a human checks in, placed before steps that poison downstream work; map onto the harness four-phase workflow when one exists]
 
-SCOPE: [what it may read, what it may write, what it must never touch. When a harness exists, write scope defaults to its output folder (CLAUDE-OUTPUTS/ or CODEX-OUTPUTS/YYYY-MM-DD/), versioned naming, announce the path when done]
+SCOPE: [what it may read, what it may write, what it must never touch. When a harness exists, write scope defaults to its output folder (OUTPUTS/ or CODEX-OUTPUTS/YYYY-MM-DD/), versioned naming, announce the path when done]
 
 HARNESS: [contract chain layers present (CLAUDE.md / AGENTS.md global, workspace, project), validators to invoke, rules the agent must NOT duplicate because the chain already loads them]
 ```

@@ -1,6 +1,6 @@
 {
   "plugin": "agent-ops",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "skills": [
     "agent-builder",
     "agent-ops-router",
@@ -19,8 +19,8 @@
     "agent-system-audit"
   ],
   "compatibility_shims": {
-    "through": "0.2.x",
-    "remove_in": "0.3.0 after loopkit 0.2.0",
+    "through": "0.3.x",
+    "remove_in": "0.4.0 after loopkit 0.2.0",
     "skills": [
       "goal-runner",
       "loop-goal-engineer",
@@ -35,7 +35,7 @@
   ],
   "guardrails": [
     "Do not run autonomous work without authority, evidence, and stop conditions.",
-    "Generic Codex Goals and loops are owned by LoopKit.",
+    "Generic Goals and loops on Claude Code, Claude Cowork, and Codex are owned by LoopKit.",
     "General idea-to-result work remains owned by Outcome Engine."
   ],
   "routing_cases": [
@@ -49,7 +49,7 @@
       "prompt": "Agent Ops: route this bounded Goal execution request.",
       "expected_skill": "agent-ops-router",
       "evidence_file": "skills/agent-ops-router/references/routing.md",
-      "evidence_contains": "loopkit-handoff: route generic Codex Goals"
+      "evidence_contains": "loopkit-handoff: route generic Goals"
     },
     {
       "prompt": "Audit this autonomous workflow for unbounded authority.",

@@ -1,6 +1,6 @@
 ---
 name: loopy
-description: Explicit-only compatibility shim for the historical Loopy name. Use only when the user explicitly says Loopy or asks for the Loop Library workflow. Redirect generic Codex loop design, run, verification, resume, and diagnosis to LoopKit. Retain the bundled legacy references only for an explicitly requested Loop Library discovery or publication task.
+description: Explicit-only compatibility shim for the historical Loopy name. Use only when the user explicitly says Loopy or asks for the Loop Library workflow. Redirect generic loop design, run, verification, resume, and diagnosis, on Claude Code, Claude Cowork, or Codex, to LoopKit. Retain the bundled legacy references only for an explicitly requested Loop Library discovery or publication task.
 metadata:
   author: Israel Ayliffe
   version: 1.1.0-compat
@@ -8,7 +8,7 @@ metadata:
 
 # Loopy compatibility shim
 
-This historical name remains available through Agent Ops 0.2.x. LoopKit owns generic Codex loop work.
+This historical name remains available through Agent Ops 0.3.x. LoopKit owns generic loop work on Claude Code, Claude Cowork, and Codex.
 
 For an explicit Loopy request, route generic work as follows:
 
@@ -21,4 +21,4 @@ If the user explicitly requests Loop Library discovery, debrief, save, or public
 
 Do not create parallel local state. Use LoopKit receipts and checkpoints for any executed run.
 
-This shim is scheduled for removal in Agent Ops 0.3.0 after LoopKit reaches 0.2.0.
+This shim is scheduled for removal in Agent Ops 0.4.0 after LoopKit reaches 0.2.0.

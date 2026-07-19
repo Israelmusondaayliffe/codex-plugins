@@ -1,6 +1,6 @@
 ---
 name: agent-builder
-description: Build agents and agentic workflows for Claude Code and Codex CLI from a plain task description. Based on Anthropic's Building Effective Agents framework. Five routed modes. ARCHITECT walks the simplicity ladder and selects the pattern. WORKFLOW builds the chosen pattern as concrete artifacts. AGENT builds autonomous agents with ground-truth verification, stop conditions, pause points, and Claude Code subagent files. ACI designs and hardens tool definitions (poka-yoke, docstring-grade parameters). REVIEW critiques existing agent setups against the three core principles. Harness-aware, built agents inherit AGENTS.md chains, CLAUDE.md contracts, and output-folder discipline. Triggers on build an agent, design an agent, make me a subagent, agent for claude code or codex, codex subagent config, multi-agent system, orchestrator workers, prompt chain, evaluator optimizer, agent design patterns, review or fix my agent, tool definition design, ACI, or any request to create an agentic system.
+description: Build agents and agentic workflows for Claude Code, Claude Cowork, and Codex from a plain task description. Based on Anthropic's Building Effective Agents framework. Five routed modes. ARCHITECT walks the simplicity ladder and selects the pattern. WORKFLOW builds the chosen pattern as concrete artifacts. AGENT builds autonomous agents with ground-truth verification, stop conditions, pause points, and per-host subagent definitions (agents/*.md files on Claude Code and Cowork, config.toml agent blocks on Codex). ACI designs and hardens tool definitions (poka-yoke, docstring-grade parameters). REVIEW critiques existing agent setups against the three core principles. Harness-aware, built agents inherit the instruction chain (CLAUDE.md chain on Claude Code and Cowork, AGENTS.md chain on Codex) and output-folder discipline. Triggers on build an agent, design an agent, make me a subagent, agent for claude code, cowork, or codex, codex subagent config, multi-agent system, orchestrator workers, prompt chain, evaluator optimizer, agent design patterns, review or fix my agent, tool definition design, ACI, or any request to create an agentic system.
 metadata:
   author: Israel A
   version: 1.1.0
@@ -8,7 +8,7 @@ metadata:
 
 # Agent Builder
 
-Turn "I want an agent that does X" into a working agent design and its concrete artifacts for Claude Code or Codex CLI.
+Turn "I want an agent that does X" into a working agent design and its concrete artifacts for Claude Code, Claude Cowork, or Codex.
 
 The framework this skill encodes, from Anthropic's Building Effective Agents: the most successful implementations use simple, composable patterns, not complex frameworks. Every design starts at the bottom of the simplicity ladder and climbs only when the step demonstrably improves outcomes. Agentic systems trade latency and cost for task performance, and that trade is made consciously, never by default.
 
@@ -23,7 +23,7 @@ Triggers: any fresh "build me an agent for X" where the pattern is not yet chose
 Triggers: pattern already chosen (by ARCHITECT or explicitly by the user) and it is one of the five workflow patterns: prompt chaining, routing, parallelization, orchestrator-workers, evaluator-optimizer.
 
 **AGENT** -> Load `agents/agent-autonomous.md`
-Triggers: pattern chosen is a true autonomous agent (open-ended, unpredictable step count), or the user asks for a Claude Code subagent file, a persistent agent definition, or "an agent that runs on its own."
+Triggers: pattern chosen is a true autonomous agent (open-ended, unpredictable step count), or the user asks for a subagent definition (a Claude Code or Cowork agents/*.md file, a Codex config.toml agent block), a persistent agent definition, or "an agent that runs on its own."
 
 **ACI** -> Load `agents/agent-aci.md`
 Triggers: "design the tools", "write tool definitions", "my agent keeps misusing the tool", MCP tool surface design, parameter naming, or any request focused on the agent-computer interface rather than the agent itself.
@@ -41,7 +41,7 @@ Never deliver a rung-3 design when rung 1 or 2 solves the task. Say so plainly w
 
 ## Target Tool Handling
 
-Default target is Claude Code. If the user says Codex, target the Codex app and CLI. Artifact formats per tool live in `references/target-formats.md`, load it before emitting any final artifact. Two per-target rules that always apply: Codex-bound prompts are outcome-first (outcome, criteria, constraints, never step-by-step procedure), and every built agent inherits the user's operating harness when one exists (contract chain layers, single dated write destination, validators, four-phase workflow), duplicating none of it. When the built system needs a /goal or /loop to run (schedules, autonomous sessions, orchestrator kickoff messages), compose with the loop-goal-engineer skill if it is available rather than hand-writing those prompts.
+Default target is Claude Code. Claude Cowork uses the same Claude artifact shapes, delivered through plugins, with the platform caveats in target-formats.md. If the user says Codex, target the Codex app and CLI. Artifact formats per host live in `references/target-formats.md`, load it before emitting any final artifact. Two per-target rules that always apply: Codex-bound prompts (GPT-5.5 targets) are outcome-first (outcome, criteria, constraints, never step-by-step procedure), a rule that does not apply to Claude-bound prompts, and every built agent inherits the user's operating harness when one exists (contract chain layers, single dated write destination, validators, four-phase workflow), duplicating none of it. When the built system needs a /goal or /loop to run (schedules, autonomous sessions, orchestrator kickoff messages), compose with the loop-goal-engineer skill if it is available rather than hand-writing those prompts.
 
 ## Shared Output Contract
 
@@ -69,9 +69,9 @@ It checks the non-negotiables: stopping conditions (max iterations or budget), g
 - `references/patterns.md` Workflows vs agents, the augmented LLM building block, all five workflow patterns with use-when tests and examples. Load in ARCHITECT, WORKFLOW, REVIEW.
 - `references/autonomous-agents.md` Agent mechanics, the ground truth rule, stopping conditions, pause points, proven domains, the three core principles. Load in AGENT, REVIEW.
 - `references/aci-design.md` Tool prompt engineering, format rules of thumb, the tool design checklist, poka-yoke. Load in ACI, and in AGENT when the agent gets custom tools.
-- `references/target-formats.md` Claude Code subagent file format, CLAUDE.md and skills placement, Codex AGENTS.md, and the CLI translation table (chaining = phase gates, parallelization = worktrees, evaluator-optimizer = grader loops). Load before emitting artifacts in any mode.
+- `references/target-formats.md` Claude Code and Cowork subagent file format and Agent-tool dispatch, CLAUDE.md chain and skills placement, Codex AGENTS.md chain and config.toml agent blocks, and the CLI translation table (chaining = phase gates, parallelization = worktrees, evaluator-optimizer = grader loops). Load before emitting artifacts in any mode.
 - `assets/agent-spec-template.md` The design spec every build fills before artifacts are written.
-- `assets/subagent-template.md` Claude Code subagent file skeleton.
+- `assets/subagent-template.md` Claude Code and Cowork subagent file skeleton.
 
 ## Error Recovery
 

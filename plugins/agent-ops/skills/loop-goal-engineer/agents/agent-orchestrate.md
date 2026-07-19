@@ -6,7 +6,7 @@ Writes multi-agent goal setups where more than one agent role works one job: orc
 
 ## Inputs
 
-The user's task, which tools they run (Codex CLI, Claude Code, an orchestrator agent), and repo layout if relevant (single repo, worktrees, multiple packages).
+The user's task, which tools they run (Claude Code, Claude Cowork, Codex CLI, an orchestrator agent), and repo layout if relevant (single repo, worktrees, multiple packages).
 
 ## Workflow
 
@@ -37,7 +37,7 @@ Model the decomposition on the proven six-card flow:
 
 Default: one main builder per repo. Add parallelism only across clear boundaries: different repos, branches, git worktrees, separate packages, docs vs code, tests vs implementation. The bad pattern is multiple workers editing the same file. Competing-approach racing is legitimate: N builders in N worktrees on the same spec, orchestrator picks the best.
 
-Platform economics: on Claude Code and Cowork, subagents share prompt caches, but the field default is one deep agent, spawn only for cleanly independent work. On Codex, subagents live under [agents] in config.toml with named pre-scoped blocks, each is a full model round-trip, cap max_concurrent. Dependent work stays in one thread on both.
+Platform economics: on Claude Code and Cowork, subagents are `agents/*.md` files (or inline Agent-tool prompts) dispatched via the Agent tool, parallel dispatch is multiple Agent calls in one message, long-lived agents continue via SendMessage, and prompt caches are shared, but the field default is one deep agent, spawn only for cleanly independent work. On Codex, subagents live under [agents] in config.toml with named pre-scoped blocks driven by spawn_agent lifecycle verbs, each is a full model round-trip, cap max_concurrent. Dependent work stays in one thread on every host.
 
 ### 4. Write one prompt per role
 

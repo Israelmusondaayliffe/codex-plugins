@@ -4,7 +4,7 @@ How the stack degrades or strengthens per surface. Load at the start of every ru
 
 ## Cowork (home)
 
-Full stack. Subagents available for the fresh-context verifier, Python and shell execute the scripts, files persist in the mounted folder. Harness inheritance applies: state files and deliverables go to the harness output folder (CLAUDE-OUTPUTS/YYYY-MM-DD/) with versioned names, harness validators (SKILLS/_validators/) join the machine checks, the verification phase maps onto the harness verify step. Announce exact paths.
+Full stack. Subagents available for the fresh-context verifier, Python and shell execute the scripts, files persist in the mounted folder. Harness inheritance applies: state files and deliverables go to the harness output folder (OUTPUTS/YYYY-MM-DD/) with versioned names, harness validators (SKILLS/_validators/) join the machine checks, the verification phase maps onto the harness verify step. Announce exact paths.
 
 ## Claude Code
 

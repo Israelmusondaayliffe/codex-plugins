@@ -8,7 +8,7 @@ Writes /loop prompts: recurring, scheduled, or self-pacing work across many iter
 
 The user's task description, cadence if any (every morning, Mondays 9 AM, on CI failure, self-paced), target tool, and constraints.
 
-Target note: /loop and /schedule are Claude Code vocabulary. For Codex targets, recurring work becomes an Automation and sustained autonomous work becomes a Goal with the six-element contract, see target-tools.md before writing.
+Target note: /loop and /schedule are Claude Code vocabulary. On Claude Cowork, recurring work becomes an in-session scheduled task with durable state in a connected folder. For Codex targets, recurring work becomes an Automation and sustained autonomous work becomes a Goal with the six-element contract, see target-tools.md before writing.
 
 ## Workflow
 

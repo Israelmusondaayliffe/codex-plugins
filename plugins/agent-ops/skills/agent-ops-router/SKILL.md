@@ -1,6 +1,6 @@
 ---
 name: agent-ops-router
-description: Route reusable agent-system requests among agent design and agent-system audit. Use when a user asks to build a reusable agent, define an agent tool contract, choose an agent architecture, or audit an agent system's authority and stops. Generic Codex Goals, bounded loops, resume, verification, and schedules route to LoopKit.
+description: Route reusable agent-system requests among agent design and agent-system audit. Use when a user asks to build a reusable agent, define an agent tool contract, choose an agent architecture, or audit an agent system's authority and stops. Generic Goals, bounded loops, resume, verification, and schedules, on Claude Code, Claude Cowork, or Codex, route to LoopKit.
 ---
 
 # Agent Ops Router
@@ -17,7 +17,7 @@ Select the operational object before choosing a skill. Reusable agent systems ne
 4. Load only the route owner:
    - agent-design: agent-builder
    - audit: agent-system-audit
-5. Route generic Codex Goal or loop work to `loopkit:loopkit`.
+5. Route generic Goal or loop work, on any host (Claude Code, Claude Cowork, or Codex), to `loopkit:loopkit`.
 6. Use Outcome Engine only when the request is a general idea-to-result workflow rather than an agent operating system.
 7. Verify the chosen route names an outcome, evidence surface, boundaries, and stop condition.
 

@@ -34,11 +34,11 @@ Every autonomous agent this skill emits has, explicitly written into its instruc
 
 ### 4. Emit the artifacts per target
 
-Claude Code: a subagent file from `assets/subagent-template.md` destined for `.claude/agents/<name>.md` (kebab-case name, description that tells the main agent when to delegate, minimal tool grant), plus CLAUDE.md constraint lines when project rules belong on every run (keep them short, they are paid on every session start). For fresh-context review agents, state that the reviewer must not inherit the builder's context.
+Claude Code and Cowork: a subagent file from `assets/subagent-template.md` destined for `.claude/agents/<name>.md`, `~/.claude/agents/<name>.md`, or a plugin's `agents/` folder (kebab-case name, description that tells the main agent when to delegate, minimal tool grant), plus CLAUDE.md constraint lines when project rules belong on every run (keep them short, they are paid on every session start). There is no config.toml equivalent: the file is the definition, dispatch is the Agent tool, parallel dispatch is multiple Agent calls in one message, and long-lived agents are continued via SendMessage. For fresh-context review agents, state that the reviewer must not inherit the builder's context.
 
-Codex: a named `[agents.<name>]` block for `~/.codex/config.toml` for reusable subagents (the loop mechanics folded into its instructions field), or an AGENTS.md section at the correct chain layer (global, workspace, or project, most-specific wins). Codex-bound prompts are outcome-first: outcome, success criteria, constraints, never step-by-step procedure, GPT-5.5 goes brittle on procedural prompts. Sustained work gets a /goal with all six elements. See target-formats.md for the shapes.
+Codex: a named `[agents.<name>]` block for `~/.codex/config.toml` (under `${CODEX_HOME:-~/.codex}`) for reusable subagents (the loop mechanics folded into its instructions field), or an AGENTS.md section at the correct chain layer (global, workspace, or project, most-specific wins). Codex-bound prompts are outcome-first: outcome, success criteria, constraints, never step-by-step procedure, GPT-5.5 goes brittle on procedural prompts. Sustained work gets a /goal with all six elements. See target-formats.md for the shapes.
 
-Harness inheritance: when the user runs a harness, write scope defaults to its output folder (CLAUDE-OUTPUTS/ or CODEX-OUTPUTS/YYYY-MM-DD/, versioned naming, announce the path), and the agent prompt carries nothing the contract chain already loads every turn.
+Harness inheritance: when the user runs a harness, write scope defaults to its output folder (OUTPUTS/ or CODEX-OUTPUTS/YYYY-MM-DD/, versioned naming, announce the path), and the agent prompt carries nothing the contract chain already loads every turn.
 
 Both: when the agent is meant to run autonomously toward a finish line or on a schedule, compose with the loop-goal-engineer skill for the /goal or /loop that launches it.
 
