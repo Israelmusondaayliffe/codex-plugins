@@ -1,6 +1,6 @@
 {
   "plugin": "continuity-vault",
-  "version": "0.1.0+codex.20260714121935",
+  "version": "0.1.1",
   "skills": [
     "continuity-router",
     "frontier-extraction",
@@ -21,7 +21,7 @@
     {"name": "writing-quality", "required": false, "purpose": "Final continuity report prose"}
   ],
   "guardrails": [
-    "The active AGENTS.md chain and workspace source files remain authoritative.",
+    "The active instruction chain (CLAUDE.md on Claude Code / Cowork, AGENTS.md on Codex) and workspace source files remain authoritative.",
     "Memory and Chronicle are recall surfaces and must be rechecked before load-bearing use.",
     "Audits do not silently overwrite, delete, or resolve conflicts in source material."
   ],

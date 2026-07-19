@@ -11,4 +11,4 @@ Use one primary route per handoff.
 | `audit` | Claims, instructions, or references may be stale or conflicting | `staleness-and-conflict-audit` | Compared sources and review date |
 | `digest` | A bounded set of sources needs a concise continuity summary | `frontier-extraction` plus writing companion | Closed source set and audience |
 
-Authority order is the active `AGENTS.md` chain, then project and workspace source files, then derived artifacts. Memory and Chronicle are recall surfaces and cannot settle a load-bearing conflict by themselves.
+Authority order is the active instruction chain (the `CLAUDE.md` chain on Claude Code / Cowork, the `AGENTS.md` chain on Codex), then project and workspace source files, then derived artifacts. Memory and Chronicle are recall surfaces and cannot settle a load-bearing conflict by themselves.

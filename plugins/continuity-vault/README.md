@@ -1,6 +1,6 @@
 # Continuity Vault
 
-Continuity Vault packages source-preserving extraction, governed knowledge promotion, relationship mapping, recall routing, and staleness audits for work that must survive future Codex sessions.
+Continuity Vault packages source-preserving extraction, governed knowledge promotion, relationship mapping, recall routing, and staleness audits for work that must survive future Claude Code, Claude Cowork, and Codex sessions.
 
 ## Owned skills
 

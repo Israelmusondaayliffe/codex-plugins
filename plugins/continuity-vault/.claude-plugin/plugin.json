@@ -1,8 +1,17 @@
 {
   "name": "continuity-vault",
-  "version": "0.1.0+codex.20260714121935",
-  "description": "Source-preserving extraction, knowledge promotion, graph routing, recall, and staleness auditing.",
+  "version": "0.1.1",
+  "description": "Source-preserving extraction, knowledge promotion, graph routing, recall, and staleness auditing across Claude Code, Claude Cowork, and Codex sessions.",
   "author": {
     "name": "Israel Ayliffe"
-  }
+  },
+  "keywords": [
+    "continuity",
+    "knowledge-management",
+    "knowledge-graph",
+    "memory",
+    "claude-code",
+    "cowork",
+    "codex"
+  ]
 }

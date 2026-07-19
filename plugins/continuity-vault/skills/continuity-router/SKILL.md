@@ -1,6 +1,6 @@
 ---
 name: continuity-router
-description: Routes continuity work across extraction, durable-file promotion, knowledge graphs, memory search, staleness audits, and digests. Use when work from tasks, projects, or research must remain findable and trustworthy across future Codex sessions. Keeps workspace files as authority, treats memory and Chronicle as recall only, and does not overwrite or delete source material.
+description: Routes continuity work across extraction, durable-file promotion, knowledge graphs, memory search, staleness audits, and digests. Use when work from tasks, projects, or research must remain findable and trustworthy across future Claude Code, Claude Cowork, or Codex sessions. Keeps workspace files as authority, treats memory and Chronicle as recall only, and does not overwrite or delete source material.
 ---
 
 # Continuity Router

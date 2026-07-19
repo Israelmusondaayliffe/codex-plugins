@@ -3,7 +3,7 @@
 Audit only a bounded source set. For each load-bearing claim:
 
 1. Identify its source and last known verification date.
-2. Check whether a closer `AGENTS.md`, project file, live connector, CLI, or official documentation now supersedes it.
+2. Check whether a closer instruction file (`CLAUDE.md` on Claude Code / Cowork, `AGENTS.md` on Codex), project file, live connector, CLI, or official documentation now supersedes it.
 3. Classify the issue as `stale-claim`, `instruction-conflict`, `authority-gap`, `missing-owner`, or `broken-reference`.
 4. Set severity to `low`, `medium`, or `high` based on the consequence of reuse.
 5. Recommend verification, owner review, source repair, or retirement. Do not perform mutation as part of the audit.
