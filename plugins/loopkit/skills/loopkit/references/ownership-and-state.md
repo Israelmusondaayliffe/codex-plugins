@@ -2,7 +2,7 @@
 
 ## Ownership
 
-- LoopKit owns generic Codex loop and Goal contracts, execution, receipts, resume, scheduling, and runtime diagnosis.
+- LoopKit owns generic loop and goal contracts (Codex Goals or Claude Code `/goal`), execution, receipts, resume, scheduling, and runtime diagnosis on Claude Code, Claude Cowork, and Codex.
 - Agent Ops owns reusable agent design, agent-system routing, and agent-system audit.
 - Outcome Engine owns general idea-to-result shaping when no feedback loop is needed.
 - ProofLoop remains explicit-only.
@@ -12,8 +12,7 @@
 Resolve the state root in this order:
 
 1. `LOOPKIT_STATE_ROOT` for tests or an explicit isolated run.
-2. `$CODEX_HOME/loopkit` when `CODEX_HOME` is set.
-3. `~/.codex/loopkit` otherwise.
+2. Otherwise resolve the host home first (`~/.claude` on Claude Code / Cowork, `${CODEX_HOME:-~/.codex}` on Codex), then use `<host-home>/loopkit`.
 
 Each workspace uses a 12-character hash of its resolved path. Every run contains a contract, current state, append-only events, compact checkpoint, and evidence directory.
 

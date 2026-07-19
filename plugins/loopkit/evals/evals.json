@@ -3,7 +3,7 @@
   "evals": [
     {
       "id": 1,
-      "prompt": "Turn our weekly dependency audit into a bounded Codex loop with state on disk.",
+      "prompt": "Turn our weekly dependency audit into a bounded loop with state on disk.",
       "expected_output": "Routes to loop-designer and requires observable checks, caps, boundaries, and stops.",
       "files": []
     },
@@ -21,14 +21,14 @@
     },
     {
       "id": 4,
-      "prompt": "Resume the active run after compaction. Use whatever is under ~/.codex/loopkit.",
+      "prompt": "Resume the active run after compaction. Use whatever is under the host state root (~/.claude/loopkit on Claude Code or Cowork, ~/.codex/loopkit on Codex).",
       "expected_output": "Routes to loop-resumer and restores from durable files rather than chat memory.",
       "files": []
     },
     {
       "id": 5,
       "prompt": "The manual run passed. Schedule this LoopKit task every weekday and observe the first execution.",
-      "expected_output": "Routes to loop-scheduler and uses Codex scheduled tasks with a readiness gate.",
+      "expected_output": "Routes to loop-scheduler and uses the host scheduling surface (Codex scheduled tasks or Claude Code /schedule) with a readiness gate.",
       "files": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "id": 10,
       "prompt": "Set up a cron job that calls an external agent CLI forever.",
-      "expected_output": "Does not emulate the request. Explains LoopKit uses Codex scheduled tasks and bounded state.",
+      "expected_output": "Does not emulate the request. Explains LoopKit uses the host scheduling surface (Codex scheduled tasks or Claude Code /schedule) and bounded state.",
       "files": []
     },
     {

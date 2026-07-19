@@ -19,6 +19,7 @@ from loopkit_core import (  # noqa: E402
     init_run,
     load_json,
     record_receipt,
+    state_root,
     transition_run,
     validate_contract,
     validate_receipt,
@@ -48,6 +49,20 @@ def valid_contract() -> dict:
             "exhausted": "iteration or no-progress cap is reached",
         },
     }
+
+
+class StateRootTests(unittest.TestCase):
+    def test_claudecode_env_selects_claude_home(self) -> None:
+        env = {"CLAUDECODE": "1", "CODEX_HOME": "/tmp/codex-home"}
+        with mock.patch.dict(os.environ, env, clear=False):
+            os.environ.pop("LOOPKIT_STATE_ROOT", None)
+            self.assertEqual(state_root(), (Path.home() / ".claude" / "loopkit").resolve())
+
+    def test_codex_home_wins_without_claudecode(self) -> None:
+        with mock.patch.dict(os.environ, {"CODEX_HOME": "/tmp/codex-home"}, clear=False):
+            for var in ("LOOPKIT_STATE_ROOT", "CLAUDECODE"):
+                os.environ.pop(var, None)
+            self.assertEqual(state_root(), Path("/tmp/codex-home/loopkit").resolve())
 
 
 class LoopKitCoreTests(unittest.TestCase):

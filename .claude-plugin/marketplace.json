@@ -93,8 +93,8 @@
     {
       "name": "loopkit",
       "source": "./plugins/loopkit",
-      "description": "Design, run, verify, resume, schedule, and diagnose bounded Codex loops with durable state and evidence-gated completion.",
-      "version": "0.1.0",
+      "description": "Design, run, verify, resume, schedule, and diagnose bounded loops on Claude Code, Claude Cowork, and Codex with durable host-scoped state and evidence-gated completion.",
+      "version": "0.2.0",
       "author": {
         "name": "Israel Ayliffe",
         "url": "https://github.com/Israelmusondaayliffe"

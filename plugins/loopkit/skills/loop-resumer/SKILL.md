@@ -12,7 +12,7 @@ Resume from files, not recollection. The checkpoint is a compact index. The cont
 
 ## Workflow
 
-1. Use the named run directory. If none is named, locate the newest active run for the resolved current workspace under `${CODEX_HOME:-~/.codex}/loopkit/runs/<workspace-hash>/`.
+1. Use the named run directory. If none is named, resolve the host home first (`~/.claude` on Claude Code / Cowork, `${CODEX_HOME:-~/.codex}` on Codex), then locate the newest active run for the resolved current workspace under `<host-home>/loopkit/runs/<workspace-hash>/`.
 2. Read `contract.json`, `state.json`, `checkpoint.md`, and the newest receipt.
 3. Confirm the run id matches across files, the status is nonterminal, and the current generation is known.
 4. Refresh the checkpoint:
@@ -32,5 +32,9 @@ python3 scripts/checkpoint_run.py RUN_DIR
 ## Recovery
 
 If files disagree, state is malformed, evidence is missing, or the generation changed while reading, stop normal execution and route to `loop-doctor`. Do not repair by guessing.
+
+## Pre-port runs
+
+Runs created before the dual-host port live under the Codex root (`~/.codex/loopkit/runs/`). They are not migrated. Resume one by naming its run directory explicitly.
 
 Load `references/resume-integrity.md` for the integrity checklist.

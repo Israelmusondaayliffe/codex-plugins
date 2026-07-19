@@ -2,7 +2,7 @@
 
 ## Storage
 
-The root is `${CODEX_HOME:-~/.codex}/loopkit/`. A run lives at:
+Resolve the host home first (`~/.claude` on Claude Code / Cowork, `${CODEX_HOME:-~/.codex}` on Codex). The runtime detects Claude hosts via the `CLAUDECODE` environment variable, which both Claude Code and Cowork shells set; `LOOPKIT_STATE_ROOT` overrides detection entirely. The state root is `<host-home>/loopkit/`, and a run lives at:
 
 ```text
 runs/<workspace-hash>/<timestamp>-<slug>/
@@ -16,6 +16,8 @@ runs/<workspace-hash>/<timestamp>-<slug>/
 ```
 
 The workspace hash is the first 12 hexadecimal characters of SHA-256 over the resolved workspace path. Timestamps use UTC in `YYYYMMDDTHHMMSSZ` form.
+
+Runs created before the dual-host port live under the Codex root (`~/.codex/loopkit/runs/`). They are not migrated. They can still be resumed by naming that run directory explicitly.
 
 ## State machine
 

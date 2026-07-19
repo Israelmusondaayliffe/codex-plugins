@@ -56,6 +56,10 @@ def state_root() -> Path:
     override = os.environ.get("LOOPKIT_STATE_ROOT")
     if override:
         return Path(override).expanduser().resolve()
+    # CLAUDECODE marks a live Claude Code / Cowork shell; CODEX_HOME may
+    # linger in dotfiles, so the live host signal wins.
+    if os.environ.get("CLAUDECODE"):
+        return (Path.home() / ".claude" / "loopkit").resolve()
     codex_home = os.environ.get("CODEX_HOME")
     base = Path(codex_home).expanduser() if codex_home else Path.home() / ".codex"
     return (base / "loopkit").resolve()

@@ -501,12 +501,12 @@ export const plugins = [
   {
     "slug": "agent-ops",
     "name": "Agent Ops",
-    "shortDescription": "Design and audit bounded agent systems.",
-    "longDescription": "Agent Ops designs reusable agents, routes agent-system work, and audits authority, tools, evidence, stops, and recovery. Generic Codex Goals and loops are owned by LoopKit.",
-    "description": "Design, route, and audit reusable agent systems with explicit authority, evidence, stops, and failure behavior.",
-    "version": "0.2.0",
+    "shortDescription": "Design and audit bounded agent systems on Claude Code, Cowork, or Codex.",
+    "longDescription": "Agent Ops designs reusable agents, routes agent-system work, and audits authority, tools, evidence, stops, and recovery on Claude Code, Claude Cowork, and Codex. Host-aware: subagents are agents/*.md files dispatched via the Agent tool on Claude Code and Cowork, and named config.toml blocks driven by spawn_agent lifecycle verbs on Codex. Generic Goals and loops on any host are owned by LoopKit.",
+    "description": "Design, route, and audit reusable agent systems on Claude Code, Claude Cowork, and Codex, with explicit authority, evidence, stops, and failure behavior.",
+    "version": "0.3.0",
     "category": "Productivity",
-    "license": null,
+    "license": "MIT",
     "capabilities": [],
     "defaultPrompts": [
       "Design a bounded agent system for this outcome.",
@@ -521,11 +521,11 @@ export const plugins = [
     "skills": [
       {
         "name": "agent-builder",
-        "description": "Build agents and agentic workflows for Claude Code and Codex CLI from a plain task description. Based on Anthropic's Building Effective Agents framework. Five routed modes. ARCHITECT walks the simplicity ladder and selects the pattern. WORKFLOW builds the chosen pattern as concrete artifacts. AGENT builds autonomous agents with ground-truth verification, stop conditions, pause points, and Claude Code subagent files. ACI designs and hardens tool definitions (poka-yoke, docstring-grade parameters). REVIEW critiques existing agent setups against the three core principles. Harness-aware, built agents inherit AGENTS.md chains, CLAUDE.md contracts, and output-folder discipline. Triggers on build an agent, design an agent, make me a subagent, agent for claude code or codex, codex subagent config, multi-agent system, orchestrator workers, prompt chain, evaluator optimizer, agent design patterns, review or fix my agent, tool definition design, ACI, or any request to create an agentic system."
+        "description": "Build agents and agentic workflows for Claude Code, Claude Cowork, and Codex from a plain task description. Based on Anthropic's Building Effective Agents framework. Five routed modes. ARCHITECT walks the simplicity ladder and selects the pattern. WORKFLOW builds the chosen pattern as concrete artifacts. AGENT builds autonomous agents with ground-truth verification, stop conditions, pause points, and per-host subagent definitions (agents/*.md files on Claude Code and Cowork, config.toml agent blocks on Codex). ACI designs and hardens tool definitions (poka-yoke, docstring-grade parameters). REVIEW critiques existing agent setups against the three core principles. Harness-aware, built agents inherit the instruction chain (CLAUDE.md chain on Claude Code and Cowork, AGENTS.md chain on Codex) and output-folder discipline. Triggers on build an agent, design an agent, make me a subagent, agent for claude code, cowork, or codex, codex subagent config, multi-agent system, orchestrator workers, prompt chain, evaluator optimizer, agent design patterns, review or fix my agent, tool definition design, ACI, or any request to create an agentic system."
       },
       {
         "name": "agent-ops-router",
-        "description": "Route reusable agent-system requests among agent design and agent-system audit. Use when a user asks to build a reusable agent, define an agent tool contract, choose an agent architecture, or audit an agent system's authority and stops. Generic Codex Goals, bounded loops, resume, verification, and schedules route to LoopKit."
+        "description": "Route reusable agent-system requests among agent design and agent-system audit. Use when a user asks to build a reusable agent, define an agent tool contract, choose an agent architecture, or audit an agent system's authority and stops. Generic Goals, bounded loops, resume, verification, and schedules, on Claude Code, Claude Cowork, or Codex, route to LoopKit."
       },
       {
         "name": "agent-system-audit",
@@ -533,15 +533,15 @@ export const plugins = [
       },
       {
         "name": "goal-runner",
-        "description": "Explicit-only compatibility shim for the historical Goal Runner name. Use only when the user explicitly says goal-runner or Goal Runner. Redirect Codex Goal contract, execution, verification, and resume work to the matching LoopKit skill. Generic goal or completion requests should trigger LoopKit directly."
+        "description": "Explicit-only compatibility shim for the historical Goal Runner name. Use only when the user explicitly says goal-runner or Goal Runner. Redirect Goal contract, execution, verification, and resume work, on Claude Code, Claude Cowork, or Codex, to the matching LoopKit skill. Generic goal or completion requests should trigger LoopKit directly."
       },
       {
         "name": "loop-goal-engineer",
-        "description": "Explicit-only compatibility shim for the historical Loop Goal Engineer name. Use only when the user explicitly says loop-goal-engineer or Loop Goal Engineer. Redirect Codex loop design, scheduling, and diagnosis to LoopKit. Generic loop, Goal, recurring-task, and schedule requests should trigger LoopKit directly."
+        "description": "Explicit-only compatibility shim for the historical Loop Goal Engineer name. Use only when the user explicitly says loop-goal-engineer or Loop Goal Engineer. Redirect loop design, scheduling, and diagnosis, on Claude Code, Claude Cowork, or Codex, to LoopKit. Generic loop, Goal, recurring-task, and schedule requests should trigger LoopKit directly."
       },
       {
         "name": "loopy",
-        "description": "Explicit-only compatibility shim for the historical Loopy name. Use only when the user explicitly says Loopy or asks for the Loop Library workflow. Redirect generic Codex loop design, run, verification, resume, and diagnosis to LoopKit. Retain the bundled legacy references only for an explicitly requested Loop Library discovery or publication task."
+        "description": "Explicit-only compatibility shim for the historical Loopy name. Use only when the user explicitly says Loopy or asks for the Loop Library workflow. Redirect generic loop design, run, verification, resume, and diagnosis, on Claude Code, Claude Cowork, or Codex, to LoopKit. Retain the bundled legacy references only for an explicitly requested Loop Library discovery or publication task."
       }
     ],
     "counts": {
@@ -549,7 +549,7 @@ export const plugins = [
       "assets": 8,
       "references": 17,
       "scripts": 7,
-      "files": 56
+      "files": 57
     },
     "bundlesMcp": false,
     "bundlesApp": false
@@ -649,10 +649,10 @@ export const plugins = [
   {
     "slug": "web-product-studio",
     "name": "Web Product Studio",
-    "shortDescription": "Build and verify coherent web products.",
-    "longDescription": "Web Product Studio routes greenfield builds, redesigns, image-first implementation, targeted fixes, and QA while enforcing one design constitution and browser-verifiable acceptance flows.",
-    "description": "Route, build, redesign, implement from images, and verify web products with one visual authority.",
-    "version": "0.1.0+codex.20260714115137",
+    "shortDescription": "Build and verify coherent web products on Claude Code, Cowork, or Codex.",
+    "longDescription": "Web Product Studio routes greenfield builds, redesigns, image-first implementation, targeted fixes, and QA while enforcing one design constitution and browser-verifiable acceptance flows. Runs on Claude Code, Claude Cowork, and Codex: rendered verification uses the in-app browser pane on Claude Code or the built-in Browser on Codex, with Playwright for repeatable automation.",
+    "description": "Route, build, redesign, implement from images, and verify web products with one visual authority on Claude Code, Claude Cowork, or Codex.",
+    "version": "0.2.0",
     "category": "Developer Tools",
     "license": null,
     "capabilities": [],
@@ -1101,10 +1101,10 @@ export const plugins = [
   {
     "slug": "loopkit",
     "name": "LoopKit",
-    "shortDescription": "Bounded Codex loops with durable evidence.",
-    "longDescription": "LoopKit turns repeatable work into bounded Codex loops. It creates durable contracts, runs evidence-gated iterations, restores compact checkpoints, prepares scheduled tasks, and diagnoses stalled or unsafe runs.",
-    "description": "Design, run, verify, resume, schedule, and diagnose bounded Codex loops with durable state and evidence-gated completion.",
-    "version": "0.1.0",
+    "shortDescription": "Bounded loops with durable evidence on Claude Code, Cowork, and Codex.",
+    "longDescription": "LoopKit turns repeatable work into bounded loops on Claude Code, Claude Cowork, and Codex. It creates durable contracts, runs evidence-gated iterations, restores compact checkpoints, prepares scheduled tasks on the host scheduling surface, and diagnoses stalled or unsafe runs.",
+    "description": "Design, run, verify, resume, schedule, and diagnose bounded loops on Claude Code, Claude Cowork, and Codex with durable host-scoped state and evidence-gated completion.",
+    "version": "0.2.0",
     "category": "Productivity",
     "license": "MIT",
     "capabilities": [
@@ -1126,7 +1126,7 @@ export const plugins = [
     "skills": [
       {
         "name": "loop-designer",
-        "description": "Design and initialize a bounded Codex loop or Goal contract with observable completion, machine checks, authority boundaries, iteration limits, and named stop states. Use when a user asks to turn a recurring task into a loop, define a verifiable Goal, build a Plan-Act-Verify contract, or create durable loop state before execution. Do not use to run an existing contract."
+        "description": "Design and initialize a bounded loop or goal contract (Codex Goals or Claude Code /goal) with observable completion, machine checks, authority boundaries, iteration limits, and named stop states. Use when a user asks to turn a recurring task into a loop, define a verifiable Goal, build a Plan-Act-Verify contract, or create durable loop state before execution. Do not use to run an existing contract."
       },
       {
         "name": "loop-doctor",
@@ -1142,7 +1142,7 @@ export const plugins = [
       },
       {
         "name": "loop-scheduler",
-        "description": "Prepare, activate, observe, pause, or remove a Codex scheduled task for a manually tested LoopKit run. Use when a user asks to schedule this loop, run it every day or week, make the workflow recurring, test an automation, or diagnose a scheduled LoopKit run. Uses Codex scheduled tasks, not cron or a shell loop."
+        "description": "Prepare, activate, observe, pause, or remove a scheduled task (Codex scheduled tasks, or Claude Code scheduled cloud routines via /schedule) for a manually tested LoopKit run. Use when a user asks to schedule this loop, run it every day or week, make the workflow recurring, test an automation, or diagnose a scheduled LoopKit run. Uses the host scheduling surface, not cron or a shell loop."
       },
       {
         "name": "loop-verifier",
@@ -1150,7 +1150,7 @@ export const plugins = [
       },
       {
         "name": "loopkit",
-        "description": "Route Codex work among bounded loop design, execution, verification, resume, scheduled tasks, and diagnosis. Use when a user says build a loop, run this until done, make this recurring, resume the active run, schedule this task, verify the loop, diagnose repetition, or asks for a durable Plan-Act-Verify workflow with state on disk. Use this front door for multi-stage loop work. Do not use for quick one-shot questions, general agent architecture, or external agent CLI configuration."
+        "description": "Route Claude Code, Claude Cowork, or Codex work among bounded loop design, execution, verification, resume, scheduled tasks, and diagnosis. Use when a user says build a loop, run this until done, make this recurring, resume the active run, schedule this task, verify the loop, diagnose repetition, or asks for a durable Plan-Act-Verify workflow with state on disk. Use this front door for multi-stage loop work. Do not use for quick one-shot questions, general agent architecture, or external agent CLI configuration."
       }
     ],
     "counts": {
@@ -1252,7 +1252,7 @@ export const plugins = [
     "shortDescription": "Engineer and run adaptive agent organizations.",
     "longDescription": "Transforms complex goals into typed, executable agent graphs with shared state, evidence, verification, bounded runtime restructuring, and human authority controls.",
     "description": "Design, run, inspect, and safely reorganize adaptive agent operating graphs.",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "category": "Productivity",
     "license": "MIT",
     "capabilities": [
@@ -1316,6 +1316,6 @@ export const totals = {
   "assets": 283,
   "references": 402,
   "scripts": 357,
-  "files": 1576
+  "files": 1577
 } as const;
 export type Plugin = (typeof plugins)[number];

@@ -32,7 +32,9 @@ REQUIRED_SCRIPTS = {
     "doctor_run.py",
     "verify_bundle.py",
 }
-FORBIDDEN_PORTABILITY_MARKERS = (".claude/", "CLAUDE.md", "claude -p", "run.sh")
+# Dual-host port (0.2.0): ".claude/" and "CLAUDE.md" are no longer forbidden;
+# docs now name both host homes (~/.claude and ${CODEX_HOME:-~/.codex}).
+FORBIDDEN_PORTABILITY_MARKERS = ("claude -p", "run.sh")
 
 
 def fail(errors: list[str], message: str) -> None:
@@ -61,6 +63,21 @@ def main() -> int:
         fail(errors, "manifest name must be loopkit")
     if manifest.get("version") != bundle.get("version"):
         fail(errors, "manifest and bundle-spec versions differ")
+    claude_manifest_path = ROOT / ".claude-plugin" / "plugin.json"
+    claude_hooks_path = ROOT / "hooks" / "claude-hooks.json"
+    try:
+        claude_manifest = json.loads(claude_manifest_path.read_text(encoding="utf-8"))
+        claude_hooks = json.loads(claude_hooks_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        fail(errors, f"claude bundle artifacts unreadable: {exc}")
+        claude_manifest, claude_hooks = {}, {}
+    for field in ("name", "version", "description", "license"):
+        if manifest.get(field) != claude_manifest.get(field):
+            fail(errors, f"manifest field {field} differs between .codex-plugin and .claude-plugin")
+    if claude_manifest.get("hooks") != "./hooks/claude-hooks.json":
+        fail(errors, "claude manifest must wire hooks to ./hooks/claude-hooks.json")
+    if set(claude_hooks.get("hooks", {})) != {"PreCompact", "SessionStart"}:
+        fail(errors, "claude-hooks.json must define exactly PreCompact and SessionStart")
     if "hooks" in manifest:
         fail(errors, "manifest must use default hooks/hooks.json discovery")
     prompts = manifest.get("interface", {}).get("defaultPrompt")

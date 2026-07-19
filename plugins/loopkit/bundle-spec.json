@@ -1,7 +1,11 @@
 {
   "plugin": "loopkit",
-  "version": "0.1.0",
-  "state_root": "${CODEX_HOME:-~/.codex}/loopkit",
+  "version": "0.2.0",
+  "state_root": {
+    "claude-code": "~/.claude/loopkit",
+    "cowork": "~/.claude/loopkit",
+    "codex": "${CODEX_HOME:-~/.codex}/loopkit"
+  },
   "front_door": "loopkit",
   "skills": [
     "loopkit",

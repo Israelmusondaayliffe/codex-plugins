@@ -1,6 +1,6 @@
 ---
 name: loopkit
-description: Route Codex work among bounded loop design, execution, verification, resume, scheduled tasks, and diagnosis. Use when a user says build a loop, run this until done, make this recurring, resume the active run, schedule this task, verify the loop, diagnose repetition, or asks for a durable Plan-Act-Verify workflow with state on disk. Use this front door for multi-stage loop work. Do not use for quick one-shot questions, general agent architecture, or external agent CLI configuration.
+description: Route Claude Code, Claude Cowork, or Codex work among bounded loop design, execution, verification, resume, scheduled tasks, and diagnosis. Use when a user says build a loop, run this until done, make this recurring, resume the active run, schedule this task, verify the loop, diagnose repetition, or asks for a durable Plan-Act-Verify workflow with state on disk. Use this front door for multi-stage loop work. Do not use for quick one-shot questions, general agent architecture, or external agent CLI configuration.
 metadata:
   author: Israel Ayliffe
   version: 0.1.0
@@ -8,7 +8,7 @@ metadata:
 
 # LoopKit
 
-Route a repeatable Codex workflow to one primary owner. A loop is appropriate only when fresh feedback can change the next action. Keep the contract, state, and evidence on disk so interruption or compaction cannot silently change the finish line.
+Route a repeatable host-platform workflow to one primary owner. A loop is appropriate only when fresh feedback can change the next action. Keep the contract, state, and evidence on disk so interruption or compaction cannot silently change the finish line.
 
 ## Router
 
@@ -37,7 +37,7 @@ If the user asks for a reusable agent definition or an agent-system audit, route
 
 ## Shared protocol
 
-Load `references/ownership-and-state.md` when route ownership or on-disk state is unclear. State belongs under `${CODEX_HOME:-~/.codex}/loopkit/`. A loop never grants authority beyond the active task's permissions and approvals.
+Load `references/ownership-and-state.md` when route ownership or on-disk state is unclear. State is host-scoped: resolve the host home first (`~/.claude` on Claude Code / Cowork, `${CODEX_HOME:-~/.codex}` on Codex), then use `<host-home>/loopkit/`. A loop never grants authority beyond the active task's permissions and approvals.
 
 ## Failure behavior
 

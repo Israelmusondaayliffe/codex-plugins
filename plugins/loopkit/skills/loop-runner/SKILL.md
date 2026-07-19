@@ -8,7 +8,7 @@ metadata:
 
 # Loop Runner
 
-Execute one bounded action per iteration and write evidence before reporting progress. For sustained work, create or use the current Codex Goal so the run has a visible thread-level outcome. The Goal does not replace LoopKit's durable state.
+Execute one bounded action per iteration and write evidence before reporting progress. For sustained work, create or use the host's goal surface (a Codex Goal, or Claude Code `/goal`) so the run has a visible thread-level outcome. The goal surface does not replace LoopKit's durable state.
 
 ## Start gate
 

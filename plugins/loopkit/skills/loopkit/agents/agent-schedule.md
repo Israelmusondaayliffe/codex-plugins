@@ -2,7 +2,7 @@
 
 ## Scope
 
-Prepare a Codex scheduled task for a loop that already passed a manual run. Do not emulate the scheduler with shell loops or cron.
+Prepare a scheduled task on the host surface (Codex scheduled tasks, or Claude Code scheduled cloud routines via `/schedule`) for a loop that already passed a manual run. Do not emulate the scheduler with shell loops or cron.
 
 ## Inputs
 
@@ -10,7 +10,7 @@ Require a tested run, cadence, task prompt, no-op behavior, evidence return, and
 
 ## Handoff
 
-Load `loop-scheduler`. Record `schedule.json`, then use the current Codex scheduled-task surface when available.
+Load `loop-scheduler`. Record `schedule.json`, then use the current host scheduling surface (Codex desktop or web scheduled-task controls, or Claude Code `/schedule`) when available.
 
 ## Validation
 
