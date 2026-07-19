@@ -8,7 +8,7 @@ Create a standalone HTML report from the final qualified prospect data. Use the 
 python3 scripts/generate_report.py analysis.json outputs/first-customer-finder-report.html
 ```
 
-Return a clickable absolute file link in Codex. Keep the JSON in a work or temporary directory unless the user asks for raw data.
+Return a clickable absolute file link in Claude Code, Claude Cowork, or Codex. Keep the JSON in a work or temporary directory unless the user asks for raw data.
 
 ## JSON schema
 

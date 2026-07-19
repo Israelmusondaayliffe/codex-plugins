@@ -65,8 +65,8 @@
     {
       "name": "founder-revenue-engine",
       "source": "./plugins/founder-revenue-engine",
-      "description": "Signal research, ICP definition, commercial narrative, bounded outreach drafts, and founder-led content.",
-      "version": "0.1.0+codex.20260714121935",
+      "description": "Signal research, ICP definition, commercial narrative, bounded outreach drafts, and founder-led content on Claude Code, Claude Cowork, or Codex.",
+      "version": "0.1.1",
       "author": {
         "name": "Israel Ayliffe"
       }

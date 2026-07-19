@@ -1,15 +1,24 @@
 {
   "name": "founder-revenue-engine",
-  "version": "0.1.0+codex.20260714121935",
-  "description": "Signal research, ICP definition, commercial narrative, bounded outreach drafts, and founder-led content.",
+  "version": "0.1.1",
+  "description": "Signal research, ICP definition, commercial narrative, bounded outreach drafts, and founder-led content on Claude Code, Claude Cowork, or Codex.",
   "author": {
     "name": "Israel Ayliffe"
   },
+  "keywords": [
+    "claude-code",
+    "cowork",
+    "codex",
+    "sales",
+    "outreach",
+    "icp",
+    "founder"
+  ],
   "skills": "./skills/",
   "interface": {
     "displayName": "Founder Revenue Engine",
-    "shortDescription": "Turn market signals into evidence-backed early revenue work.",
-    "longDescription": "Founder Revenue Engine converts recent market signals into a bounded ICP, commercial narrative, outreach drafts, and founder-led content while keeping sends and account changes unauthorized by default.",
+    "shortDescription": "Turn market signals into evidence-backed early revenue work on Claude Code, Cowork, or Codex.",
+    "longDescription": "Founder Revenue Engine converts recent market signals into a bounded ICP, commercial narrative, outreach drafts, and founder-led content on Claude Code, Claude Cowork, and Codex while keeping sends and account changes unauthorized by default.",
     "developerName": "Israel Ayliffe",
     "category": "Sales",
     "capabilities": [],

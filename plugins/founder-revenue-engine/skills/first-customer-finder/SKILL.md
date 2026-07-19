@@ -1,6 +1,6 @@
 ---
 name: first-customer-finder
-description: Find and qualify evidence-backed potential first customers, early adopters, design partners, or beta users for a startup using recent public pain and buying signals. Use when Codex needs to analyze a product URL or idea, define an ideal customer profile, research public discussions and business pages, identify first-user prospects, rank lead fit and timing, prepare source-based outreach drafts, or create a shareable early-customer prospecting report without sending messages automatically.
+description: Find and qualify evidence-backed potential first customers, early adopters, design partners, or beta users for a startup using recent public pain and buying signals. Use when Claude Code, Claude Cowork, or Codex needs to analyze a product URL or idea, define an ideal customer profile, research public discussions and business pages, identify first-user prospects, rank lead fit and timing, prepare source-based outreach drafts, or create a shareable early-customer prospecting report without sending messages automatically.
 ---
 
 # First Customer Finder
@@ -78,7 +78,7 @@ Create a standalone HTML report unless the user explicitly requests chat-only ou
 2. Run `scripts/generate_report.py <analysis.json> <report.html>`.
 3. Save the report in the workspace `outputs/` directory.
 4. Verify prospect cards, source links, scores, patterns, outreach plan, and limitations.
-5. Return a clickable absolute file link in the final response so it opens from Codex.
+5. Return a clickable absolute file link in the final response so it opens from Claude Code, Claude Cowork, or Codex.
 
 ## Modes
 
