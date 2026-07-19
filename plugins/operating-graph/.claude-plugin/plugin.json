@@ -1,6 +1,6 @@
 {
   "name": "operating-graph",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Design, run, inspect, and safely reorganize adaptive agent operating graphs.",
   "author": {
     "name": "Israel Ayliffe",
@@ -10,6 +10,8 @@
   "repository": "https://github.com/Israelmusondaayliffe/codex-plugins",
   "license": "MIT",
   "keywords": [
+    "claude-code",
+    "cowork",
     "codex",
     "agents",
     "graphs",

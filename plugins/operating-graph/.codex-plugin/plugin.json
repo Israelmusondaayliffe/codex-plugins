@@ -1,6 +1,6 @@
 {
   "name": "operating-graph",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Design, run, inspect, and safely reorganize adaptive agent operating graphs.",
   "author": {
     "name": "Israel Ayliffe",
@@ -9,7 +9,17 @@
   "homepage": "https://github.com/Israelmusondaayliffe/codex-plugins/tree/main/plugins/operating-graph",
   "repository": "https://github.com/Israelmusondaayliffe/codex-plugins",
   "license": "MIT",
-  "keywords": ["codex", "agents", "graphs", "orchestration", "workflows", "runtime", "adaptive-systems"],
+  "keywords": [
+    "claude-code",
+    "cowork",
+    "codex",
+    "agents",
+    "graphs",
+    "orchestration",
+    "workflows",
+    "runtime",
+    "adaptive-systems"
+  ],
   "skills": "./skills/",
   "interface": {
     "displayName": "Operating Graph",
@@ -17,7 +27,10 @@
     "longDescription": "Transforms complex goals into typed, executable agent graphs with shared state, evidence, verification, bounded runtime restructuring, and human authority controls.",
     "developerName": "The House of Curiosity",
     "category": "Productivity",
-    "capabilities": ["Interactive", "Write"],
+    "capabilities": [
+      "Interactive",
+      "Write"
+    ],
     "defaultPrompt": [
       "Design an operating graph for this goal.",
       "Run this goal as an adaptive agent graph.",
