@@ -1,6 +1,6 @@
 {
   "plugin": "model-prompt-lab",
-  "version": "0.1.0+codex.20260714121935",
+  "version": "0.1.1",
   "skills": [
     "fable-5-production-prompter",
     "fable-mode",

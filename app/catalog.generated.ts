@@ -721,10 +721,10 @@ export const plugins = [
   {
     "slug": "model-prompt-lab",
     "name": "Model Prompt Lab",
-    "shortDescription": "Route, build, migrate, and test model prompts.",
-    "longDescription": "Model Prompt Lab selects a verified model and prompt operation before loading focused production guidance, then supports migration audits and benchmark design without inventing unstable platform behavior.",
-    "description": "Verified model routing, production prompt architecture, migration audits, and benchmark design.",
-    "version": "0.1.0+codex.20260714121935",
+    "shortDescription": "Route, build, migrate, and test model prompts on Claude Code, Cowork, and Codex.",
+    "longDescription": "Model Prompt Lab selects a verified model and prompt operation before loading focused production guidance on Claude Code, Claude Cowork, or Codex, then supports migration audits and benchmark design without inventing unstable platform behavior.",
+    "description": "Verified model routing, production prompt architecture, migration audits, and benchmark design on Claude Code, Claude Cowork, and Codex.",
+    "version": "0.1.1",
     "category": "Developer Tools",
     "license": null,
     "capabilities": [],
@@ -897,10 +897,10 @@ export const plugins = [
   {
     "slug": "founder-revenue-engine",
     "name": "Founder Revenue Engine",
-    "shortDescription": "Turn market signals into evidence-backed early revenue work.",
-    "longDescription": "Founder Revenue Engine converts recent market signals into a bounded ICP, commercial narrative, outreach drafts, and founder-led content while keeping sends and account changes unauthorized by default.",
-    "description": "Signal research, ICP definition, commercial narrative, bounded outreach drafts, and founder-led content.",
-    "version": "0.1.0+codex.20260714121935",
+    "shortDescription": "Turn market signals into evidence-backed early revenue work on Claude Code, Cowork, or Codex.",
+    "longDescription": "Founder Revenue Engine converts recent market signals into a bounded ICP, commercial narrative, outreach drafts, and founder-led content on Claude Code, Claude Cowork, and Codex while keeping sends and account changes unauthorized by default.",
+    "description": "Signal research, ICP definition, commercial narrative, bounded outreach drafts, and founder-led content on Claude Code, Claude Cowork, or Codex.",
+    "version": "0.1.1",
     "category": "Sales",
     "license": null,
     "capabilities": [],
@@ -917,7 +917,7 @@ export const plugins = [
     "skills": [
       {
         "name": "first-customer-finder",
-        "description": "Find and qualify evidence-backed potential first customers, early adopters, design partners, or beta users for a startup using recent public pain and buying signals. Use when Codex needs to analyze a product URL or idea, define an ideal customer profile, research public discussions and business pages, identify first-user prospects, rank lead fit and timing, prepare source-based outreach drafts, or create a shareable early-customer prospecting report without sending messages automatically."
+        "description": "Find and qualify evidence-backed potential first customers, early adopters, design partners, or beta users for a startup using recent public pain and buying signals. Use when Claude Code, Claude Cowork, or Codex needs to analyze a product URL or idea, define an ideal customer profile, research public discussions and business pages, identify first-user prospects, rank lead fit and timing, prepare source-based outreach drafts, or create a shareable early-customer prospecting report without sending messages automatically."
       },
       {
         "name": "founder-revenue-router",
@@ -957,10 +957,10 @@ export const plugins = [
   {
     "slug": "continuity-vault",
     "name": "Continuity Vault",
-    "shortDescription": "Keep reusable knowledge findable and trustworthy.",
-    "longDescription": "Continuity Vault routes work through source-preserving extraction, governed promotion, relationship mapping, recall, and staleness audits while keeping workspace files authoritative.",
-    "description": "Source-preserving extraction, knowledge promotion, graph routing, recall, and staleness auditing.",
-    "version": "0.1.0+codex.20260714121935",
+    "shortDescription": "Keep reusable knowledge findable and trustworthy on Claude Code, Claude Cowork, and Codex.",
+    "longDescription": "Continuity Vault routes work through source-preserving extraction, governed promotion, relationship mapping, recall, and staleness audits while keeping workspace files authoritative. It runs on Claude Code, Claude Cowork, and Codex, and treats the host instruction chain (CLAUDE.md on Claude Code / Cowork, AGENTS.md on Codex) plus workspace source files as the authority layer.",
+    "description": "Source-preserving extraction, knowledge promotion, graph routing, recall, and staleness auditing across Claude Code, Claude Cowork, and Codex sessions.",
+    "version": "0.1.1",
     "category": "Productivity",
     "license": null,
     "capabilities": [],
@@ -977,7 +977,7 @@ export const plugins = [
     "skills": [
       {
         "name": "continuity-router",
-        "description": "Routes continuity work across extraction, durable-file promotion, knowledge graphs, memory search, staleness audits, and digests. Use when work from tasks, projects, or research must remain findable and trustworthy across future Codex sessions. Keeps workspace files as authority, treats memory and Chronicle as recall only, and does not overwrite or delete source material."
+        "description": "Routes continuity work across extraction, durable-file promotion, knowledge graphs, memory search, staleness audits, and digests. Use when work from tasks, projects, or research must remain findable and trustworthy across future Claude Code, Claude Cowork, or Codex sessions. Keeps workspace files as authority, treats memory and Chronicle as recall only, and does not overwrite or delete source material."
       },
       {
         "name": "frontier-extraction",

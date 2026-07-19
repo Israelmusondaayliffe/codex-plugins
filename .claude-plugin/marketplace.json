@@ -121,8 +121,8 @@
     {
       "name": "model-prompt-lab",
       "source": "./plugins/model-prompt-lab",
-      "description": "Verified model routing, production prompt architecture, migration audits, and benchmark design.",
-      "version": "0.1.0+codex.20260714121935",
+      "description": "Verified model routing, production prompt architecture, migration audits, and benchmark design on Claude Code, Claude Cowork, and Codex.",
+      "version": "0.1.1",
       "author": {
         "name": "Israel Ayliffe"
       }
