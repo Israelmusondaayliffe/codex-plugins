@@ -4,5 +4,6 @@
   "description": "Governed agent learning ledger and evaluation wrapper with bounded refinement, verification, quarantined memory, and read-only audit.",
   "author": {
     "name": "Israel Ayliffe"
-  }
+  },
+  "keywords": ["codex", "claude-code", "cowork"]
 }

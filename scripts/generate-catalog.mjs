@@ -97,9 +97,17 @@ const plugins = marketplace.plugins.map((entry) => {
   ) {
     throw new Error(`Marketplace source mismatch for ${entry.name}`);
   }
-  for (const field of ["name", "version", "description", "license"]) {
-    if ((manifest[field] ?? null) !== (claudeManifest[field] ?? null)) {
+  for (const field of ["name", "version", "description", "license", "keywords"]) {
+    if (
+      JSON.stringify(manifest[field] ?? null) !==
+      JSON.stringify(claudeManifest[field] ?? null)
+    ) {
       throw new Error(`Manifest ${field} mismatch for ${entry.name}`);
+    }
+  }
+  for (const keyword of ["codex", "claude-code", "cowork"]) {
+    if (!manifest.keywords?.includes(keyword)) {
+      throw new Error(`Missing ${keyword} platform keyword for ${entry.name}`);
     }
   }
   const files = walk(pluginRoot);

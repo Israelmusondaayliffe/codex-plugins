@@ -6,7 +6,9 @@ every file under one license.
 ## Package-specific terms
 
 - knowledge-work-superpowers includes its own MIT LICENSE and NOTICE.md.
-- outcome-engine declares MIT in its plugin manifest and includes NOTICE.md.
+- agent-ops declares MIT in its plugin manifests and includes a LICENSE file.
+- capability-operator declares MIT in its plugin manifests and includes a LICENSE file.
+- outcome-engine declares MIT in its plugin manifests and includes a LICENSE and NOTICE.md.
 - loopkit declares MIT in its plugin manifest and includes a LICENSE file.
 - harness-engineering declares MIT in its plugin manifest and includes a LICENSE file.
 - citizen-forge declares MIT in its plugin manifest and includes a LICENSE file.

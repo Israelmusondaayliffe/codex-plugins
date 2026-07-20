@@ -4,5 +4,6 @@
   "description": "Intent-aware drafting, rewriting, detect-only review, claim boundaries, and final prose validation.",
   "author": {
     "name": "Israel Ayliffe"
-  }
+  },
+  "keywords": ["codex", "claude-code", "cowork"]
 }
