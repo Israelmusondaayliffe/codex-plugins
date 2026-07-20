@@ -14,7 +14,10 @@
     "grilling",
     "specification",
     "handoff",
-    "verification"
+    "verification",
+    "codex",
+    "claude-code",
+    "cowork"
   ],
   "skills": "./skills/",
   "interface": {

@@ -5,6 +5,7 @@
   "author": {
     "name": "Israel Ayliffe"
   },
+  "keywords": ["codex", "claude-code", "cowork"],
   "skills": "./skills/",
   "interface": {
     "displayName": "Brand World Studio",

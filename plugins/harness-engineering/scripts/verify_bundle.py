@@ -32,16 +32,23 @@ def fail(message: str) -> None:
 
 def main() -> int:
     root = Path(sys.argv[1] if len(sys.argv) > 1 else Path(__file__).resolve().parents[1]).resolve()
-    manifest_path = root / ".claude-plugin" / "plugin.json"
-    if not manifest_path.is_file():
-        manifest_path = root / ".codex-plugin" / "plugin.json"
-    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
-    if manifest.get("name") != "harness-engineering" or manifest.get("version") != "2.0.0":
-        fail("manifest identity or version is incorrect")
-    if manifest.get("author", {}).get("name") != "Israel Ayliffe" or manifest.get("license") != "MIT":
-        fail("publisher or license metadata is incorrect")
-    if "apps" in manifest or "mcpServers" in manifest or "hooks" in manifest:
-        fail("manifest declares a component that v1 does not ship")
+    manifests = {}
+    for platform in ("codex", "claude"):
+        manifest_path = root / f".{platform}-plugin" / "plugin.json"
+        if not manifest_path.is_file():
+            fail(f"{platform} manifest is missing")
+        manifests[platform] = json.loads(manifest_path.read_text(encoding="utf-8"))
+    manifest = manifests["codex"]
+    for field in ("name", "version", "description", "license"):
+        if manifests["codex"].get(field) != manifests["claude"].get(field):
+            fail(f"manifest {field} differs across Codex and Claude")
+    for platform, platform_manifest in manifests.items():
+        if platform_manifest.get("name") != "harness-engineering" or platform_manifest.get("version") != "2.0.0":
+            fail(f"{platform} manifest identity or version is incorrect")
+        if platform_manifest.get("author", {}).get("name") != "Israel Ayliffe" or platform_manifest.get("license") != "MIT":
+            fail(f"{platform} publisher or license metadata is incorrect")
+        if "apps" in platform_manifest or "mcpServers" in platform_manifest or "hooks" in platform_manifest:
+            fail(f"{platform} manifest declares a component that v2 does not ship")
 
     actual = {path.parent.name for path in (root / "skills").glob("*/SKILL.md")}
     if actual != EXPECTED_SKILLS:
@@ -93,7 +100,7 @@ def main() -> int:
     missing = [str(path) for path in required if not path.is_file()]
     if missing:
         fail(f"required files missing: {missing}")
-    print(json.dumps({"plugin": "harness-engineering", "version": "1.0.0", "skills_validated": validations}, indent=2))
+    print(json.dumps({"plugin": "harness-engineering", "version": manifest["version"], "skills_validated": validations}, indent=2))
     return 0
 
 

@@ -4,5 +4,6 @@
   "description": "Routes checked analysis into decision-facing visual stories, executive readouts, reports, decks, dashboards, and publishable sites.",
   "author": {
     "name": "Israel Ayliffe"
-  }
+  },
+  "keywords": ["codex", "claude-code", "cowork"]
 }

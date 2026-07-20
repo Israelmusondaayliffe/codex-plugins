@@ -4,5 +4,6 @@
   "description": "Plans reproducible model evaluations, normalizes benchmark runs, and produces measured model-selection decisions.",
   "author": {
     "name": "Israel Ayliffe"
-  }
+  },
+  "keywords": ["codex", "claude-code", "cowork"]
 }

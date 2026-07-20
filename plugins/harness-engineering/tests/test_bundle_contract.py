@@ -8,22 +8,24 @@ import unittest
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def manifest_path() -> Path:
-    for candidate in (ROOT / ".claude-plugin" / "plugin.json", ROOT / ".codex-plugin" / "plugin.json"):
-        if candidate.is_file():
-            return candidate
-    raise FileNotFoundError("no plugin manifest found")
+def read_manifest(platform: str) -> dict:
+    path = ROOT / f".{platform}-plugin" / "plugin.json"
+    return json.loads(path.read_text(encoding="utf-8"))
 
 
 class BundleContractTests(unittest.TestCase):
     def test_manifest_and_marketplace_ready_shape(self) -> None:
-        manifest = json.loads(manifest_path().read_text(encoding="utf-8"))
-        self.assertEqual(manifest["name"], "harness-engineering")
-        self.assertEqual(manifest["version"], "2.0.0")
-        self.assertEqual(manifest["license"], "MIT")
-        self.assertEqual(len(manifest["interface"]["defaultPrompt"]), 3)
-        self.assertNotIn("apps", manifest)
-        self.assertNotIn("mcpServers", manifest)
+        codex_manifest = read_manifest("codex")
+        claude_manifest = read_manifest("claude")
+        for field in ("name", "version", "description", "license"):
+            self.assertEqual(codex_manifest[field], claude_manifest[field], field)
+        self.assertEqual(codex_manifest["name"], "harness-engineering")
+        self.assertEqual(codex_manifest["version"], "2.0.0")
+        self.assertEqual(codex_manifest["license"], "MIT")
+        self.assertEqual(len(codex_manifest["interface"]["defaultPrompt"]), 3)
+        for manifest in (codex_manifest, claude_manifest):
+            self.assertNotIn("apps", manifest)
+            self.assertNotIn("mcpServers", manifest)
 
     def test_platform_references_exist(self) -> None:
         for name in ("platform-matrix.md", "platform-claude-code.md", "platform-cowork.md", "platform-codex.md"):

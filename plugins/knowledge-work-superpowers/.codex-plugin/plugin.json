@@ -13,7 +13,10 @@
     "analysis",
     "planning",
     "review",
-    "verification"
+    "verification",
+    "codex",
+    "claude-code",
+    "cowork"
   ],
   "skills": "./skills/",
   "interface": {

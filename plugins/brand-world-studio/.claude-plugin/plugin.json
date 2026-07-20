@@ -4,5 +4,6 @@
   "description": "Brand briefs, visual systems, image-model routing, production prompt packs, and consistency verification.",
   "author": {
     "name": "Israel Ayliffe"
-  }
+  },
+  "keywords": ["codex", "claude-code", "cowork"]
 }
